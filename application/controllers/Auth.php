@@ -22,11 +22,30 @@ class Auth extends CI_Controller
         if ($user) {
             if ($password == $user['password']) {
                 echo "berhasil";
+                $data = [
+                    'username' => $user['username'],
+                    'role' => $user['role'],
+                    'status' => "login"
+                ];
+                $this->session->set_userdata($data);
+                if ($user['role'] == 1) {
+                    redirect('admin');
+                } else {
+                    echo "Fitur ini belum tersedia";
+                }
             } else {
                 redirect('home');
             }
         } else {
             redirect('home');
         }
+    }
+    public function logout()
+    {
+        $this->session->unset_userdata('username');
+        $this->session->unset_userdata('role');
+        $this->session->unset_userdata('status');
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Anda telah logout</div>');
+        redirect('home');
     }
 }
