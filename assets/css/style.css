@@ -10,7 +10,6 @@ body {
 	font-family: 'Work Sans', sans-serif;
 	font-size: 15px;
 	color: #323232;
-	background-color: #485ea0;
 }
 
 @media (min-width: 992px) {
@@ -79,12 +78,14 @@ button.btn-secondary:hover {
 .top-bar {
 	background: #485ea0;
 	padding: 4px 0px;
+
 }
 
 .social-media ul {
 	list-style: none;
 	margin: 0px;
 	padding: 0px;
+
 }
 
 .social-media ul li {
@@ -94,11 +95,11 @@ button.btn-secondary:hover {
 
 .social-media ul li a {
 	font-size: 16px;
-	color: #ffffff;
+	color: #ffe3b3;
 }
 
 .social-media ul li a:hover {
-	color: #323232;
+	color: #ffffff;
 }
 
 .contact-details ul {
@@ -111,7 +112,7 @@ button.btn-secondary:hover {
 .contact-details ul li {
 	display: inline-block;
 	padding: 0px 5px;
-	color: #ffffff;
+	color: #ffe3b3;
 }
 
 .wrapper-main {
@@ -120,7 +121,7 @@ button.btn-secondary:hover {
 }
 
 .top-nav {
-	background-color: #ffffff !important;
+	background-color: #ffe3b3 !important;
 }
 
 .navbar-expand-lg.top-nav .navbar-nav .nav-link {
@@ -447,7 +448,7 @@ button.btn-secondary:hover {
 	font-size: 45px;
 	margin-bottom: 20px;
 	text-align: center;
-	color: #485ea0;
+	color: #ffe3b3;
 }
 
 .project-menu {
@@ -715,12 +716,14 @@ button.btn-secondary:hover {
 .touch-line p {
 	color: #ffffff;
 	font-size: 15px;
+	font-weight: 600;
+	font-size: 22px;
 }
 
 .touch-line a.btn-secondary {
-	background-color: #ffffff;
-	border-color: #ffffff;
+	background-color: #ffe3b3;
 	color: #485ea0;
+	border-color: #ffe3b3;
 }
 
 .footer {
@@ -1402,6 +1405,10 @@ footer p {
 	transition: all 0.5s ease 0s;
 }
 
+#tentang, #portfolio{
+	background-color: #485ea0;
+}
+
 .our-team .social li a:hover {
 	color: #ffffff;
 	background: #485ea0;
@@ -2032,14 +2039,11 @@ footer p {
 		font-size: 14px;
 	}
 
-	a#tombol {
-		background-color: #ffe3b3;
-		color: #485ea0;
-		border-color: #ffe3b3;
-	}
+	#tombolpmb {}
 
-	p#judulpmb {
-		font-weight: 600;
-		font-size: 22px;
-	}
+	#judulpmb {}
+
+	.btn-primary:not(:disabled):not(.disabled).active,
+	.btn-primary:not(:disabled):not(.disabled):active,
+	.show>.btn-primary.dropdown-toggle {}
 }

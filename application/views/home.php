@@ -133,29 +133,31 @@
         </header>
 
         <!-- Page Content -->
-        <div class="container my-5">
-            <!-- About Section -->
-            <div class="about-main">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <h3 id="judul">MENATAP MASA DEPAN BERSAMA INFORMATIKA - UMRI</h3>
-                        <hr class="my-0">
-                        <p class="mt-4"><strong>WE TURN DREAMS INTO REALITY</strong> _ Informatika-UMRI setuju bahwa setiap orang berhak memiliki harapan untuk memiliki masa depan yang indah. Memperoleh pendidikan yang berkualitas merupakan fondasi untuk menciptakan pembangunan berkelanjutan dan meningkatkan kualitas hidup setiap orang (Mahasiswa) khususnya di era teknologi saat ini. </p>
-                        <p>Informatika - UMRI menggunakan pendekatan Teknologi dalam aktivitas pendidikan guna memajukan kualitas pembelajaran, cara belajar dan mengajar serta juga untuk mempengaruhi dimensi berpikir secara sistematis dan proaktif bagi pelajar dan sarjana. Sehingga terciptalah keseimbangan kompetensi SOFTSKILL dan HARDSKILL bagi setiap Mahasiswa di Program Studi Teknik Informatika.</p>
-                        <h5>Our smart approach</h5>
-                        <ul>
-                            <li>Sed at tellus eu quam posuere mattis.</li>
-                            <li>Phasellus quis erat et enim laoreet posuere ac porttitor ipsum.</li>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                        </ul>
+        <section id="tentang">
+            <div class="container py-5" id="about-main">
+                <!-- About Section -->
+                <div class="about-main">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <h3 id="judul">MENATAP MASA DEPAN BERSAMA INFORMATIKA - UMRI</h3>
+                            <hr class="my-0">
+                            <p class="mt-4"><strong>WE TURN DREAMS INTO REALITY</strong> _ Informatika-UMRI setuju bahwa setiap orang berhak memiliki harapan untuk memiliki masa depan yang indah. Memperoleh pendidikan yang berkualitas merupakan fondasi untuk menciptakan pembangunan berkelanjutan dan meningkatkan kualitas hidup setiap orang (Mahasiswa) khususnya di era teknologi saat ini. </p>
+                            <p>Informatika - UMRI menggunakan pendekatan Teknologi dalam aktivitas pendidikan guna memajukan kualitas pembelajaran, cara belajar dan mengajar serta juga untuk mempengaruhi dimensi berpikir secara sistematis dan proaktif bagi pelajar dan sarjana. Sehingga terciptalah keseimbangan kompetensi SOFTSKILL dan HARDSKILL bagi setiap Mahasiswa di Program Studi Teknik Informatika.</p>
+                            <h5>Our smart approach</h5>
+                            <ul>
+                                <li>Sed at tellus eu quam posuere mattis.</li>
+                                <li>Phasellus quis erat et enim laoreet posuere ac porttitor ipsum.</li>
+                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6">
+                            <img class="img-fluid rounded" src="<?= site_url('assets/') ?>images/about-img.jpg" alt="" />
+                        </div>
                     </div>
-                    <div class="col-lg-6">
-                        <img class="img-fluid rounded" src="<?= site_url('assets/') ?>images/about-img.jpg" alt="" />
-                    </div>
+                    <!-- /.row -->
                 </div>
-                <!-- /.row -->
             </div>
-        </div>
+        </section>
 
         <div class="services-bar">
             <div class="container">
@@ -239,114 +241,116 @@
             </div>
         </div>
 
-        <div class="container my-5">
-            <!-- Portfolio Section -->
-            <div class="portfolio-main">
-                <h2>Our Portfolio</h2>
-                <div class="col-lg-12">
-                    <div class="project-menu text-center">
-                        <button class="btn btn-primary active" data-filter="*">All</button>
-                        <button data-filter=".business" class="btn btn-primary">Business</button>
-                        <button data-filter=".travel" class="btn btn-primary">Travel</button>
-                        <button data-filter=".financial" class="btn btn-primary">Financial</button>
-                        <button data-filter=".academic" class="btn btn-primary">Academic</button>
+        <section id="portfolio">
+            <div class="container py-5">
+                <!-- Portfolio Section -->
+                <div class="portfolio-main">
+                    <h2>Our Portfolio</h2>
+                    <div class="col-lg-12">
+                        <div class="project-menu text-center">
+                            <button class="btn btn-primary active" data-filter="*">All</button>
+                            <button data-filter=".business" class="btn btn-primary">Business</button>
+                            <button data-filter=".travel" class="btn btn-primary">Travel</button>
+                            <button data-filter=".financial" class="btn btn-primary">Financial</button>
+                            <button data-filter=".academic" class="btn btn-primary">Academic</button>
+                        </div>
                     </div>
+                    <div id="projects" class="projects-main row">
+                        <div class="col-lg-4 col-sm-6 pro-item portfolio-item financial">
+                            <div class="card h-100">
+                                <div class="card-img">
+                                    <a href="<?= site_url('assets/') ?>images/portfolio-img-01.jpg" data-fancybox="images">
+                                        <img class="card-img-top" src="<?= site_url('assets/') ?>images/portfolio-img-01.jpg" alt="" />
+                                        <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="#">Financial Sustainability</a>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 pro-item portfolio-item business academic">
+                            <div class="card h-100">
+                                <div class="card-img">
+                                    <a href="<?= site_url('assets/') ?>images/portfolio-img-02.jpg" data-fancybox="images">
+                                        <img class="card-img-top" src="<?= site_url('assets/') ?>images/portfolio-img-02.jpg" alt="" />
+                                        <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="#">Financial Sustainability</a>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 pro-item portfolio-item travel">
+                            <div class="card h-100">
+                                <div class="card-img">
+                                    <a href="<?= site_url('assets/') ?>images/portfolio-img-03.jpg" data-fancybox="images">
+                                        <img class="card-img-top" src="<?= site_url('assets/') ?>images/portfolio-img-03.jpg" alt="" />
+                                        <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="#">Financial Sustainability</a>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 pro-item portfolio-item business">
+                            <div class="card h-100">
+                                <div class="card-img">
+                                    <a href="<?= site_url('assets/') ?>images/portfolio-img-04.jpg" data-fancybox="images">
+                                        <img class="card-img-top" src="<?= site_url('assets/') ?>images/portfolio-img-04.jpg" alt="" />
+                                        <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="#">Financial Sustainability</a>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 pro-item portfolio-item travel">
+                            <div class="card h-100">
+                                <div class="card-img">
+                                    <a href="<?= site_url('assets/') ?>images/portfolio-img-05.jpg" data-fancybox="images">
+                                        <img class="card-img-top" src="<?= site_url('assets/') ?>images/portfolio-img-05.jpg" alt="" />
+                                        <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="#">Financial Sustainability</a>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 pro-item portfolio-item financial academic">
+                            <div class="card h-100">
+                                <div class="card-img">
+                                    <a href="<?= site_url('assets/') ?>images/portfolio-img-01.jpg" data-fancybox="images">
+                                        <img class="card-img-top" src="<?= site_url('assets/') ?>images/portfolio-img-01.jpg" alt="" />
+                                        <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="#">Financial Sustainability</a>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.row -->
                 </div>
-                <div id="projects" class="projects-main row">
-                    <div class="col-lg-4 col-sm-6 pro-item portfolio-item financial">
-                        <div class="card h-100">
-                            <div class="card-img">
-                                <a href="<?= site_url('assets/') ?>images/portfolio-img-01.jpg" data-fancybox="images">
-                                    <img class="card-img-top" src="<?= site_url('assets/') ?>images/portfolio-img-01.jpg" alt="" />
-                                    <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
-                                </a>
-                            </div>
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                    <a href="#">Financial Sustainability</a>
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 pro-item portfolio-item business academic">
-                        <div class="card h-100">
-                            <div class="card-img">
-                                <a href="<?= site_url('assets/') ?>images/portfolio-img-02.jpg" data-fancybox="images">
-                                    <img class="card-img-top" src="<?= site_url('assets/') ?>images/portfolio-img-02.jpg" alt="" />
-                                    <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
-                                </a>
-                            </div>
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                    <a href="#">Financial Sustainability</a>
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 pro-item portfolio-item travel">
-                        <div class="card h-100">
-                            <div class="card-img">
-                                <a href="<?= site_url('assets/') ?>images/portfolio-img-03.jpg" data-fancybox="images">
-                                    <img class="card-img-top" src="<?= site_url('assets/') ?>images/portfolio-img-03.jpg" alt="" />
-                                    <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
-                                </a>
-                            </div>
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                    <a href="#">Financial Sustainability</a>
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 pro-item portfolio-item business">
-                        <div class="card h-100">
-                            <div class="card-img">
-                                <a href="<?= site_url('assets/') ?>images/portfolio-img-04.jpg" data-fancybox="images">
-                                    <img class="card-img-top" src="<?= site_url('assets/') ?>images/portfolio-img-04.jpg" alt="" />
-                                    <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
-                                </a>
-                            </div>
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                    <a href="#">Financial Sustainability</a>
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 pro-item portfolio-item travel">
-                        <div class="card h-100">
-                            <div class="card-img">
-                                <a href="<?= site_url('assets/') ?>images/portfolio-img-05.jpg" data-fancybox="images">
-                                    <img class="card-img-top" src="<?= site_url('assets/') ?>images/portfolio-img-05.jpg" alt="" />
-                                    <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
-                                </a>
-                            </div>
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                    <a href="#">Financial Sustainability</a>
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 pro-item portfolio-item financial academic">
-                        <div class="card h-100">
-                            <div class="card-img">
-                                <a href="<?= site_url('assets/') ?>images/portfolio-img-01.jpg" data-fancybox="images">
-                                    <img class="card-img-top" src="<?= site_url('assets/') ?>images/portfolio-img-01.jpg" alt="" />
-                                    <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
-                                </a>
-                            </div>
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                    <a href="#">Financial Sustainability</a>
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.row -->
             </div>
-        </div>
+        </section>
 
         <div class="blog-slide py-5">
             <div class="container">
@@ -549,7 +553,7 @@
             </div>
         </div>
 
-        <div class="customers-box mt-5">
+        <div class="customers-box pt-5">
             <div class="container">
                 <!-- Our Customers -->
                 <h2>Our Customers</h2>
@@ -587,12 +591,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <p style="font-weight: 600;font-size: 22px;">PENERIMAAN MAHASISWA BARU TEKNIK INFORMATIKA</p>
+                        <p id="judulpmb">PENERIMAAN MAHASISWA BARU TEKNIK INFORMATIKA</p>
                     </div>
                 </div>
                 <div class="row justify-content-center mt-3">
                     <div class="col-md-3">
-                        <a class="btn btn-lg btn-secondary btn-block" href="#" style="background-color: #ffe3b3;color: #485ea0;border-color: #ffe3b3;"> Contact Us </a>
+                        <a class="btn btn-lg btn-secondary btn-block" id="tombolpmb" href="#"><i class="far fa-paper-plane"></i> Daftar Sekarang</a>
                     </div>
                 </div>
             </div>
@@ -603,11 +607,38 @@
         <footer class="footer">
             <div class="container bottom_border">
                 <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-6 col">
-                        <h5 class="headin5_amrc col_white_amrc pt2">About Us</h5>
+                    
+                    <div class="col-lg-4 col-md-6 col-sm-6 ">
+                        <div class="news-box">
+                            <h5 class="headin5_amrc col_white_amrc pt2">Hubngi Kami</h5>
+                            <p class="mb-0">
+                                Jl. KH. Ahmad Dahlan No.88, Kp. Melayu, Kec. Sukajadi, Kota Pekanbaru, Riau 28156
+                            </p>
+                            <p class="my-0">
+                            <i class="fas fa-phone fa-rotate-90"></i> (0761) 35008
+                            </p>
+                            <p>
+                            <i class="fas fa-envelope"></i> Informatika@umri.ac.id
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 pl-5">
+                        <h5 class="headin5_amrc col_white_amrc pt2">Pranala</h5>
                         <!--headin5_amrc-->
-                        <p class="mb10">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                            Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                        <ul class="footer_ul_amrc">
+                            <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>umri.ac.id</a></li>
+                            <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Daftar UMRI</a></li>
+                            <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Perpustakaan</a></li>
+                            <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Fakultas</a></li>
+                            <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Celscitech</a></li>
+                            <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>E-Journal</a></li>
+                            <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Repositori TA</a></li> </ul> <!--footer_ul_amrc ends here-->
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <h5 class="headin5_amrc col_white_amrc pt2">Ikuti Kami Di</h5>
+                        <!--headin5_amrc-->
+                        <!-- <p class="mb10">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                            Ipsum has been the industry's standard dummy text ever since the 1500s</p> -->
                         <ul class="footer-social">
                             <li><a class="facebook hb-xs-margin" href="#"><span class="hb hb-xs spin hb-facebook"><i class="fab fa-facebook-f"></i></span></a></li>
                             <li><a class="twitter hb-xs-margin" href="#"><span class="hb hb-xs spin hb-twitter"><i class="fab fa-twitter"></i></span></a></li>
@@ -615,53 +646,6 @@
                             <li><a class="googleplus hb-xs-margin" href="#"><span class="hb hb-xs spin hb-google-plus"><i class="fab fa-google-plus-g"></i></span></a></li>
                             <li><a class="dribbble hb-xs-margin" href="#"><span class="hb hb-xs spin hb-dribbble"><i class="fab fa-dribbble"></i></span></a></li>
                         </ul>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <h5 class="headin5_amrc col_white_amrc pt2">Quick links</h5>
-                        <!--headin5_amrc-->
-                        <ul class="footer_ul_amrc">
-                            <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Default Version</a></li>
-                            <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Boxed Version</a></li>
-                            <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Our Team </a></li>
-                            <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>About Us</a></li>
-                            <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Our Services</a></li>
-                            <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Get In Touch</a></li>
-                        </ul>
-                        <!--footer_ul_amrc ends here-->
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 col">
-                        <h5 class="headin5_amrc col_white_amrc pt2">Follow us</h5>
-                        <!--headin5_amrc ends here-->
-                        <ul class="footer_ul2_amrc">
-                            <li>
-                                <a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a>
-                                <p>Lorem Ipsum is simply dummy...<a href="#">https://www.lipsum.com/</a></p>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a>
-                                <p>Lorem Ipsum is simply dummy...<a href="#">https://www.lipsum.com/</a></p>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a>
-                                <p>Lorem Ipsum is simply dummy...<a href="#">https://www.lipsum.com/</a></p>
-                            </li>
-                        </ul>
-                        <!--footer_ul2_amrc ends here-->
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 ">
-                        <div class="news-box">
-                            <h5 class="headin5_amrc col_white_amrc pt2">Newsletter</h5>
-                            <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
-                                velit...</p>
-                            <form action="#">
-                                <div class="input-group">
-                                    <input class="form-control" placeholder="Search for..." type="text">
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-secondary" type="button">Go!</button>
-                                    </span>
-                                </div>
-                            </form>
-                        </div>
                     </div>
                 </div>
             </div>
