@@ -39,8 +39,8 @@
                     <div class="col-lg-6">
                         <div class="contact-details">
                             <ul>
-                                <li><i class="fas fa-phone fa-rotate-90"></i> +01 899 286 777</li>
-                                <li><i class="fas fa-map-marker-alt"></i> 8/99 , North khailkoir, NY</li>
+                                <li><i class="fas fa-phone fa-rotate-90"></i> (0761) 35008</li>
+                                <li><i class="fas fa-map-marker-alt"></i> Pekanbaru, Riau</li>
                             </ul>
                         </div>
                     </div>
@@ -106,27 +106,20 @@
                     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                 </ol>
                 <div class="carousel-inner" role="listbox">
-                    <!-- Slide One - Set the background image for this slide in the line below -->
-                    <div class="carousel-item active" style="background-image: url('<?= site_url('assets/') ?>images/slider-01.jpg')">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h3>Welcome to Zonebiz</h3>
-                            <p>A Great Theme For Business Consulting</p>
+                    <!-- Slider -->
+                    <?php
+                    $slider = $this->db->get('slider')->result_array();
+                    $i = 1;
+                    foreach ($slider as $s) :
+                    ?>
+                        <div class="carousel-item <?= ($i == 1) ? "active" : "" ?>" style="background-image: url('<?= site_url('assets/images/slider/') . $s['gambar'] ?>">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h3><?= $s['judul'] ?></h3>
+                                <p><?= $s['subjudul'] ?></p>
+                            </div>
                         </div>
-                    </div>
-                    <!-- Slide Two - Set the background image for this slide in the line below -->
-                    <div class="carousel-item" style="background-image: url('<?= site_url('assets/') ?>images/slider-02.jpg')">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h3>Best Consulting Services.</h3>
-                            <p>A Great Theme For Business Consulting</p>
-                        </div>
-                    </div>
-                    <!-- Slide Three - Set the background image for this slide in the line below -->
-                    <div class="carousel-item" style="background-image: url('<?= site_url('assets/') ?>images/slider-03.jpg')">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h3>Welcome to Zonebiz</h3>
-                            <p>A Great Theme For Business Consulting</p>
-                        </div>
-                    </div>
+                    <?php $i++;
+                    endforeach; ?>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -140,14 +133,15 @@
         </header>
 
         <!-- Page Content -->
-        <div class="container">
+        <div class="container my-5">
             <!-- About Section -->
             <div class="about-main">
                 <div class="row">
                     <div class="col-lg-6">
-                        <h2>Welcome to Zonebiz</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
+                        <h3 id="judul">MENATAP MASA DEPAN BERSAMA INFORMATIKA - UMRI</h3>
+                        <hr class="my-0">
+                        <p class="mt-4"><strong>WE TURN DREAMS INTO REALITY</strong> _ Informatika-UMRI setuju bahwa setiap orang berhak memiliki harapan untuk memiliki masa depan yang indah. Memperoleh pendidikan yang berkualitas merupakan fondasi untuk menciptakan pembangunan berkelanjutan dan meningkatkan kualitas hidup setiap orang (Mahasiswa) khususnya di era teknologi saat ini. </p>
+                        <p>Informatika - UMRI menggunakan pendekatan Teknologi dalam aktivitas pendidikan guna memajukan kualitas pembelajaran, cara belajar dan mengajar serta juga untuk mempengaruhi dimensi berpikir secara sistematis dan proaktif bagi pelajar dan sarjana. Sehingga terciptalah keseimbangan kompetensi SOFTSKILL dan HARDSKILL bagi setiap Mahasiswa di Program Studi Teknik Informatika.</p>
                         <h5>Our smart approach</h5>
                         <ul>
                             <li>Sed at tellus eu quam posuere mattis.</li>
@@ -175,7 +169,8 @@
                             </div>
                             <div class="card-body">
                                 <h4 class="card-header"> Analytics </h4>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente
+                                    esse necessitatibus neque.</p>
                             </div>
                         </div>
                     </div>
@@ -186,7 +181,8 @@
                             </div>
                             <div class="card-body">
                                 <h4 class="card-header"> Applications </h4>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente
+                                    esse necessitatibus neque.</p>
                             </div>
                         </div>
                     </div>
@@ -197,7 +193,8 @@
                             </div>
                             <div class="card-body">
                                 <h4 class="card-header"> Business Process </h4>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente
+                                    esse necessitatibus neque.</p>
                             </div>
                         </div>
                     </div>
@@ -208,7 +205,8 @@
                             </div>
                             <div class="card-body">
                                 <h4 class="card-header"> Consulting </h4>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente
+                                    esse necessitatibus neque.</p>
                             </div>
                         </div>
                     </div>
@@ -219,7 +217,8 @@
                             </div>
                             <div class="card-body">
                                 <h4 class="card-header"> Infrastructure </h4>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente
+                                    esse necessitatibus neque.</p>
                             </div>
                         </div>
                     </div>
@@ -230,7 +229,8 @@
                             </div>
                             <div class="card-body">
                                 <h4 class="card-header"> Product Engineering </h4>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente
+                                    esse necessitatibus neque.</p>
                             </div>
                         </div>
                     </div>
@@ -239,7 +239,7 @@
             </div>
         </div>
 
-        <div class="container">
+        <div class="container my-5">
             <!-- Portfolio Section -->
             <div class="portfolio-main">
                 <h2>Our Portfolio</h2>
@@ -348,35 +348,134 @@
             </div>
         </div>
 
-        <div class="blog-slide">
+        <div class="blog-slide py-5">
             <div class="container">
                 <h2>Our Blog</h2>
-                <div class="row">
+                <div class="row mt-5">
                     <div class="col-lg-12">
                         <div id="blog-slider" class="owl-carousel">
                             <div class="post-slide">
-                                <div class="post-header">
-                                    <h4 class="title">
-                                        <a href="#">Latest blog Post</a>
-                                    </h4>
-                                    <ul class="post-bar">
-                                        <li><img src="<?= site_url('assets/') ?>images/testi_01.png" alt=""><a href="#">Williamson</a></li>
-                                        <li><i class="fa fa-calendar"></i>02 June 2018</li>
-                                    </ul>
-                                </div>
                                 <div class="pic">
-                                    <img src="<?= site_url('assets/') ?>images/img-1.jpg" alt="">
+                                    <a href="#">
+                                        <img src="<?= site_url('assets/') ?>images/img-1.jpg" alt="">
+                                    </a>
                                     <ul class="post-category">
                                         <li><a href="#">Business</a></li>
                                         <li><a href="#">Financ</a></li>
                                     </ul>
                                 </div>
-                                <p class="post-description">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas gravida nulla eu massa efficitur, eu hendrerit ipsum efficitur. Morbi vitae velit ac.
+                                <div class="post-header mb-0 text-center">
+                                    <ul class="post-bar mt-3 mb-0">
+                                        <li>Posted on : <i class="fa fa-calendar"></i>02 June 2018</li>
+                                    </ul>
+                                    <h4 class="title">
+                                        <a href="#">Latest blog Post</a>
+                                    </h4>
+
+                                </div>
+                                <p class="post-description text-center">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas gravida nulla eu
+                                    massa efficitur, eu hendrerit ipsum efficitur. Morbi vitae velit ac.
+                                </p>
+                            </div>
+                            <div class="post-slide">
+                                <div class="pic">
+                                    <a href="#">
+                                        <img src="<?= site_url('assets/') ?>images/img-1.jpg" alt="">
+                                    </a>
+                                    <ul class="post-category">
+                                        <li><a href="#">Business</a></li>
+                                        <li><a href="#">Financ</a></li>
+                                    </ul>
+                                </div>
+                                <div class="post-header mb-0 text-center">
+                                    <ul class="post-bar mt-3 mb-0">
+                                        <li>Posted on : <i class="fa fa-calendar"></i>02 June 2018</li>
+                                    </ul>
+                                    <h4 class="title">
+                                        <a href="#">Latest blog Post</a>
+                                    </h4>
+
+                                </div>
+                                <p class="post-description text-center">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas gravida nulla eu
+                                    massa efficitur, eu hendrerit ipsum efficitur. Morbi vitae velit ac.
+                                </p>
+                            </div>
+                            <div class="post-slide">
+                                <div class="pic">
+                                    <a href="#">
+                                        <img src="<?= site_url('assets/') ?>images/img-1.jpg" alt="">
+                                    </a>
+                                    <ul class="post-category">
+                                        <li><a href="#">Business</a></li>
+                                        <li><a href="#">Financ</a></li>
+                                    </ul>
+                                </div>
+                                <div class="post-header mb-0 text-center">
+                                    <ul class="post-bar mt-3 mb-0">
+                                        <li>Posted on : <i class="fa fa-calendar"></i>02 June 2018</li>
+                                    </ul>
+                                    <h4 class="title">
+                                        <a href="#">Latest blog Post</a>
+                                    </h4>
+
+                                </div>
+                                <p class="post-description text-center">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas gravida nulla eu
+                                    massa efficitur, eu hendrerit ipsum efficitur. Morbi vitae velit ac.
+                                </p>
+                            </div>
+                            <div class="post-slide">
+                                <div class="pic">
+                                    <a href="#">
+                                        <img src="<?= site_url('assets/') ?>images/img-1.jpg" alt="">
+                                    </a>
+                                    <ul class="post-category">
+                                        <li><a href="#">Business</a></li>
+                                        <li><a href="#">Financ</a></li>
+                                    </ul>
+                                </div>
+                                <div class="post-header mb-0 text-center">
+                                    <ul class="post-bar mt-3 mb-0">
+                                        <li>Posted on : <i class="fa fa-calendar"></i>02 June 2018</li>
+                                    </ul>
+                                    <h4 class="title">
+                                        <a href="#">Latest blog Post</a>
+                                    </h4>
+
+                                </div>
+                                <p class="post-description text-center">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas gravida nulla eu
+                                    massa efficitur, eu hendrerit ipsum efficitur. Morbi vitae velit ac.
+                                </p>
+                            </div>
+                            <div class="post-slide">
+                                <div class="pic">
+                                    <a href="#">
+                                        <img src="<?= site_url('assets/') ?>images/img-1.jpg" alt="">
+                                    </a>
+                                    <ul class="post-category">
+                                        <li><a href="#">Business</a></li>
+                                        <li><a href="#">Financ</a></li>
+                                    </ul>
+                                </div>
+                                <div class="post-header mb-0 text-center">
+                                    <ul class="post-bar mt-3 mb-0">
+                                        <li>Posted on : <i class="fa fa-calendar"></i>02 June 2018</li>
+                                    </ul>
+                                    <h4 class="title">
+                                        <a href="#">Latest blog Post</a>
+                                    </h4>
+
+                                </div>
+                                <p class="post-description text-center">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas gravida nulla eu
+                                    massa efficitur, eu hendrerit ipsum efficitur. Morbi vitae velit ac.
                                 </p>
                             </div>
 
-                            <div class="post-slide">
+                            <!-- <div class="post-slide">
                                 <div class="post-header">
                                     <h4 class="title">
                                         <a href="#">Latest blog Post</a>
@@ -394,7 +493,8 @@
                                     </ul>
                                 </div>
                                 <p class="post-description">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas gravida nulla eu massa efficitur, eu hendrerit ipsum efficitur. Morbi vitae velit ac.
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas gravida nulla eu
+                                    massa efficitur, eu hendrerit ipsum efficitur. Morbi vitae velit ac.
                                 </p>
                             </div>
 
@@ -416,7 +516,8 @@
                                     </ul>
                                 </div>
                                 <p class="post-description">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas gravida nulla eu massa efficitur, eu hendrerit ipsum efficitur. Morbi vitae velit ac.
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas gravida nulla eu
+                                    massa efficitur, eu hendrerit ipsum efficitur. Morbi vitae velit ac.
                                 </p>
                             </div>
 
@@ -438,25 +539,60 @@
                                     </ul>
                                 </div>
                                 <p class="post-description">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas gravida nulla eu massa efficitur, eu hendrerit ipsum efficitur. Morbi vitae velit ac.
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas gravida nulla eu
+                                    massa efficitur, eu hendrerit ipsum efficitur. Morbi vitae velit ac.
                                 </p>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
+        <div class="customers-box mt-5">
+            <div class="container">
+                <!-- Our Customers -->
+                <h2>Our Customers</h2>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div id="customers-slider" class="owl-carousel">
+                            <div class="mb-4">
+                                <img class="img-fluid" src="<?= site_url('assets/') ?>images/logo_01.png" alt="" />
+                            </div>
+                            <div class="mb-4">
+                                <img class="img-fluid" src="<?= site_url('assets/') ?>images/logo_02.png" alt="" />
+                            </div>
+                            <div class="mb-4">
+                                <img class="img-fluid" src="<?= site_url('assets/') ?>images/logo_03.png" alt="" />
+                            </div>
+                            <div class="mb-4">
+                                <img class="img-fluid" src="<?= site_url('assets/') ?>images/logo_04.png" alt="" />
+                            </div>
+                            <div class="mb-4">
+                                <img class="img-fluid" src="<?= site_url('assets/') ?>images/logo_05.png" alt="" />
+                            </div>
+                            <div class="mb-4">
+                                <img class="img-fluid" src="<?= site_url('assets/') ?>images/logo_06.png" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container -->
+        </div>
 
         <!-- Contact Us -->
         <div class="touch-line">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-8">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p>
+                    <div class="col-md-12 text-center">
+                        <p style="font-weight: 600;font-size: 22px;">PENERIMAAN MAHASISWA BARU TEKNIK INFORMATIKA</p>
                     </div>
-                    <div class="col-md-4">
-                        <a class="btn btn-lg btn-secondary btn-block" href="#"> Contact Us </a>
+                </div>
+                <div class="row justify-content-center mt-3">
+                    <div class="col-md-3">
+                        <a class="btn btn-lg btn-secondary btn-block" href="#" style="background-color: #ffe3b3;color: #485ea0;border-color: #ffe3b3;"> Contact Us </a>
                     </div>
                 </div>
             </div>
@@ -470,7 +606,8 @@
                     <div class="col-lg-3 col-md-6 col-sm-6 col">
                         <h5 class="headin5_amrc col_white_amrc pt2">About Us</h5>
                         <!--headin5_amrc-->
-                        <p class="mb10">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                        <p class="mb10">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                            Ipsum has been the industry's standard dummy text ever since the 1500s</p>
                         <ul class="footer-social">
                             <li><a class="facebook hb-xs-margin" href="#"><span class="hb hb-xs spin hb-facebook"><i class="fab fa-facebook-f"></i></span></a></li>
                             <li><a class="twitter hb-xs-margin" href="#"><span class="hb hb-xs spin hb-twitter"><i class="fab fa-twitter"></i></span></a></li>
@@ -514,7 +651,8 @@
                     <div class="col-lg-3 col-md-6 col-sm-6 ">
                         <div class="news-box">
                             <h5 class="headin5_amrc col_white_amrc pt2">Newsletter</h5>
-                            <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
+                            <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
+                                velit...</p>
                             <form action="#">
                                 <div class="input-group">
                                     <input class="form-control" placeholder="Search for..." type="text">
