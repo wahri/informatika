@@ -16,7 +16,6 @@
                                 <label for="judul">Judul</label>
                                 <input type="text" class="form-control" id="judul" name="judul">
                                 <small id="error" class="form-text text-danger"><?= form_error('judul') ?></small>
-                                
                             </div>
                             <div class="form-group">
                                 <label for="subjudul">Subjudul</label>

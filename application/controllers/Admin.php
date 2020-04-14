@@ -82,8 +82,9 @@ class Admin extends CI_Controller
 
     public function tambahUser()
     {
-        $this->form_validation->set_rules('username', 'sername', 'required|trim');
-        $this->form_validation->set_rules('password', 'Password', 'required|trim');
+        $this->form_validation->set_rules('username', 'Username', 'required|trim|is_unique[admin.username]');
+        $this->form_validation->set_rules('password', 'Password', 'required|trim|matches[password2]');
+        $this->form_validation->set_rules('password2', 'Confirm Password', 'required|trim|matches[password1]');
 
         if ($this->form_validation->run() == FALSE) {
             $data['admin'] = $this->db->get('admin')->result_array();
@@ -102,5 +103,12 @@ class Admin extends CI_Controller
             $this->db->insert('admin', $data);
             redirect('admin/tambahuser');
         }
+    }
+
+    public function deleteUser($id)
+    {
+        $this->db->delete('admin', ['id' => $id]);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">User dihapus!</div>');
+        redirect('admin/tambahuser');
     }
 }
