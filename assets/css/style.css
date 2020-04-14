@@ -331,6 +331,10 @@ button.btn-secondary:hover {
 	height: 100%;
 }
 
+.slider-main h3, .slider-main p{
+	color: #ffe3b3;
+}
+
 .carousel-item {
 	height: 88vh;
 	min-height: 300px;
@@ -516,7 +520,7 @@ button.btn-secondary:hover {
 }
 
 .overlay {
-	background: rgba(18, 115, 235, 0.5);
+	background: rgba(255, 227, 179, 0.5);
 	position: absolute;
 	bottom: -100%;
 	width: 100%;
@@ -2039,11 +2043,4 @@ footer p {
 		font-size: 14px;
 	}
 
-	#tombolpmb {}
-
-	#judulpmb {}
-
-	.btn-primary:not(:disabled):not(.disabled).active,
-	.btn-primary:not(:disabled):not(.disabled):active,
-	.show>.btn-primary.dropdown-toggle {}
 }

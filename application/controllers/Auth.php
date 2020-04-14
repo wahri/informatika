@@ -3,25 +3,23 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Auth extends CI_Controller
 {
-    public function __construct()
+
+    public function index()
     {
-        parent::__construct();
         if ($this->session->userdata('status') == "login") {
             if ($this->session->userdata('role') == 1) {
                 redirect('admin');
-            }else{
+            } else {
                 echo "fitur blm ada";
             }
-        }
-    }
-    public function index()
-    {
-        $this->form_validation->set_rules('username', 'Username', 'required|trim');
-        $this->form_validation->set_rules('password', 'Password', 'required|trim');
-        if ($this->form_validation->run() == FALSE) {
-            $this->load->view('auth');
         } else {
-            $this->_login();
+            $this->form_validation->set_rules('username', 'Username', 'required|trim');
+            $this->form_validation->set_rules('password', 'Password', 'required|trim');
+            if ($this->form_validation->run() == FALSE) {
+                $this->load->view('auth');
+            } else {
+                $this->_login();
+            }
         }
     }
     public function _login()
@@ -31,8 +29,7 @@ class Auth extends CI_Controller
 
         $user = $this->db->get_where('admin', ['username' => $username])->row_array();
         if ($user) {
-            if ($password == $user['password']) {
-                echo "berhasil";
+            if (password_verify($password, $user['password'])) {
                 $data = [
                     'username' => $user['username'],
                     'role' => $user['role'],

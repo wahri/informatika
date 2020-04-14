@@ -8,6 +8,10 @@
                         <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                         Dashboard
                     </a>
+                    <a class="nav-link" href="<?= site_url('admin/tambahuser') ?>">
+                        <div class="sb-nav-link-icon"><i class="fas fa-user-plus"></i></div>
+                        Tambah User
+                    </a>
                     <a class="nav-link" href="<?= site_url('admin/default') ?>">
                         <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                         Blank

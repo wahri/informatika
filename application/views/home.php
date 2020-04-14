@@ -97,47 +97,62 @@
                 </div>
             </div>
         </nav>
+        
+        <?php
+        $slider = $this->db->get('slider')->result_array();
+        if ($slider > 0) :
+        ?>
+            <header class="slider-main">
+                <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <?php
 
-        <header class="slider-main">
-            <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner" role="listbox">
-                    <!-- Slider -->
-                    <?php
-                    $slider = $this->db->get('slider')->result_array();
-                    $i = 1;
-                    foreach ($slider as $s) :
-                    ?>
-                        <div class="carousel-item <?= ($i == 1) ? "active" : "" ?>" style="background-image: url('<?= site_url('assets/images/slider/') . $s['gambar'] ?>">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h3><?= $s['judul'] ?></h3>
-                                <p><?= $s['subjudul'] ?></p>
+                        $j = 0;
+                        foreach ($slider as $s) :
+                        ?>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="<?= $j; ?>" class="
+                        <?=
+                                ($j == 0) ? "active" : ""
+                        ?>">
+                            </li>
+                        <?php
+                            $j++;
+                        endforeach;
+                        ?>
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                        <!-- Slider -->
+                        <?php
+                        $i = 1;
+                        foreach ($slider as $s) :
+                        ?>
+                            <div class="carousel-item <?= ($i == 1) ? "active" : "" ?>" style="background-image: url('<?= site_url('assets/images/slider/') . $s['gambar'] ?>">
+                                <div class="carousel-caption d-none d-md-block" id="coklat">
+                                    <h3><?= $s['judul'] ?></h3>
+                                    <p><?= $s['subjudul'] ?></p>
+                                </div>
                             </div>
-                        </div>
-                    <?php $i++;
-                    endforeach; ?>
+                        <?php $i++;
+                        endforeach; ?>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
-        </header>
-
+            </header>
+        <?php endif; ?>
+        
         <!-- Page Content -->
         <section id="tentang">
             <div class="container py-5" id="about-main">
                 <!-- About Section -->
                 <div class="about-main">
-                    <div class="row">
+                    <div class="row justify-content-between">
                         <div class="col-lg-6">
                             <h3 id="judul">MENATAP MASA DEPAN BERSAMA INFORMATIKA - UMRI</h3>
                             <hr class="my-0">
@@ -150,8 +165,8 @@
                                 <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
                             </ul>
                         </div>
-                        <div class="col-lg-6">
-                            <img class="img-fluid rounded" src="<?= site_url('assets/') ?>images/about-img.jpg" alt="" />
+                        <div class="col-lg-5 ml-5">
+                            <img class="img-fluid rounded" src="<?= site_url('assets/') ?>images/intro.png" alt="" />
                         </div>
                     </div>
                     <!-- /.row -->
@@ -607,7 +622,7 @@
         <footer class="footer">
             <div class="container bottom_border">
                 <div class="row">
-                    
+
                     <div class="col-lg-4 col-md-6 col-sm-6 ">
                         <div class="news-box">
                             <h5 class="headin5_amrc col_white_amrc pt2">Hubngi Kami</h5>
@@ -615,10 +630,10 @@
                                 Jl. KH. Ahmad Dahlan No.88, Kp. Melayu, Kec. Sukajadi, Kota Pekanbaru, Riau 28156
                             </p>
                             <p class="my-0">
-                            <i class="fas fa-phone fa-rotate-90"></i> (0761) 35008
+                                <i class="fas fa-phone fa-rotate-90"></i> (0761) 35008
                             </p>
                             <p>
-                            <i class="fas fa-envelope"></i> Informatika@umri.ac.id
+                                <i class="fas fa-envelope"></i> Informatika@umri.ac.id
                             </p>
                         </div>
                     </div>
@@ -632,7 +647,9 @@
                             <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Fakultas</a></li>
                             <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Celscitech</a></li>
                             <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>E-Journal</a></li>
-                            <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Repositori TA</a></li> </ul> <!--footer_ul_amrc ends here-->
+                            <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Repositori TA</a></li>
+                        </ul>
+                        <!--footer_ul_amrc ends here-->
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <h5 class="headin5_amrc col_white_amrc pt2">Ikuti Kami Di</h5>

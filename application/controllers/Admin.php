@@ -79,4 +79,28 @@ class Admin extends CI_Controller
             }
         }
     }
+
+    public function tambahUser()
+    {
+        $this->form_validation->set_rules('username', 'sername', 'required|trim');
+        $this->form_validation->set_rules('password', 'Password', 'required|trim');
+
+        if ($this->form_validation->run() == FALSE) {
+            $data['admin'] = $this->db->get('admin')->result_array();
+            $data['judul'] = "Tambah User";
+            $this->load->view('admin/template/header', $data);
+            $this->load->view('admin/template/topbar');
+            $this->load->view('admin/template/sidebar');
+            $this->load->view('admin/tambahuser', $data);
+            $this->load->view('admin/template/footer');
+        }else{
+            $data = [
+                'username' => $this->input->post('username'),
+                'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
+                'role' => $this->input->post('role')
+            ];
+            $this->db->insert('admin', $data);
+            redirect('admin/tambahuser');
+        }
+    }
 }
