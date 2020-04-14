@@ -20,7 +20,12 @@
                     <a class="nav-link" href="<?= site_url('admin/slider') ?>">
                         <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                         Slider
-                    </a><a class="nav-link" href="tables.html">
+                    </a>
+                    <a class="nav-link" href="<?= site_url('admin/editprofil') ?>">
+                        <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                        Edit Profil
+                    </a>
+                    <a class="nav-link" href="tables.html">
                         <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                         Tables
                     </a>
@@ -60,7 +65,7 @@
             </div>
             <div class="sb-sidenav-footer">
                 <div class="small">Logged in as:</div>
-                Start Bootstrap
+                <?= $this->session->userdata('username') ?>
             </div>
         </nav>
     </div>

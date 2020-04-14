@@ -114,12 +114,57 @@ class Admin extends CI_Controller
 
     public function editProfil()
     {
-        $data['admin'] = $this->db->get('admin')->result_array();
-        $data['judul'] = "Tambah User";
-        $this->load->view('admin/template/header', $data);
-        $this->load->view('admin/template/topbar');
-        $this->load->view('admin/template/sidebar');
-        $this->load->view('admin/tambahuser', $data);
-        $this->load->view('admin/template/footer');
+        $this->form_validation->set_rules('judul', 'Judul', 'required');
+        $this->form_validation->set_rules('paragraf', 'Paragraf', 'required');
+
+        if ($this->form_validation->run() == FALSE) {
+            $data['profil'] = $this->db->get('profil')->row_array();
+            $data['judul'] = "Edit Profil";
+            $this->load->view('admin/template/header', $data);
+            $this->load->view('admin/template/topbar');
+            $this->load->view('admin/template/sidebar');
+            $this->load->view('admin/editprofil', $data);
+            $this->load->view('admin/template/footer');
+        }else{
+            $data = [
+                'judul' => $this->input->post('judul'),
+                'paragraf' => $this->input->post('paragraf')
+            ];
+            $this->db->update('profil', $data, ['id_profil' => $this->input->post('id_profil')]);
+            $this->session->set_flashdata('message', '<div class="alert alert-success mt-4" role="alert">Berhasil mengedit profil!</div>');
+            redirect('admin/editprofil');
+        }
+    }
+
+    public function hapusGambarProfil()
+    {
+        $profil = $this->db->get('profil')->row_array();
+        $link = "./assets/images/";
+        $data['gambar'] = NULL;
+        unlink($link . $profil['gambar']);
+        $this->db->update('profil', $data, ['id_profil' => $profil['id_profil']]);
+        redirect('admin/editprofil');
+    }
+
+    public function uploadGambarProfil()
+    {
+        $profil = $this->db->get('profil')->row_array();
+        $config['upload_path'] = './assets/images/';
+        $config['allowed_types'] = 'jpg|jpeg|png|gif';
+        $config['max_size'] = '1000000';
+        $config['file_name'] = 'profil';
+
+        $this->load->library('upload', $config, 'gambar');
+        $this->gambar->initialize($config);
+
+        if ($this->gambar->do_upload('gambar')) {
+            $data['gambar'] = $this->gambar->data('file_name');
+            $this->db->update('profil', $data, ['id_profil' => $profil['id_profil']]);
+            $this->session->set_flashdata('message', '<div class="alert alert-success mt-4" role="alert">Berhasil mengupload gambar!</div>');
+            redirect('admin/editprofil');
+        } else {
+            $this->session->set_flashdata('message', '<div class="alert alert-danger mt-4" role="alert">Gagal mengupload gambar!</div>');
+            redirect('admin/editprofil');
+        }
     }
 }

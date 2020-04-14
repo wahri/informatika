@@ -148,8 +148,7 @@
         <?php endif; ?>
         
         <?php 
-        $profil = $this->db->get('profil')->result_array();
-        foreach($profil as $p):
+        $profil = $this->db->get('profil')->row_array();
         ?>
         <!-- Page Content -->
         <section id="tentang">
@@ -158,19 +157,18 @@
                 <div class="about-main">
                     <div class="row justify-content-between">
                         <div class="col-lg-6">
-                            <h3 id="judul"><?= $p['judul'] ?></h3>
+                            <h3 id="judul"><?= $profil['judul'] ?></h3>
                             <hr class="mt-0 mb-4">
-                            <?= $p['paragraf'] ?>
+                            <?= $profil['paragraf'] ?>
                         </div>
                         <div class="col-lg-5 ml-5">
-                            <img class="img-fluid rounded" src="<?= site_url('assets/images/') . $p['gambar'] ?>" alt="Teknik Informatika" />
+                            <img class="img-fluid rounded" src="<?= site_url('assets/images/') . $profil['gambar'] ?>" alt="Teknik Informatika" />
                         </div>
                     </div>
                     <!-- /.row -->
                 </div>
             </div>
         </section>
-        <?php endforeach; ?>
 
         <div class="services-bar">
             <div class="container">
