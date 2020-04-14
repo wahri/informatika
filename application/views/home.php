@@ -126,7 +126,7 @@
                         $i = 1;
                         foreach ($slider as $s) :
                         ?>
-                            <div class="carousel-item <?= ($i == 1) ? "active" : "" ?>" style="background-image: url('<?= site_url('assets/images/slider/') . $s['gambar'] ?>">
+                            <div class="carousel-item <?= ($i == 1) ? "active" : "" ?>" style="background-image: url('<?= site_url('assets/images/slider/') . $s['gambar'] ?>')">
                                 <div class="carousel-caption d-none d-md-block" id="coklat">
                                     <h3><?= $s['judul'] ?></h3>
                                     <p><?= $s['subjudul'] ?></p>
@@ -147,6 +147,10 @@
             </header>
         <?php endif; ?>
         
+        <?php 
+        $profil = $this->db->get('profil')->result_array();
+        foreach($profil as $p):
+        ?>
         <!-- Page Content -->
         <section id="tentang">
             <div class="container py-5" id="about-main">
@@ -154,25 +158,19 @@
                 <div class="about-main">
                     <div class="row justify-content-between">
                         <div class="col-lg-6">
-                            <h3 id="judul">MENATAP MASA DEPAN BERSAMA INFORMATIKA - UMRI</h3>
-                            <hr class="my-0">
-                            <p class="mt-4"><strong>WE TURN DREAMS INTO REALITY</strong> _ Informatika-UMRI setuju bahwa setiap orang berhak memiliki harapan untuk memiliki masa depan yang indah. Memperoleh pendidikan yang berkualitas merupakan fondasi untuk menciptakan pembangunan berkelanjutan dan meningkatkan kualitas hidup setiap orang (Mahasiswa) khususnya di era teknologi saat ini. </p>
-                            <p>Informatika - UMRI menggunakan pendekatan Teknologi dalam aktivitas pendidikan guna memajukan kualitas pembelajaran, cara belajar dan mengajar serta juga untuk mempengaruhi dimensi berpikir secara sistematis dan proaktif bagi pelajar dan sarjana. Sehingga terciptalah keseimbangan kompetensi SOFTSKILL dan HARDSKILL bagi setiap Mahasiswa di Program Studi Teknik Informatika.</p>
-                            <h5>Our smart approach</h5>
-                            <ul>
-                                <li>Sed at tellus eu quam posuere mattis.</li>
-                                <li>Phasellus quis erat et enim laoreet posuere ac porttitor ipsum.</li>
-                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                            </ul>
+                            <h3 id="judul"><?= $p['judul'] ?></h3>
+                            <hr class="mt-0 mb-4">
+                            <?= $p['paragraf'] ?>
                         </div>
                         <div class="col-lg-5 ml-5">
-                            <img class="img-fluid rounded" src="<?= site_url('assets/') ?>images/intro.png" alt="" />
+                            <img class="img-fluid rounded" src="<?= site_url('assets/images/') . $p['gambar'] ?>" alt="Teknik Informatika" />
                         </div>
                     </div>
                     <!-- /.row -->
                 </div>
             </div>
         </section>
+        <?php endforeach; ?>
 
         <div class="services-bar">
             <div class="container">

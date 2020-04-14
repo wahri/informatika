@@ -94,7 +94,7 @@ class Admin extends CI_Controller
             $this->load->view('admin/template/sidebar');
             $this->load->view('admin/tambahuser', $data);
             $this->load->view('admin/template/footer');
-        }else{
+        } else {
             $data = [
                 'username' => $this->input->post('username'),
                 'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
@@ -110,5 +110,16 @@ class Admin extends CI_Controller
         $this->db->delete('admin', ['id' => $id]);
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">User dihapus!</div>');
         redirect('admin/tambahuser');
+    }
+
+    public function editProfil()
+    {
+        $data['admin'] = $this->db->get('admin')->result_array();
+        $data['judul'] = "Tambah User";
+        $this->load->view('admin/template/header', $data);
+        $this->load->view('admin/template/topbar');
+        $this->load->view('admin/template/sidebar');
+        $this->load->view('admin/tambahuser', $data);
+        $this->load->view('admin/template/footer');
     }
 }
