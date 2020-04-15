@@ -28,6 +28,17 @@ a.btn-primary:hover {
 	border-color: #323232;
 }
 
+a.btn-coklat {
+	background-color: #ffe3b3;
+	border-color: #ffe3b3;
+	color: #323232;
+}
+
+a.btn-coklat:hover {
+	background-color: #ffffff;
+	border-color: #ffffff;
+}
+
 button.btn-primary {
 	background-color: #485ea0;
 	border-color: #485ea0;
@@ -351,7 +362,7 @@ button.btn-secondary:hover {
 
 .services-bar {
 	padding: 20px 0px 30px 0px;
-	background: url(../images/dott.jpg);
+	background: url(../images/bg.jpg);
 }
 
 .services-bar h1 {
@@ -359,7 +370,7 @@ button.btn-secondary:hover {
 	font-size: 45px;
 	text-align: center;
 	margin-bottom: 0px;
-	color: #485ea0;
+	color: #323232;
 }
 
 .services-bar .card {
@@ -1251,7 +1262,7 @@ footer p {
 }
 
 .breadcrumb-main .breadcrumb li {
-	color: #323232;
+	color: #ffe3b3;
 	display: inline-block;
 	font-size: 15px;
 }
@@ -1412,6 +1423,7 @@ footer p {
 #tentang, #portfolio{
 	background-color: #485ea0;
 }
+
 
 .our-team .social li a:hover {
 	color: #ffffff;
@@ -2042,5 +2054,7 @@ footer p {
 		white-space: inherit;
 		font-size: 14px;
 	}
+
+
 
 }

@@ -125,7 +125,7 @@ class Admin extends CI_Controller
             $this->load->view('admin/template/sidebar');
             $this->load->view('admin/editprofil', $data);
             $this->load->view('admin/template/footer');
-        }else{
+        } else {
             $data = [
                 'judul' => $this->input->post('judul'),
                 'paragraf' => $this->input->post('paragraf')
@@ -165,6 +165,60 @@ class Admin extends CI_Controller
         } else {
             $this->session->set_flashdata('message', '<div class="alert alert-danger mt-4" role="alert">Gagal mengupload gambar!</div>');
             redirect('admin/editprofil');
+        }
+    }
+
+    public function menu()
+    {
+        $this->form_validation->set_rules('urutan', 'Urutan', 'required');
+        $this->form_validation->set_rules('menu', 'Menu', 'required');
+        $this->form_validation->set_rules('link', 'Link', 'required');
+
+        if ($this->form_validation->run() == FALSE) {
+            $this->db->from('menu');
+            $this->db->order_by('urutan', 'asc');
+            $data['menu'] = $this->db->get()->result_array();
+            $data['judul'] = "Tambah Menu";
+            $this->load->view('admin/template/header', $data);
+            $this->load->view('admin/template/topbar');
+            $this->load->view('admin/template/sidebar');
+            $this->load->view('admin/menu', $data);
+            $this->load->view('admin/template/footer');
+        } else {
+            $data = [
+                'urutan' => $this->input->post('urutan'),
+                'menu' => $this->input->post('menu'),
+                'link' => $this->input->post('link')
+            ];
+            $this->db->insert('menu', $data);
+            $this->session->set_flashdata('message', '<div class="alert alert-success mt-4" role="alert">Berhasil Menambahkan Menu!</div>');
+            redirect('admin/menu');
+        }
+    }
+
+    public function submenu()
+    {
+        $this->form_validation->set_rules('submenu', 'submenu', 'required');
+        $this->form_validation->set_rules('link', 'Link', 'required');
+
+        if ($this->form_validation->run() == FALSE) {
+            $data['menu'] = $this->db->get('menu')->result_array();
+            $data['submenu'] = $this->db->get('submenu')->result_array();
+            $data['judul'] = "Tambah submenu";
+            $this->load->view('admin/template/header', $data);
+            $this->load->view('admin/template/topbar');
+            $this->load->view('admin/template/sidebar');
+            $this->load->view('admin/submenu', $data);
+            $this->load->view('admin/template/footer');
+        } else {
+            $data = [
+                'id_menu' => $this->input->post('id_menu'),
+                'submenu' => $this->input->post('submenu'),
+                'link' => $this->input->post('link')
+            ];
+            $this->db->insert('submenu', $data);
+            $this->session->set_flashdata('message', '<div class="alert alert-success mt-4" role="alert">Berhasil Menambahkan submenu!</div>');
+            redirect('admin/submenu');
         }
     }
 }

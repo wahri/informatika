@@ -25,6 +25,14 @@
                         <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                         Edit Profil
                     </a>
+                    <a class="nav-link" href="<?= site_url('admin/menu') ?>">
+                        <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                        Tambah Menu
+                    </a>
+                    <a class="nav-link" href="<?= site_url('admin/submenu') ?>">
+                        <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                        Tambah Submenu
+                    </a>
                     <a class="nav-link" href="tables.html">
                         <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                         Tables

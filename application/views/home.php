@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>UMRI | Teknik Informatika</title>
+    <title><?= $judul ?> | Teknik Informatika UMRI</title>
     <!-- Bootstrap core CSS -->
     <link href="<?= site_url('assets/') ?>vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Fontawesome CSS -->
@@ -58,46 +58,35 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="about.html">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="services.html">Services</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages <i class="fas fa-sort-down"></i></a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-                                <a class="dropdown-item" href="faq.html">FAQ</a>
-                                <a class="dropdown-item" href="404.html">404</a>
-                                <a class="dropdown-item" href="pricing.html">Pricing Table</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Portfolio <i class="fas fa-sort-down"></i></a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
-                                <a class="dropdown-item" href="portfolio-3-col.html">3 Column Portfolio</a>
-                                <a class="dropdown-item" href="portfolio-4-col.html">4 Column Portfolio</a>
-                                <a class="dropdown-item" href="portfolio-item.html">Single Portfolio Item</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog <i class="fas fa-sort-down"></i></a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-                                <a class="dropdown-item" href="blog.html">Blog</a>
-                                <a class="dropdown-item" href="blog-post.html">Blog Post</a>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact</a>
-                        </li>
+                        <?php
+                        $this->db->from('menu');
+                        $this->db->order_by('urutan', 'asc');
+                        $menu = $this->db->get()->result_array();
+                        foreach ($menu as $m) :
+                            $submenu = $this->db->get_where('submenu', ['id_menu' => $m['id_menu']])->result_array();
+                            if ($submenu) :
+                        ?>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link <?= ($link == $m['menu']) ? "active" : "" ?>" href="<?= $m['link'] ?>" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?= $m['menu'] ?><i class="fas fa-sort-down"></i></a>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+                                        <?php foreach ($submenu as $sm) : ?>
+                                            <a class="dropdown-item" href="<?= site_url() . $sm['link'] ?>"><?= $sm['submenu'] ?></a>
+                                        <?php endforeach; ?>
+                                    </div>
+                                </li>
+                            <?php else : ?>
+                                <li class="nav-item">
+                                    <a class="nav-link <?= ($link == $m['menu']) ? "active" : "" ?>" href="<?= site_url() . $m['link'] ?>"><?= $m['menu'] ?></a>
+                                </li>
+                        <?php
+                            endif;
+                        endforeach;
+                        ?>
                     </ul>
                 </div>
             </div>
         </nav>
-        
+
         <?php
         $slider = $this->db->get('slider')->result_array();
         if ($slider > 0) :
@@ -146,13 +135,13 @@
                 </div>
             </header>
         <?php endif; ?>
-        
-        <?php 
+
+        <?php
         $profil = $this->db->get('profil')->row_array();
         ?>
         <!-- Page Content -->
         <section id="tentang">
-            <div class="container py-5" id="about-main">
+            <div class="container py-4" id="about-main">
                 <!-- About Section -->
                 <div class="about-main">
                     <div class="row justify-content-between">
@@ -162,210 +151,30 @@
                             <?= $profil['paragraf'] ?>
                         </div>
                         <div class="col-lg-5 ml-5">
-                            <img class="img-fluid rounded" src="<?= site_url('assets/images/') . $profil['gambar'] ?>" alt="Teknik Informatika" />
+                            <img class="img-fluid rounded mx-auto d-block" src="<?= site_url('assets/images/') . $profil['gambar'] ?>" alt="Teknik Informatika" />
                         </div>
                     </div>
-                    <!-- /.row -->
-                </div>
-            </div>
-        </section>
-
-        <div class="services-bar">
-            <div class="container">
-                <h1 class="py-4">Our Best Services </h1>
-                <!-- Services Section -->
-                <div class="row">
-                    <div class="col-lg-4 mb-4">
-                        <div class="card h-100">
-                            <div class="card-img">
-                                <img class="img-fluid" src="<?= site_url('assets/') ?>images/services-img-01.jpg" alt="" />
-                            </div>
-                            <div class="card-body">
-                                <h4 class="card-header"> Analytics </h4>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente
-                                    esse necessitatibus neque.</p>
-                            </div>
+                    <div class="row mt-3">
+                        <div class="col-lg-5 justify-content-center">
+                            <a href="<?= site_url('home/about') ?>" class="btn btn-coklat btn-block">
+                                <h3>Visi dan Misi</h3>
+                            </a>
                         </div>
                     </div>
-                    <div class="col-lg-4 mb-4">
-                        <div class="card h-100">
-                            <div class="card-img">
-                                <img class="img-fluid" src="<?= site_url('assets/') ?>images/services-img-02.jpg" alt="" />
-                            </div>
-                            <div class="card-body">
-                                <h4 class="card-header"> Applications </h4>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente
-                                    esse necessitatibus neque.</p>
-                            </div>
+                    <div class="row mt-3 mb-0">
+                        <div class="col-lg-5">
+                            <a href="" class="btn btn-coklat btn-block">
+                                <h3>Kurikulum</h3>
+                            </a>
                         </div>
                     </div>
-                    <div class="col-lg-4 mb-4">
-                        <div class="card h-100">
-                            <div class="card-img">
-                                <img class="img-fluid" src="<?= site_url('assets/') ?>images/services-img-03.jpg" alt="" />
-                            </div>
-                            <div class="card-body">
-                                <h4 class="card-header"> Business Process </h4>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente
-                                    esse necessitatibus neque.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mb-4">
-                        <div class="card h-100">
-                            <div class="card-img">
-                                <img class="img-fluid" src="<?= site_url('assets/') ?>images/services-img-04.jpg" alt="" />
-                            </div>
-                            <div class="card-body">
-                                <h4 class="card-header"> Consulting </h4>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente
-                                    esse necessitatibus neque.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mb-4">
-                        <div class="card h-100">
-                            <div class="card-img">
-                                <img class="img-fluid" src="<?= site_url('assets/') ?>images/services-img-05.jpg" alt="" />
-                            </div>
-                            <div class="card-body">
-                                <h4 class="card-header"> Infrastructure </h4>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente
-                                    esse necessitatibus neque.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mb-4">
-                        <div class="card h-100">
-                            <div class="card-img">
-                                <img class="img-fluid" src="<?= site_url('assets/') ?>images/services-img-06.jpg" alt="" />
-                            </div>
-                            <div class="card-body">
-                                <h4 class="card-header"> Product Engineering </h4>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente
-                                    esse necessitatibus neque.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.row -->
-            </div>
-        </div>
-
-        <section id="portfolio">
-            <div class="container py-5">
-                <!-- Portfolio Section -->
-                <div class="portfolio-main">
-                    <h2>Our Portfolio</h2>
-                    <div class="col-lg-12">
-                        <div class="project-menu text-center">
-                            <button class="btn btn-primary active" data-filter="*">All</button>
-                            <button data-filter=".business" class="btn btn-primary">Business</button>
-                            <button data-filter=".travel" class="btn btn-primary">Travel</button>
-                            <button data-filter=".financial" class="btn btn-primary">Financial</button>
-                            <button data-filter=".academic" class="btn btn-primary">Academic</button>
-                        </div>
-                    </div>
-                    <div id="projects" class="projects-main row">
-                        <div class="col-lg-4 col-sm-6 pro-item portfolio-item financial">
-                            <div class="card h-100">
-                                <div class="card-img">
-                                    <a href="<?= site_url('assets/') ?>images/portfolio-img-01.jpg" data-fancybox="images">
-                                        <img class="card-img-top" src="<?= site_url('assets/') ?>images/portfolio-img-01.jpg" alt="" />
-                                        <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
-                                    </a>
-                                </div>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        <a href="#">Financial Sustainability</a>
-                                    </h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6 pro-item portfolio-item business academic">
-                            <div class="card h-100">
-                                <div class="card-img">
-                                    <a href="<?= site_url('assets/') ?>images/portfolio-img-02.jpg" data-fancybox="images">
-                                        <img class="card-img-top" src="<?= site_url('assets/') ?>images/portfolio-img-02.jpg" alt="" />
-                                        <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
-                                    </a>
-                                </div>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        <a href="#">Financial Sustainability</a>
-                                    </h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6 pro-item portfolio-item travel">
-                            <div class="card h-100">
-                                <div class="card-img">
-                                    <a href="<?= site_url('assets/') ?>images/portfolio-img-03.jpg" data-fancybox="images">
-                                        <img class="card-img-top" src="<?= site_url('assets/') ?>images/portfolio-img-03.jpg" alt="" />
-                                        <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
-                                    </a>
-                                </div>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        <a href="#">Financial Sustainability</a>
-                                    </h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6 pro-item portfolio-item business">
-                            <div class="card h-100">
-                                <div class="card-img">
-                                    <a href="<?= site_url('assets/') ?>images/portfolio-img-04.jpg" data-fancybox="images">
-                                        <img class="card-img-top" src="<?= site_url('assets/') ?>images/portfolio-img-04.jpg" alt="" />
-                                        <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
-                                    </a>
-                                </div>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        <a href="#">Financial Sustainability</a>
-                                    </h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6 pro-item portfolio-item travel">
-                            <div class="card h-100">
-                                <div class="card-img">
-                                    <a href="<?= site_url('assets/') ?>images/portfolio-img-05.jpg" data-fancybox="images">
-                                        <img class="card-img-top" src="<?= site_url('assets/') ?>images/portfolio-img-05.jpg" alt="" />
-                                        <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
-                                    </a>
-                                </div>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        <a href="#">Financial Sustainability</a>
-                                    </h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6 pro-item portfolio-item financial academic">
-                            <div class="card h-100">
-                                <div class="card-img">
-                                    <a href="<?= site_url('assets/') ?>images/portfolio-img-01.jpg" data-fancybox="images">
-                                        <img class="card-img-top" src="<?= site_url('assets/') ?>images/portfolio-img-01.jpg" alt="" />
-                                        <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
-                                    </a>
-                                </div>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        <a href="#">Financial Sustainability</a>
-                                    </h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.row -->
                 </div>
             </div>
         </section>
 
         <div class="blog-slide py-5">
             <div class="container">
-                <h2>Our Blog</h2>
+                <h2>Berita TIF</h2>
                 <div class="row mt-5">
                     <div class="col-lg-12">
                         <div id="blog-slider" class="owl-carousel">
@@ -489,80 +298,210 @@
                                     massa efficitur, eu hendrerit ipsum efficitur. Morbi vitae velit ac.
                                 </p>
                             </div>
-
-                            <!-- <div class="post-slide">
-                                <div class="post-header">
-                                    <h4 class="title">
-                                        <a href="#">Latest blog Post</a>
-                                    </h4>
-                                    <ul class="post-bar">
-                                        <li><img src="<?= site_url('assets/') ?>images/testi_02.png" alt=""><a href="#">Kristiana</a></li>
-                                        <li><i class="fa fa-calendar"></i>05 June 2018</li>
-                                    </ul>
-                                </div>
-                                <div class="pic">
-                                    <img src="<?= site_url('assets/') ?>images/img-2.jpg" alt="">
-                                    <ul class="post-category">
-                                        <li><a href="#">Business</a></li>
-                                        <li><a href="#">Financ</a></li>
-                                    </ul>
-                                </div>
-                                <p class="post-description">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas gravida nulla eu
-                                    massa efficitur, eu hendrerit ipsum efficitur. Morbi vitae velit ac.
-                                </p>
-                            </div>
-
-                            <div class="post-slide">
-                                <div class="post-header">
-                                    <h4 class="title">
-                                        <a href="#">Latest blog Post</a>
-                                    </h4>
-                                    <ul class="post-bar">
-                                        <li><img src="<?= site_url('assets/') ?>images/testi_01.png" alt=""><a href="#">Kristiana</a></li>
-                                        <li><i class="fa fa-calendar"></i>05 June 2018</li>
-                                    </ul>
-                                </div>
-                                <div class="pic">
-                                    <img src="<?= site_url('assets/') ?>images/img-3.jpg" alt="">
-                                    <ul class="post-category">
-                                        <li><a href="#">Business</a></li>
-                                        <li><a href="#">Financ</a></li>
-                                    </ul>
-                                </div>
-                                <p class="post-description">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas gravida nulla eu
-                                    massa efficitur, eu hendrerit ipsum efficitur. Morbi vitae velit ac.
-                                </p>
-                            </div>
-
-                            <div class="post-slide">
-                                <div class="post-header">
-                                    <h4 class="title">
-                                        <a href="#">Latest blog Post</a>
-                                    </h4>
-                                    <ul class="post-bar">
-                                        <li><img src="<?= site_url('assets/') ?>images/testi_02.png" alt=""><a href="#">Kristiana</a></li>
-                                        <li><i class="fa fa-calendar"></i>05 June 2018</li>
-                                    </ul>
-                                </div>
-                                <div class="pic">
-                                    <img src="<?= site_url('assets/') ?>images/img-4.jpg" alt="">
-                                    <ul class="post-category">
-                                        <li><a href="#">Business</a></li>
-                                        <li><a href="#">Financ</a></li>
-                                    </ul>
-                                </div>
-                                <p class="post-description">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas gravida nulla eu
-                                    massa efficitur, eu hendrerit ipsum efficitur. Morbi vitae velit ac.
-                                </p>
-                            </div> -->
                         </div>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-lg-12 text-center">
+                        <a href="" class="btn btn-primary">Lihat lebih banyak</a>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="services-bar">
+            <div class="container">
+                <h1 class="py-4">Teknik Informatika</h1>
+                <!-- Services Section -->
+                <div class="row">
+                    <div class="col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <div class="card-img">
+                                <img class="img-fluid" src="<?= site_url('assets/') ?>images/services-img-01.jpg" alt="" />
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-header"> Analytics </h4>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente
+                                    esse necessitatibus neque.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <div class="card-img">
+                                <img class="img-fluid" src="<?= site_url('assets/') ?>images/services-img-02.jpg" alt="" />
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-header"> Applications </h4>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente
+                                    esse necessitatibus neque.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <div class="card-img">
+                                <img class="img-fluid" src="<?= site_url('assets/') ?>images/services-img-03.jpg" alt="" />
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-header"> Business Process </h4>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente
+                                    esse necessitatibus neque.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <div class="card-img">
+                                <img class="img-fluid" src="<?= site_url('assets/') ?>images/services-img-04.jpg" alt="" />
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-header"> Consulting </h4>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente
+                                    esse necessitatibus neque.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <div class="card-img">
+                                <img class="img-fluid" src="<?= site_url('assets/') ?>images/services-img-05.jpg" alt="" />
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-header"> Infrastructure </h4>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente
+                                    esse necessitatibus neque.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <div class="card-img">
+                                <img class="img-fluid" src="<?= site_url('assets/') ?>images/services-img-06.jpg" alt="" />
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-header"> Product Engineering </h4>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente
+                                    esse necessitatibus neque.</p>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+                <!-- /.row -->
+            </div>
+        </div>
+
+        <!-- Portfolio Section -->
+        <!-- <section id="portfolio">
+            <div class="container py-5">
+                <div class="portfolio-main">
+                    <h2>Our Portfolio</h2>
+                    <div class="col-lg-12">
+                        <div class="project-menu text-center">
+                            <button class="btn btn-primary active" data-filter="*">All</button>
+                            <button data-filter=".business" class="btn btn-primary">Business</button>
+                            <button data-filter=".travel" class="btn btn-primary">Travel</button>
+                            <button data-filter=".financial" class="btn btn-primary">Financial</button>
+                            <button data-filter=".academic" class="btn btn-primary">Academic</button>
+                        </div>
+                    </div>
+                    <div id="projects" class="projects-main row">
+                        <div class="col-lg-4 col-sm-6 pro-item portfolio-item financial">
+                            <div class="card h-100">
+                                <div class="card-img">
+                                    <a href="<?= site_url('assets/') ?>images/portfolio-img-01.jpg" data-fancybox="images">
+                                        <img class="card-img-top" src="<?= site_url('assets/') ?>images/portfolio-img-01.jpg" alt="" />
+                                        <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="#">Financial Sustainability</a>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 pro-item portfolio-item business academic">
+                            <div class="card h-100">
+                                <div class="card-img">
+                                    <a href="<?= site_url('assets/') ?>images/portfolio-img-02.jpg" data-fancybox="images">
+                                        <img class="card-img-top" src="<?= site_url('assets/') ?>images/portfolio-img-02.jpg" alt="" />
+                                        <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="#">Financial Sustainability</a>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 pro-item portfolio-item travel">
+                            <div class="card h-100">
+                                <div class="card-img">
+                                    <a href="<?= site_url('assets/') ?>images/portfolio-img-03.jpg" data-fancybox="images">
+                                        <img class="card-img-top" src="<?= site_url('assets/') ?>images/portfolio-img-03.jpg" alt="" />
+                                        <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="#">Financial Sustainability</a>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 pro-item portfolio-item business">
+                            <div class="card h-100">
+                                <div class="card-img">
+                                    <a href="<?= site_url('assets/') ?>images/portfolio-img-04.jpg" data-fancybox="images">
+                                        <img class="card-img-top" src="<?= site_url('assets/') ?>images/portfolio-img-04.jpg" alt="" />
+                                        <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="#">Financial Sustainability</a>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 pro-item portfolio-item travel">
+                            <div class="card h-100">
+                                <div class="card-img">
+                                    <a href="<?= site_url('assets/') ?>images/portfolio-img-05.jpg" data-fancybox="images">
+                                        <img class="card-img-top" src="<?= site_url('assets/') ?>images/portfolio-img-05.jpg" alt="" />
+                                        <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="#">Financial Sustainability</a>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 pro-item portfolio-item financial academic">
+                            <div class="card h-100">
+                                <div class="card-img">
+                                    <a href="<?= site_url('assets/') ?>images/portfolio-img-01.jpg" data-fancybox="images">
+                                        <img class="card-img-top" src="<?= site_url('assets/') ?>images/portfolio-img-01.jpg" alt="" />
+                                        <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="#">Financial Sustainability</a>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+
 
         <div class="customers-box pt-5">
             <div class="container">
