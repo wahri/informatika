@@ -253,6 +253,7 @@
                 <div class="row">
                     <div class="col-lg-4 mb-4">
                         <div class="card h-100">
+                            <a href="#"></a>
                             <div class="card-img">
                                 <img class="img-fluid" src="<?= site_url('assets/') ?>images/services-img-01.jpg" alt="" />
                             </div>
@@ -265,6 +266,7 @@
                     </div>
                     <div class="col-lg-4 mb-4">
                         <div class="card h-100">
+                            <a href="#"></a>
                             <div class="card-img">
                                 <img class="img-fluid" src="<?= site_url('assets/') ?>images/services-img-02.jpg" alt="" />
                             </div>
@@ -277,6 +279,7 @@
                     </div>
                     <div class="col-lg-4 mb-4">
                         <div class="card h-100">
+                            <a href="#"></a>
                             <div class="card-img">
                                 <img class="img-fluid" src="<?= site_url('assets/') ?>images/services-img-03.jpg" alt="" />
                             </div>
