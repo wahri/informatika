@@ -18,6 +18,8 @@ body {
 	}
 }
 
+
+
 a.btn-primary {
 	background-color: #485ea0;
 	border-color: #485ea0;
@@ -364,6 +366,7 @@ button.btn-secondary:hover {
 .services-bar {
 	padding: 20px 0px 30px 0px;
 	background: url(../images/bg.jpg);
+	background-attachment: fixed;
 }
 
 .services-bar h1 {

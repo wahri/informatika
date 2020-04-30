@@ -21,7 +21,7 @@
 
 <body>
     <div class="wrapper-main">
-        
+
         <?php $this->load->view('template/header'); ?>
 
         <?php
