@@ -248,7 +248,7 @@
 
         <div class="services-bar">
             <div class="container">
-                <h1 class="py-4">Teknik Informatika</h1>
+                <h1 class="py-4 text-header">Teknik Informatika</h1>
                 <!-- Services Section -->
                 <div class="row">
                     <div class="col-lg-4 mb-4">
