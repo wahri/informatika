@@ -12,8 +12,8 @@ class Home extends CI_Controller
 
     public function visiMisi()
     {
-        $data['judul'] = "Home";
+        $data['judul'] = "Visi dan Misi";
         $data['link'] = "Profil";
-        $this->load->view('visimisi',$data);
+        $this->load->view('visimisi', $data);
     }
 }

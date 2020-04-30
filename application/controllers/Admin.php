@@ -21,8 +21,7 @@ class Admin extends CI_Controller
         $this->load->view('admin/index', $data);
         $this->load->view('admin/template/footer');
     }
-    public function
-    default()
+    public function default()
     {
         $this->load->view('admin/default');
     }

@@ -342,7 +342,8 @@ button.btn-secondary:hover {
 	height: 100%;
 }
 
-.slider-main h3, .slider-main p{
+.slider-main h3,
+.slider-main p {
 	color: #ffe3b3;
 }
 
@@ -1293,7 +1294,7 @@ footer p {
 
 .left-ab ul li {
 	position: relative;
-	font-weight: 300;
+	font-weight: 400;
 	list-style: none;
 	line-height: 29px;
 	font-size: 15px;
@@ -1306,7 +1307,7 @@ footer p {
 	position: absolute;
 	left: -15px;
 	top: 0px;
-	color: #485ea0;
+	color: #ffe3b3;
 }
 
 .team-members-box {
@@ -1420,7 +1421,8 @@ footer p {
 	transition: all 0.5s ease 0s;
 }
 
-#tentang, #portfolio{
+#tentang,
+#portfolio {
 	background-color: #485ea0;
 }
 
@@ -2055,6 +2057,7 @@ footer p {
 		font-size: 14px;
 	}
 
-
-
+	#visimisi{
+		background-color: #485ea0;
+	}
 }
