@@ -42,10 +42,10 @@ class Auth extends CI_Controller
                     echo "Fitur ini belum tersedia";
                 }
             } else {
-                redirect('home');
+                redirect('page');
             }
         } else {
-            redirect('home');
+            redirect('page');
         }
     }
     public function logout()
@@ -54,6 +54,6 @@ class Auth extends CI_Controller
         $this->session->unset_userdata('role');
         $this->session->unset_userdata('status');
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Anda telah logout</div>');
-        redirect('home');
+        redirect('page');
     }
 }

@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Web Profil Universitas Muhammadiyah Riau">
+    <meta name="author" content="TIFTECH UMRI">
     <title><?= $judul ?> | Teknik Informatika UMRI</title>
     <!-- Bootstrap core CSS -->
     <link href="<?= site_url('assets/') ?>vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -217,131 +217,37 @@
                 <div class="row mt-5">
                     <div class="col-lg-12">
                         <div id="blog-slider" class="owl-carousel">
-                            <div class="post-slide">
-                                <a href="#" class="float-link"></a>
-                                <div class="pic">
-                                    <a href="#">
-                                        <img src="<?= site_url('assets/') ?>images/img-1.jpg" alt="">
-                                    </a>
-                                    <ul class="post-category">
-                                        <li><a href="#">Business</a></li>
-                                        <li><a href="#">Financ</a></li>
-                                    </ul>
-                                </div>
-                                <div class="post-header mb-0 text-center">
-                                    <ul class="post-bar mt-3 mb-0">
-                                        <li>Posted on : <i class="fa fa-calendar"></i>02 June 2018</li>
-                                    </ul>
-                                    <h4 class="title">
-                                        <a href="#">Latest blog Post</a>
-                                    </h4>
+                            <?php foreach ($berita as $b) : ?>
+                                <div class="post-slide">
+                                    <a href="#" class="float-link"></a>
+                                    <div class="pic">
+                                        <a href="#">
+                                            <img src="<?= site_url('assets/images/berita/') . $b['gambar'] ?>" alt="">
+                                        </a>
+                                        <ul class="post-category">
+                                            <?php
+                                            $rel_kategori = $this->db->get_where('rel_kategori_berita', ['id_berita' => $b['id_berita']])->result_array();
+                                            foreach ($rel_kategori as $k) :
+                                                $kategori = $this->db->get_where('kategori', ['id_kategori' => $k['id_kategori']])->row_array();
+                                            ?>
+                                                <li><a href="#"><?= $kategori['nama_kategori'] ?></a></li>
+                                            <?php endforeach; ?>
+                                        </ul>
+                                    </div>
+                                    <div class="post-header mb-0 text-center">
+                                        <ul class="post-bar mt-3 mb-0">
+                                            <li>Posted on : <i class="fa fa-calendar"></i><?= date("j F Y ", strtotime($b['datetime'])) ?></li>
+                                        </ul>
+                                        <h4 class="title">
+                                            <a href="#"><?= $b['judul'] ?></a>
+                                        </h4>
 
+                                    </div>
+                                    <div class="post-description text-center">
+                                        <?= substr($b['isi'], 0, 150) . '...' ?>
+                                    </div>
                                 </div>
-                                <p class="post-description text-center">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas gravida nulla eu
-                                    massa efficitur, eu hendrerit ipsum efficitur. Morbi vitae velit ac.
-                                </p>
-                            </div>
-                            <div class="post-slide">
-                                <a href="#" class="float-link"></a>
-                                <div class="pic">
-                                    <a href="#">
-                                        <img src="<?= site_url('assets/') ?>images/img-1.jpg" alt="">
-                                    </a>
-                                    <ul class="post-category">
-                                        <li><a href="#">Business</a></li>
-                                        <li><a href="#">Financ</a></li>
-                                    </ul>
-                                </div>
-                                <div class="post-header mb-0 text-center">
-                                    <ul class="post-bar mt-3 mb-0">
-                                        <li>Posted on : <i class="fa fa-calendar"></i>02 June 2018</li>
-                                    </ul>
-                                    <h4 class="title">
-                                        <a href="#">Latest blog Post</a>
-                                    </h4>
-
-                                </div>
-                                <p class="post-description text-center">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas gravida nulla eu
-                                    massa efficitur, eu hendrerit ipsum efficitur. Morbi vitae velit ac.
-                                </p>
-                            </div>
-                            <div class="post-slide">
-                                <a href="#" class="float-link"></a>
-                                <div class="pic">
-                                    <a href="#">
-                                        <img src="<?= site_url('assets/') ?>images/img-1.jpg" alt="">
-                                    </a>
-                                    <ul class="post-category">
-                                        <li><a href="#">Business</a></li>
-                                        <li><a href="#">Financ</a></li>
-                                    </ul>
-                                </div>
-                                <div class="post-header mb-0 text-center">
-                                    <ul class="post-bar mt-3 mb-0">
-                                        <li>Posted on : <i class="fa fa-calendar"></i>02 June 2018</li>
-                                    </ul>
-                                    <h4 class="title">
-                                        <a href="#">Latest blog Post</a>
-                                    </h4>
-
-                                </div>
-                                <p class="post-description text-center">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas gravida nulla eu
-                                    massa efficitur, eu hendrerit ipsum efficitur. Morbi vitae velit ac.
-                                </p>
-                            </div>
-                            <div class="post-slide">
-                                <a href="#" class="float-link"></a>
-                                <div class="pic">
-                                    <a href="#">
-                                        <img src="<?= site_url('assets/') ?>images/img-1.jpg" alt="">
-                                    </a>
-                                    <ul class="post-category">
-                                        <li><a href="#">Business</a></li>
-                                        <li><a href="#">Financ</a></li>
-                                    </ul>
-                                </div>
-                                <div class="post-header mb-0 text-center">
-                                    <ul class="post-bar mt-3 mb-0">
-                                        <li>Posted on : <i class="fa fa-calendar"></i>02 June 2018</li>
-                                    </ul>
-                                    <h4 class="title">
-                                        <a href="#">Latest blog Post</a>
-                                    </h4>
-
-                                </div>
-                                <p class="post-description text-center">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas gravida nulla eu
-                                    massa efficitur, eu hendrerit ipsum efficitur. Morbi vitae velit ac.
-                                </p>
-                            </div>
-                            <div class="post-slide">
-                                <a href="#" class="float-link"></a>
-                                <div class="pic">
-                                    <a href="#">
-                                        <img src="<?= site_url('assets/') ?>images/img-1.jpg" alt="">
-                                    </a>
-                                    <ul class="post-category">
-                                        <li><a href="#">Businesssssss</a></li>
-                                        <li><a href="#">Financ</a></li>
-                                    </ul>
-                                </div>
-                                <div class="post-header mb-0 text-center">
-                                    <ul class="post-bar mt-3 mb-0">
-                                        <li>Posted on : <i class="fa fa-calendar"></i>02 June 2018</li>
-                                    </ul>
-                                    <h4 class="title">
-                                        <a href="#">Latest blog Post</a>
-                                    </h4>
-
-                                </div>
-                                <p class="post-description text-center">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas gravida nulla eu
-                                    massa efficitur, eu hendrerit ipsum efficitur. Morbi vitae velit ac.
-                                </p>
-                            </div>
+                            <?php endforeach; ?>
                         </div>
                     </div>
                 </div>
@@ -459,132 +365,132 @@
                                 </div>
                             </div>
                         </div>
-                    </>
+                        </>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="customers-box pt-5">
-            <div class="container">
-                <!-- Our Customers -->
-                <h2>Our Customers</h2>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div id="customers-slider" class="owl-carousel">
-                            <div class="mb-4">
-                                <a href="#">
-                                    <img class="img-fluid" src="<?= site_url('assets/') ?>images/logo_01.png" alt="" />
-                                </a>
-                            </div>
-                            <div class="mb-4">
-                                <img class="img-fluid" src="<?= site_url('assets/') ?>images/logo_02.png" alt="" />
-                            </div>
-                            <div class="mb-4">
-                                <img class="img-fluid" src="<?= site_url('assets/') ?>images/logo_03.png" alt="" />
-                            </div>
-                            <div class="mb-4">
-                                <img class="img-fluid" src="<?= site_url('assets/') ?>images/logo_04.png" alt="" />
-                            </div>
-                            <div class="mb-4">
-                                <img class="img-fluid" src="<?= site_url('assets/') ?>images/logo_05.png" alt="" />
-                            </div>
-                            <div class="mb-4">
-                                <img class="img-fluid" src="<?= site_url('assets/') ?>images/logo_06.png" alt="" />
+            <div class="customers-box pt-5">
+                <div class="container">
+                    <!-- Our Customers -->
+                    <h2>Our Customers</h2>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div id="customers-slider" class="owl-carousel">
+                                <div class="mb-4">
+                                    <a href="#">
+                                        <img class="img-fluid" src="<?= site_url('assets/') ?>images/logo_01.png" alt="" />
+                                    </a>
+                                </div>
+                                <div class="mb-4">
+                                    <img class="img-fluid" src="<?= site_url('assets/') ?>images/logo_02.png" alt="" />
+                                </div>
+                                <div class="mb-4">
+                                    <img class="img-fluid" src="<?= site_url('assets/') ?>images/logo_03.png" alt="" />
+                                </div>
+                                <div class="mb-4">
+                                    <img class="img-fluid" src="<?= site_url('assets/') ?>images/logo_04.png" alt="" />
+                                </div>
+                                <div class="mb-4">
+                                    <img class="img-fluid" src="<?= site_url('assets/') ?>images/logo_05.png" alt="" />
+                                </div>
+                                <div class="mb-4">
+                                    <img class="img-fluid" src="<?= site_url('assets/') ?>images/logo_06.png" alt="" />
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <!-- /.row -->
                 </div>
-                <!-- /.row -->
+                <!-- /.container -->
             </div>
+
+            <!-- Contact Us -->
+            <div class="touch-line">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <p id="judulpmb">PENERIMAAN MAHASISWA BARU TEKNIK INFORMATIKA</p>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center mt-3">
+                        <div class="col-md-3">
+                            <a class="btn btn-lg btn-secondary btn-block" id="tombolpmb" href="#"><i class="far fa-paper-plane"></i> Daftar Sekarang</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- /.container -->
-        </div>
-
-        <!-- Contact Us -->
-        <div class="touch-line">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <p id="judulpmb">PENERIMAAN MAHASISWA BARU TEKNIK INFORMATIKA</p>
-                    </div>
-                </div>
-                <div class="row justify-content-center mt-3">
-                    <div class="col-md-3">
-                        <a class="btn btn-lg btn-secondary btn-block" id="tombolpmb" href="#"><i class="far fa-paper-plane"></i> Daftar Sekarang</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- /.container -->
-        <!--footer starts from here-->
-        <footer class="footer">
-            <div class="container bottom_border">
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 col-sm-6 ">
-                        <div class="news-box">
-                            <h5 class="headin5_amrc col_white_amrc pt2">Hubungi Kami</h5>
-                            <p class="mb-0">
-                                Jl. KH. Ahmad Dahlan No.88, Kp. Melayu, Kec. Sukajadi, Kota Pekanbaru, Riau 28156
-                            </p>
-                            <p class="my-0">
-                                <i class="fas fa-phone fa-rotate-90"></i> (0761) 35008
-                            </p>
-                            <p class="mb-0">
-                                <i class="fas fa-envelope"></i> Informatika@umri.ac.id
-                            </p>
-                            <p>
-                                <img src="<?= base_url('assets/images/ban-pt.png') ?>" alt="akreditasi" style="width: 80px;">
-                                <img src="<?= base_url('assets/images/ban-pt-2.png') ?>" alt="akreditasi" style="width: 55px;">
-                            </p>
+            <!--footer starts from here-->
+            <footer class="footer">
+                <div class="container bottom_border">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 col-sm-6 ">
+                            <div class="news-box">
+                                <h5 class="headin5_amrc col_white_amrc pt2">Hubungi Kami</h5>
+                                <p class="mb-0">
+                                    Jl. KH. Ahmad Dahlan No.88, Kp. Melayu, Kec. Sukajadi, Kota Pekanbaru, Riau 28156
+                                </p>
+                                <p class="my-0">
+                                    <i class="fas fa-phone fa-rotate-90"></i> (0761) 35008
+                                </p>
+                                <p class="mb-0">
+                                    <i class="fas fa-envelope"></i> Informatika@umri.ac.id
+                                </p>
+                                <p>
+                                    <img src="<?= base_url('assets/images/ban-pt.png') ?>" alt="akreditasi" style="width: 80px;">
+                                    <img src="<?= base_url('assets/images/ban-pt-2.png') ?>" alt="akreditasi" style="width: 55px;">
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-6 pl-5">
+                            <h5 class="headin5_amrc col_white_amrc pt2">Pranala</h5>
+                            <!--headin5_amrc-->
+                            <ul class="footer_ul_amrc">
+                                <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>umri.ac.id</a></li>
+                                <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Daftar UMRI</a></li>
+                                <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Perpustakaan</a></li>
+                                <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Fakultas</a></li>
+                                <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Celscitech</a></li>
+                                <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>E-Journal</a></li>
+                                <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Repositori TA</a></li>
+                            </ul>
+                            <!--footer_ul_amrc ends here-->
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <h5 class="headin5_amrc col_white_amrc pt2">Ikuti Kami Di</h5>
+                            <!--headin5_amrc-->
+                            <!-- <p class="mb10">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                            Ipsum has been the industry's standard dummy text ever since the 1500s</p> -->
+                            <ul class="footer-social">
+                                <li><a class="facebook hb-xs-margin" href="#"><span class="hb hb-xs spin hb-facebook"><i class="fab fa-facebook-f"></i></span></a></li>
+                                <li><a class="twitter hb-xs-margin" href="#"><span class="hb hb-xs spin hb-twitter"><i class="fab fa-twitter"></i></span></a></li>
+                                <li><a class="instagram hb-xs-margin" href="#"><span class="hb hb-xs spin hb-instagram"><i class="fab fa-instagram"></i></span></a></li>
+                                <li><a class="googleplus hb-xs-margin" href="#"><span class="hb hb-xs spin hb-google-plus"><i class="fab fa-google-plus-g"></i></span></a></li>
+                                <li><a class="dribbble hb-xs-margin" href="#"><span class="hb hb-xs spin hb-dribbble"><i class="fab fa-dribbble"></i></span></a></li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6 pl-5">
-                        <h5 class="headin5_amrc col_white_amrc pt2">Pranala</h5>
-                        <!--headin5_amrc-->
-                        <ul class="footer_ul_amrc">
-                            <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>umri.ac.id</a></li>
-                            <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Daftar UMRI</a></li>
-                            <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Perpustakaan</a></li>
-                            <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Fakultas</a></li>
-                            <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Celscitech</a></li>
-                            <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>E-Journal</a></li>
-                            <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Repositori TA</a></li>
-                        </ul>
-                        <!--footer_ul_amrc ends here-->
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <h5 class="headin5_amrc col_white_amrc pt2">Ikuti Kami Di</h5>
-                        <!--headin5_amrc-->
-                        <!-- <p class="mb10">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                            Ipsum has been the industry's standard dummy text ever since the 1500s</p> -->
-                        <ul class="footer-social">
-                            <li><a class="facebook hb-xs-margin" href="#"><span class="hb hb-xs spin hb-facebook"><i class="fab fa-facebook-f"></i></span></a></li>
-                            <li><a class="twitter hb-xs-margin" href="#"><span class="hb hb-xs spin hb-twitter"><i class="fab fa-twitter"></i></span></a></li>
-                            <li><a class="instagram hb-xs-margin" href="#"><span class="hb hb-xs spin hb-instagram"><i class="fab fa-instagram"></i></span></a></li>
-                            <li><a class="googleplus hb-xs-margin" href="#"><span class="hb hb-xs spin hb-google-plus"><i class="fab fa-google-plus-g"></i></span></a></li>
-                            <li><a class="dribbble hb-xs-margin" href="#"><span class="hb hb-xs spin hb-dribbble"><i class="fab fa-dribbble"></i></span></a></li>
-                        </ul>
-                    </div>
                 </div>
-            </div>
-            <div class="container">
-                <p class="copyright text-center">
-                    Copyright &copy; TIFTECH UMRI <?= date('Y') ?>
-                </p>
-            </div>
-        </footer>
-    </div>
+                <div class="container">
+                    <p class="copyright text-center">
+                        Copyright &copy; TIFTECH UMRI <?= date('Y') ?>
+                    </p>
+                </div>
+            </footer>
+        </div>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="<?= site_url('assets/') ?>vendor/jquery/jquery.min.js"></script>
-    <script src="<?= site_url('assets/') ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="<?= site_url('assets/') ?>js/imagesloaded.pkgd.min.js"></script>
-    <script src="<?= site_url('assets/') ?>js/isotope.pkgd.min.js"></script>
-    <script src="<?= site_url('assets/') ?>js/filter.js"></script>
-    <script src="<?= site_url('assets/') ?>js/jquery.appear.js"></script>
-    <script src="<?= site_url('assets/') ?>js/owl.carousel.min.js"></script>
-    <script src="<?= site_url('assets/') ?>js/jquery.fancybox.min.js"></script>
-    <script src="<?= site_url('assets/') ?>js/script.js"></script>
+        <!-- Bootstrap core JavaScript -->
+        <script src="<?= site_url('assets/') ?>vendor/jquery/jquery.min.js"></script>
+        <script src="<?= site_url('assets/') ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="<?= site_url('assets/') ?>js/imagesloaded.pkgd.min.js"></script>
+        <script src="<?= site_url('assets/') ?>js/isotope.pkgd.min.js"></script>
+        <script src="<?= site_url('assets/') ?>js/filter.js"></script>
+        <script src="<?= site_url('assets/') ?>js/jquery.appear.js"></script>
+        <script src="<?= site_url('assets/') ?>js/owl.carousel.min.js"></script>
+        <script src="<?= site_url('assets/') ?>js/jquery.fancybox.min.js"></script>
+        <script src="<?= site_url('assets/') ?>js/script.js"></script>
 </body>
 
 </html>

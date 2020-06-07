@@ -3,6 +3,8 @@
         <div class="container-fluid">
             <h1 class="mt-4"><?= $judul ?></h1>
             <hr>
+            <?= $this->session->flashdata('message'); ?>
+
             <a href="<?= site_url('admin/tambahslider') ?>" class="btn btn-primary mt-3">Tambah slider</a>
             <div class="row">
                 <div class="col-md-8">
@@ -28,7 +30,7 @@
                                 </tr>
                                 <tr>
                                     <td class="align-middle text-center">
-                                        <a href="" class="btn btn-danger">Delete</a>
+                                        <a href="<?= base_url('admin/deleteslider/') . $s['id_slider'] ?>" class="btn btn-danger">Delete</a>
                                     </td>
                                 </tr>
 

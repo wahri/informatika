@@ -662,6 +662,7 @@ button.btn-secondary:hover {
 .post-slide .pic {
 	overflow: hidden;
 	position: relative;
+	height: 230px;
 }
 
 .post-slide .pic:after {
@@ -681,9 +682,10 @@ button.btn-secondary:hover {
 
 .post-slide .pic img {
 	width: 100%;
-	height: auto;
+	height: 100%;
 	transform: rotate(0deg) scale(1, 1);
 	transition: all 0.6s ease-in-out 0s;
+	object-fit: cover;
 }
 
 .post-slide:hover .pic img {
@@ -724,10 +726,11 @@ button.btn-secondary:hover {
 	color: #333;
 }
 
-.post-slide .post-description {
+.post-slide .post-description p {
 	font-size: 16px;
 	color: #808080;
 	padding: 5px 15px;
+	text-align: center;
 }
 
 @media only screen and (max-width: 480px) {

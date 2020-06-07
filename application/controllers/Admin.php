@@ -8,18 +8,25 @@ class Admin extends CI_Controller
         parent::__construct();
         if ($this->session->userdata('status') != "login") {
             if ($this->session->userdata('role') != 1) {
-                redirect('home');
+                redirect('page');
             }
         }
     }
+
+    public function tampilan($tampilan, $data)
+    {
+        $data['admin'] = $this->db->get_where('admin', ['id' => $this->session->userdata('id')])->row_array();
+        $this->load->view('admin/template/header', $data);
+        $this->load->view('admin/template/sidebar', $data);
+        $this->load->view('admin/template/topbar', $data);
+        $this->load->view('admin/' . $tampilan, $data);
+        $this->load->view('admin/template/footer');
+    }
+
     public function index()
     {
         $data['judul'] = "Dashboard";
-        $this->load->view('admin/template/header', $data);
-        $this->load->view('admin/template/topbar');
-        $this->load->view('admin/template/sidebar');
-        $this->load->view('admin/index', $data);
-        $this->load->view('admin/template/footer');
+        $this->tampilan('index', $data);
     }
     public function default()
     {
@@ -30,11 +37,7 @@ class Admin extends CI_Controller
     {
         $data['slider'] = $this->db->get('slider')->result_array();
         $data['judul'] = "Fitur Slider";
-        $this->load->view('admin/template/header', $data);
-        $this->load->view('admin/template/topbar');
-        $this->load->view('admin/template/sidebar');
-        $this->load->view('admin/slider', $data);
-        $this->load->view('admin/template/footer');
+        $this->tampilan('slider', $data);
     }
 
     public function tambahSlider()
@@ -53,11 +56,7 @@ class Admin extends CI_Controller
         if ($this->form_validation->run() == FALSE) {
             $data['error'] = $this->gambarSlider->display_errors();
             $data['judul'] = "Tambah Slider";
-            $this->load->view('admin/template/header', $data);
-            $this->load->view('admin/template/topbar');
-            $this->load->view('admin/template/sidebar');
-            $this->load->view('admin/tambahslider', $data);
-            $this->load->view('admin/template/footer');
+            $this->tampilan('tambahslider', $data);
         } else {
             if ($this->gambarSlider->do_upload('gambar')) {
                 $data = [
@@ -70,13 +69,19 @@ class Admin extends CI_Controller
             } else {
                 $data['error'] = $this->gambarSlider->display_errors();
                 $data['judul'] = "Tambah Slider";
-                $this->load->view('admin/template/header', $data);
-                $this->load->view('admin/template/topbar');
-                $this->load->view('admin/template/sidebar');
-                $this->load->view('admin/tambahslider', $data);
-                $this->load->view('admin/template/footer');
+                $this->tampilan('tambahslider', $data);
             }
         }
+    }
+
+    public function deleteSlider($id)
+    {
+        $slider = $this->db->get_where('slider', ['id_slider' => $id])->row_array();
+        $link = "./assets/images/slider/";
+        unlink($link . $slider['gambar']);
+        $this->db->delete('slider', ['id_slider' => $id]);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Slider dihapus!</div>');
+        redirect('admin/slider');
     }
 
     public function tambahUser()
@@ -88,11 +93,7 @@ class Admin extends CI_Controller
         if ($this->form_validation->run() == FALSE) {
             $data['admin'] = $this->db->get('admin')->result_array();
             $data['judul'] = "Tambah User";
-            $this->load->view('admin/template/header', $data);
-            $this->load->view('admin/template/topbar');
-            $this->load->view('admin/template/sidebar');
-            $this->load->view('admin/tambahuser', $data);
-            $this->load->view('admin/template/footer');
+            $this->tampilan('tambahuser', $data);
         } else {
             $data = [
                 'username' => $this->input->post('username'),
@@ -119,11 +120,7 @@ class Admin extends CI_Controller
         if ($this->form_validation->run() == FALSE) {
             $data['profil'] = $this->db->get('profil')->row_array();
             $data['judul'] = "Edit Profil";
-            $this->load->view('admin/template/header', $data);
-            $this->load->view('admin/template/topbar');
-            $this->load->view('admin/template/sidebar');
-            $this->load->view('admin/editprofil', $data);
-            $this->load->view('admin/template/footer');
+            $this->tampilan('editprofil', $data);
         } else {
             $data = [
                 'judul' => $this->input->post('judul'),
@@ -178,11 +175,7 @@ class Admin extends CI_Controller
             $this->db->order_by('urutan', 'asc');
             $data['menu'] = $this->db->get()->result_array();
             $data['judul'] = "Tambah Menu";
-            $this->load->view('admin/template/header', $data);
-            $this->load->view('admin/template/topbar');
-            $this->load->view('admin/template/sidebar');
-            $this->load->view('admin/menu', $data);
-            $this->load->view('admin/template/footer');
+            $this->tampilan('menu', $data);
         } else {
             $data = [
                 'urutan' => $this->input->post('urutan'),
@@ -204,11 +197,7 @@ class Admin extends CI_Controller
             $data['menu'] = $this->db->get('menu')->result_array();
             $data['submenu'] = $this->db->get('submenu')->result_array();
             $data['judul'] = "Tambah submenu";
-            $this->load->view('admin/template/header', $data);
-            $this->load->view('admin/template/topbar');
-            $this->load->view('admin/template/sidebar');
-            $this->load->view('admin/submenu', $data);
-            $this->load->view('admin/template/footer');
+            $this->tampilan('submenu', $data);
         } else {
             $data = [
                 'id_menu' => $this->input->post('id_menu'),
@@ -219,5 +208,156 @@ class Admin extends CI_Controller
             $this->session->set_flashdata('message', '<div class="alert alert-success mt-4" role="alert">Berhasil Menambahkan submenu!</div>');
             redirect('admin/submenu');
         }
+    }
+
+    public function berita()
+    {
+        $data['judul'] = "Berita";
+        $data['kategori'] = $this->db->get('kategori')->result_array();
+        $data['berita'] = $this->db->get('berita')->result_array();
+        $this->tampilan('berita', $data);
+    }
+
+    public function tambahBerita()
+    {
+        $this->form_validation->set_rules('judul', 'Judul Berita', 'required|trim');
+        $this->form_validation->set_rules('isi', 'Isi Berita', 'required|trim');
+
+        $config['upload_path'] = './assets/images/berita/';
+        $config['allowed_types'] = 'jpg|jpeg|png|gif';
+        $config['max_size'] = '1000000';
+        $config['file_name'] = 'berita';
+
+        $this->load->library('upload', $config, 'gambar');
+        $this->gambar->initialize($config);
+
+        if ($this->form_validation->run() == FALSE) {
+            $data['error'] = '';
+            $data['judul'] = "Berita";
+            $this->tampilan('tambahberita', $data);
+        } else {
+            if ($this->gambar->do_upload('gambar')) {
+                $data = [
+                    'judul' => $this->input->post('judul'),
+                    'isi' => $this->input->post('isi'),
+                    'gambar' => $this->gambar->data('file_name')
+                ];
+
+                $this->db->insert('berita', $data);
+                $this->session->set_flashdata('message', '<div class="alert alert-success mt-4" role="alert">Berhasil mengupload Berita!</div>');
+                redirect('admin/berita');
+            } else {
+                $data['error'] = $this->gambar->display_errors();
+                $data['judul'] = "Berita";
+                $this->tampilan('tambahberita', $data);
+            }
+        }
+    }
+
+    public function kategoriBerita($id)
+    {
+        $data['id_berita'] = $id;
+        $data['kategori'] = $this->db->get('kategori')->result_array();
+        $data['judul'] = "Berita";
+        $this->tampilan('kategoriberita', $data);
+    }
+
+    public function tambahKategori()
+    {
+        $data['nama_kategori'] = $this->input->post('nama_kategori');
+        $this->db->insert('kategori', $data);
+        $this->session->set_flashdata('message', '<div class="alert alert-success mt-4" role="alert">Berhasil menambah kategori!</div>');
+        redirect('admin/berita');
+    }
+
+    public function tambahKategoriBerita()
+    {
+        $id_berita = $this->input->post('id_berita');
+        $kategori = $this->input->post('kategori');
+
+        $this->db->delete('rel_kategori_berita', ['id_berita' => $id_berita]);
+        foreach ($kategori as $k) {
+            $data = [
+                'id_berita' => $id_berita,
+                'id_kategori' => $k
+            ];
+            $this->db->insert('rel_kategori_berita', $data);
+        }
+        $this->session->set_flashdata('message', '<div class="alert alert-success mt-4" role="alert">Berhasil menambah kategori berita!</div>');
+        redirect('admin/berita');
+    }
+
+    public function deleteKategoriBerita($id)
+    {
+        $this->db->delete('rel_kategori_berita', ['id_kategori' => $id]);
+        $this->db->delete('kategori', ['id_kategori' => $id]);
+        $this->session->set_flashdata('message', '<div class="alert alert-success mt-4" role="alert">Berhasil menghapus kategori!</div>');
+        redirect('admin/berita');
+    }
+
+    public function editBerita($id, $gambar = '')
+    {
+        $this->form_validation->set_rules('judul', 'Judul Berita', 'required|trim');
+        $this->form_validation->set_rules('isi', 'Isi Berita', 'required|trim');
+
+        $config['upload_path'] = './assets/images/berita/';
+        $config['allowed_types'] = 'jpg|jpeg|png|gif';
+        $config['max_size'] = '1000000';
+        $config['file_name'] = 'berita';
+
+        $this->load->library('upload', $config, 'gambar');
+        $this->gambar->initialize($config);
+
+        $berita = $this->db->get_where('berita', ['id_berita' => $id])->row_array();
+        // $cek_gambar = $this->input->post('cek');
+        if ($this->form_validation->run() == FALSE) {
+            $data['ubahgambar'] = $gambar;
+            $data['berita'] = $berita;
+            $data['error'] = '';
+            $data['judul'] = "Berita";
+            $this->tampilan('editberita', $data);
+        } else {
+            if($gambar){
+                if ($this->gambar->do_upload('gambar')) {
+                    $link = "./assets/images/berita/";
+                    unlink($link . $berita['gambar']);
+
+                    $data = [
+                        'judul' => $this->input->post('judul'),
+                        'isi' => $this->input->post('isi'),
+                        'gambar' => $this->gambar->data('file_name')
+                    ];
+    
+                    $this->db->update('berita', $data, ['id_berita' => $id]);
+                    $this->session->set_flashdata('message', '<div class="alert alert-success mt-4" role="alert">Berhasil mengedit Berita!</div>');
+                    redirect('admin/berita');
+                } else {
+                    $data['error'] = $this->gambar->display_errors();
+                    $data['ubahgambar'] = $gambar;
+                    $data['berita'] = $this->db->get_where('berita', ['id_berita' => $id])->row_array();
+                    $data['judul'] = "Berita";
+                    $this->tampilan('editberita', $data);
+                }
+            }else {
+                $data = [
+                    'judul' => $this->input->post('judul'),
+                    'isi' => $this->input->post('isi')
+                ];
+
+                $this->db->update('berita', $data, ['id_berita' => $id]);
+                $this->session->set_flashdata('message', '<div class="alert alert-success mt-4" role="alert">Berhasil mengedit Berita!</div>');
+                redirect('admin/berita');
+            }
+        }
+    }
+
+    public function deleteBerita($id)
+    {
+        $berita = $this->db->get_where('berita', ['id_berita' => $id])->row_array();
+        $link = "./assets/images/berita/";
+        unlink($link . $berita['gambar']);
+        $this->db->delete('berita', ['id_berita' => $id]);
+        $this->session->set_flashdata('message', '<div class="alert alert-success mt-4" role="alert">Berhasil menghapus berita!</div>');
+        redirect('admin/berita');
     }
 }

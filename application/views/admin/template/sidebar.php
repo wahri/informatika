@@ -17,6 +17,10 @@
                         Blank
                     </a>
                     <div class="sb-sidenav-menu-heading">Fitur</div>
+                    <a class="nav-link" href="<?= site_url('admin/berita') ?>">
+                        <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                        Buat Berita
+                    </a>
                     <a class="nav-link" href="<?= site_url('admin/slider') ?>">
                         <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                         Slider
