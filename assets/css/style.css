@@ -1720,7 +1720,6 @@ footer p {
 #accordionExample .accordion-single {
 	border-radius: 0px;
 	border: none;
-	position: relative;
 	margin-bottom: 15px;
 }
 
@@ -1740,6 +1739,7 @@ footer p {
 	width: 100%;
 	text-align: left;
 	border: none;
+	white-space: inherit;	
 	font-weight: 600;
 }
 
