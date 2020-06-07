@@ -1,3 +1,36 @@
+<div class="customers-box pt-5">
+    <div class="container">
+        <!-- Our Customers -->
+        <h2>Our Customers</h2>
+        <div class="row">
+            <div class="col-lg-12">
+                <div id="customers-slider" class="owl-carousel">
+                    <div class="mb-4">
+                        <img class="img-fluid" src="<?= site_url('assets/') ?>images/logo_01.png" alt="" />
+                    </div>
+                    <div class="mb-4">
+                        <img class="img-fluid" src="<?= site_url('assets/') ?>images/logo_02.png" alt="" />
+                    </div>
+                    <div class="mb-4">
+                        <img class="img-fluid" src="<?= site_url('assets/') ?>images/logo_03.png" alt="" />
+                    </div>
+                    <div class="mb-4">
+                        <img class="img-fluid" src="<?= site_url('assets/') ?>images/logo_04.png" alt="" />
+                    </div>
+                    <div class="mb-4">
+                        <img class="img-fluid" src="<?= site_url('assets/') ?>images/logo_05.png" alt="" />
+                    </div>
+                    <div class="mb-4">
+                        <img class="img-fluid" src="<?= site_url('assets/') ?>images/logo_06.png" alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</div>
+
 <!-- Contact Us -->
 <div class="touch-line">
     <div class="container">

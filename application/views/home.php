@@ -17,6 +17,7 @@
     <link href="<?= site_url('assets/') ?>css/jquery.fancybox.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="<?= site_url('assets/') ?>css/style.css" rel="stylesheet">
+    <link href="<?= site_url('assets/') ?>css/output.css" rel="stylesheet">
 </head>
 
 <body>
@@ -56,6 +57,7 @@
                                 <div class="carousel-caption d-none d-md-block" id="coklat">
                                     <h3><?= $s['judul'] ?></h3>
                                     <p><?= $s['subjudul'] ?></p>
+                                    <a href="#" class="btn btn-lg btn-primary mb-3">tes</a>
                                 </div>
                             </div>
                         <?php $i++;
@@ -76,9 +78,10 @@
         <?php
         $profil = $this->db->get('profil')->row_array();
         ?>
+
         <!-- Page Content -->
         <section id="tentang">
-            <div class="container py-4" id="about-main">
+            <div class="container py-4 mb-5" id="about-main">
                 <!-- About Section -->
                 <div class="about-main">
                     <div class="row justify-content-between">
@@ -86,169 +89,35 @@
                             <h3 id="judul"><?= $profil['judul'] ?></h3>
                             <hr class="mt-0 mb-4">
                             <?= $profil['paragraf'] ?>
+                            <div class="row mt-1">
+                                <div class="col-lg-12 justify-content-center">
+                                    <a href="<?= site_url('home/about') ?>" class="btn btn-coklat btn-block">
+                                        <h3>Visi dan Misi</h3>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row mt-3 mb-0">
+                                <div class="col-lg-12">
+                                    <a href="" class="btn btn-coklat btn-block">
+                                        <h3>Kurikulum</h3>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-lg-5 ml-5">
                             <img class="img-fluid rounded mx-auto d-block" src="<?= site_url('assets/images/') . $profil['gambar'] ?>" alt="Teknik Informatika" />
                         </div>
                     </div>
-                    <div class="row mt-3">
-                        <div class="col-lg-5 justify-content-center">
-                            <a href="<?= site_url('home/about') ?>" class="btn btn-coklat btn-block">
-                                <h3>Visi dan Misi</h3>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row mt-3 mb-0">
-                        <div class="col-lg-5">
-                            <a href="" class="btn btn-coklat btn-block">
-                                <h3>Kurikulum</h3>
-                            </a>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </section>
 
-        <div class="blog-slide py-5">
+
+
+        <div class="services-bar mb-5">
             <div class="container">
-                <h2>Berita TIF</h2>
-                <div class="row mt-5">
-                    <div class="col-lg-12">
-                        <div id="blog-slider" class="owl-carousel">
-                            <div class="post-slide">
-                                <div class="pic">
-                                    <a href="#">
-                                        <img src="<?= site_url('assets/') ?>images/img-1.jpg" alt="">
-                                    </a>
-                                    <ul class="post-category">
-                                        <li><a href="#">Business</a></li>
-                                        <li><a href="#">Financ</a></li>
-                                    </ul>
-                                </div>
-                                <div class="post-header mb-0 text-center">
-                                    <ul class="post-bar mt-3 mb-0">
-                                        <li>Posted on : <i class="fa fa-calendar"></i>02 June 2018</li>
-                                    </ul>
-                                    <h4 class="title">
-                                        <a href="#">Latest blog Post</a>
-                                    </h4>
-
-                                </div>
-                                <p class="post-description text-center">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas gravida nulla eu
-                                    massa efficitur, eu hendrerit ipsum efficitur. Morbi vitae velit ac.
-                                </p>
-                            </div>
-                            <div class="post-slide">
-                                <div class="pic">
-                                    <a href="#">
-                                        <img src="<?= site_url('assets/') ?>images/img-1.jpg" alt="">
-                                    </a>
-                                    <ul class="post-category">
-                                        <li><a href="#">Business</a></li>
-                                        <li><a href="#">Financ</a></li>
-                                    </ul>
-                                </div>
-                                <div class="post-header mb-0 text-center">
-                                    <ul class="post-bar mt-3 mb-0">
-                                        <li>Posted on : <i class="fa fa-calendar"></i>02 June 2018</li>
-                                    </ul>
-                                    <h4 class="title">
-                                        <a href="#">Latest blog Post</a>
-                                    </h4>
-
-                                </div>
-                                <p class="post-description text-center">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas gravida nulla eu
-                                    massa efficitur, eu hendrerit ipsum efficitur. Morbi vitae velit ac.
-                                </p>
-                            </div>
-                            <div class="post-slide">
-                                <div class="pic">
-                                    <a href="#">
-                                        <img src="<?= site_url('assets/') ?>images/img-1.jpg" alt="">
-                                    </a>
-                                    <ul class="post-category">
-                                        <li><a href="#">Business</a></li>
-                                        <li><a href="#">Financ</a></li>
-                                    </ul>
-                                </div>
-                                <div class="post-header mb-0 text-center">
-                                    <ul class="post-bar mt-3 mb-0">
-                                        <li>Posted on : <i class="fa fa-calendar"></i>02 June 2018</li>
-                                    </ul>
-                                    <h4 class="title">
-                                        <a href="#">Latest blog Post</a>
-                                    </h4>
-
-                                </div>
-                                <p class="post-description text-center">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas gravida nulla eu
-                                    massa efficitur, eu hendrerit ipsum efficitur. Morbi vitae velit ac.
-                                </p>
-                            </div>
-                            <div class="post-slide">
-                                <div class="pic">
-                                    <a href="#">
-                                        <img src="<?= site_url('assets/') ?>images/img-1.jpg" alt="">
-                                    </a>
-                                    <ul class="post-category">
-                                        <li><a href="#">Business</a></li>
-                                        <li><a href="#">Financ</a></li>
-                                    </ul>
-                                </div>
-                                <div class="post-header mb-0 text-center">
-                                    <ul class="post-bar mt-3 mb-0">
-                                        <li>Posted on : <i class="fa fa-calendar"></i>02 June 2018</li>
-                                    </ul>
-                                    <h4 class="title">
-                                        <a href="#">Latest blog Post</a>
-                                    </h4>
-
-                                </div>
-                                <p class="post-description text-center">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas gravida nulla eu
-                                    massa efficitur, eu hendrerit ipsum efficitur. Morbi vitae velit ac.
-                                </p>
-                            </div>
-                            <div class="post-slide">
-                                <div class="pic">
-                                    <a href="#">
-                                        <img src="<?= site_url('assets/') ?>images/img-1.jpg" alt="">
-                                    </a>
-                                    <ul class="post-category">
-                                        <li><a href="#">Business</a></li>
-                                        <li><a href="#">Financ</a></li>
-                                    </ul>
-                                </div>
-                                <div class="post-header mb-0 text-center">
-                                    <ul class="post-bar mt-3 mb-0">
-                                        <li>Posted on : <i class="fa fa-calendar"></i>02 June 2018</li>
-                                    </ul>
-                                    <h4 class="title">
-                                        <a href="#">Latest blog Post</a>
-                                    </h4>
-
-                                </div>
-                                <p class="post-description text-center">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas gravida nulla eu
-                                    massa efficitur, eu hendrerit ipsum efficitur. Morbi vitae velit ac.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row mt-5">
-                    <div class="col-lg-12 text-center">
-                        <a href="" class="btn btn-primary">Lihat lebih banyak</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="services-bar">
-            <div class="container">
-                <h1 class="py-4 text-header">Teknik Informatika</h1>
+                <h1 class="h5 py-4 text-header mb-5">Pojok Program Studi</h1>
                 <!-- Services Section -->
                 <div class="row">
                     <div class="col-lg-4 mb-4">
@@ -278,170 +147,322 @@
                         </div>
                     </div>
                     <div class="col-lg-4 mb-4">
-                        <div class="card h-100">
+                        <div class="card">
                             <a href="#"></a>
-                            <div class="card-img">
-                                <img class="img-fluid" src="<?= site_url('assets/') ?>images/services-img-03.jpg" alt="" />
-                            </div>
-                            <div class="card-body">
-                                <h4 class="card-header"> Business Process </h4>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente
-                                    esse necessitatibus neque.</p>
-                            </div>
+                            <img src="<?= site_url('assets/') ?>images/kuliah_umum.jpeg" class="card-img-top" alt="...">
                         </div>
                     </div>
-                    <!-- <div class="col-lg-4 mb-4">
-                        <div class="card h-100">
-                            <div class="card-img">
-                                <img class="img-fluid" src="<?= site_url('assets/') ?>images/services-img-04.jpg" alt="" />
-                            </div>
-                            <div class="card-body">
-                                <h4 class="card-header"> Consulting </h4>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente
-                                    esse necessitatibus neque.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mb-4">
-                        <div class="card h-100">
-                            <div class="card-img">
-                                <img class="img-fluid" src="<?= site_url('assets/') ?>images/services-img-05.jpg" alt="" />
-                            </div>
-                            <div class="card-body">
-                                <h4 class="card-header"> Infrastructure </h4>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente
-                                    esse necessitatibus neque.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mb-4">
-                        <div class="card h-100">
-                            <div class="card-img">
-                                <img class="img-fluid" src="<?= site_url('assets/') ?>images/services-img-06.jpg" alt="" />
-                            </div>
-                            <div class="card-body">
-                                <h4 class="card-header"> Product Engineering </h4>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente
-                                    esse necessitatibus neque.</p>
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
                 <!-- /.row -->
             </div>
         </div>
 
-        <!-- Portfolio Section -->
-        <!-- <section id="portfolio">
-            <div class="container py-5">
-                <div class="portfolio-main">
-                    <h2>Our Portfolio</h2>
-                    <div class="col-lg-12">
-                        <div class="project-menu text-center">
-                            <button class="btn btn-primary active" data-filter="*">All</button>
-                            <button data-filter=".business" class="btn btn-primary">Business</button>
-                            <button data-filter=".travel" class="btn btn-primary">Travel</button>
-                            <button data-filter=".financial" class="btn btn-primary">Financial</button>
-                            <button data-filter=".academic" class="btn btn-primary">Academic</button>
+        <section id="akademik">
+            <div class="container">
+                <div class="akademik-title">
+                    <h1 class="text-uppercase text-header text-center">Teknik Informatika</h1>
+                    <hr class="my-3">
+                    <p class="text-center">Bekal karier masa depan Anda dipelajari mulai saat ini Bersama Program Studi Teknik Informatika, Fakultas Ilmu Komputer, Universitas Muhammadiyah Riau. Anda akan menemukan pengalaman pembelajaran yang unik dengan memadukan nilai-nilai keislaman dan teknologi untuk mengembangkan potensi anda.</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="akademik-item">
+                            <div class="icon">
+                                <i class="fa fa fa-desktop"></i>
+                            </div>
+                            <div class="akademik-item-text">
+                                <h3 class="mb-3">Profil</h3>
+                                <p class="mb-4">
+                                    Mempersiapkan Para Profesional Teknologi Informasi Sejak didirikan pada tahun 2008 di Pekanbaru, Prodi Teknik Informatika FASILKOM UMRI tetap menjaga komitmennya untuk terus belajar dan berkembang serta
+                                </p>
+                                <a href="#" class="btn btn-coklat">KENALI LEBIH DEKAT</a>
+                            </div>
                         </div>
                     </div>
-                    <div id="projects" class="projects-main row">
-                        <div class="col-lg-4 col-sm-6 pro-item portfolio-item financial">
-                            <div class="card h-100">
-                                <div class="card-img">
-                                    <a href="<?= site_url('assets/') ?>images/portfolio-img-01.jpg" data-fancybox="images">
-                                        <img class="card-img-top" src="<?= site_url('assets/') ?>images/portfolio-img-01.jpg" alt="" />
-                                        <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
-                                    </a>
-                                </div>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        <a href="#">Financial Sustainability</a>
-                                    </h4>
-                                </div>
+                    <div class="col-md-4">
+                        <div class="akademik-item">
+                            <div class="icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div class="akademik-item-text">
+                                <h3 class="mb-3">KURIKULUM</h3>
+                                <p class="mb-4">
+                                    Kurikulum Program Studi Teknik Informatika Universitas Muhammadiyah Riau disusun dengan fokus yang terletak pada teori, riset dan penerapan di bidang Teknik Informatika, bidang ilmu lainnya serta masyarakat dan
+                                </p>
+                                <a href="#" class="btn btn-coklat">KENALI LEBIH DEKAT</a>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-sm-6 pro-item portfolio-item business academic">
-                            <div class="card h-100">
-                                <div class="card-img">
-                                    <a href="<?= site_url('assets/') ?>images/portfolio-img-02.jpg" data-fancybox="images">
-                                        <img class="card-img-top" src="<?= site_url('assets/') ?>images/portfolio-img-02.jpg" alt="" />
-                                        <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
-                                    </a>
-                                </div>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        <a href="#">Financial Sustainability</a>
-                                    </h4>
-                                </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="akademik-item">
+                            <div class="icon">
+                                <i class="fas fa-user-friends"></i>
                             </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6 pro-item portfolio-item travel">
-                            <div class="card h-100">
-                                <div class="card-img">
-                                    <a href="<?= site_url('assets/') ?>images/portfolio-img-03.jpg" data-fancybox="images">
-                                        <img class="card-img-top" src="<?= site_url('assets/') ?>images/portfolio-img-03.jpg" alt="" />
-                                        <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
-                                    </a>
-                                </div>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        <a href="#">Financial Sustainability</a>
-                                    </h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6 pro-item portfolio-item business">
-                            <div class="card h-100">
-                                <div class="card-img">
-                                    <a href="<?= site_url('assets/') ?>images/portfolio-img-04.jpg" data-fancybox="images">
-                                        <img class="card-img-top" src="<?= site_url('assets/') ?>images/portfolio-img-04.jpg" alt="" />
-                                        <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
-                                    </a>
-                                </div>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        <a href="#">Financial Sustainability</a>
-                                    </h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6 pro-item portfolio-item travel">
-                            <div class="card h-100">
-                                <div class="card-img">
-                                    <a href="<?= site_url('assets/') ?>images/portfolio-img-05.jpg" data-fancybox="images">
-                                        <img class="card-img-top" src="<?= site_url('assets/') ?>images/portfolio-img-05.jpg" alt="" />
-                                        <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
-                                    </a>
-                                </div>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        <a href="#">Financial Sustainability</a>
-                                    </h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6 pro-item portfolio-item financial academic">
-                            <div class="card h-100">
-                                <div class="card-img">
-                                    <a href="<?= site_url('assets/') ?>images/portfolio-img-01.jpg" data-fancybox="images">
-                                        <img class="card-img-top" src="<?= site_url('assets/') ?>images/portfolio-img-01.jpg" alt="" />
-                                        <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
-                                    </a>
-                                </div>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        <a href="#">Financial Sustainability</a>
-                                    </h4>
-                                </div>
+                            <div class="akademik-item-text">
+                                <h3 class="mb-3">PROFIL LULUSAN</h3>
+                                <p class="mb-4">
+                                    Program Studi Teknik Informatika Menetapkan peran yang dapat dilakukan oleh lulusan/Alumni nya baik dibidang keahlian atau bidang kerja tertentu. Penetapan profil lulusan yaitu menetapkan peran yang dapat dilakukan
+                                </p>
+                                <a href="#" class="btn btn-coklat">KENALI LEBIH DEKAT</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section> -->
+        </section>
 
+        <div class="blog-slide py-5">
+            <div class="container">
+                <h2 class="text-header">Berita TIF</h2>
+                <div class="row mt-5">
+                    <div class="col-lg-12">
+                        <div id="blog-slider" class="owl-carousel">
+                            <div class="post-slide">
+                                <a href="#" class="float-link"></a>
+                                <div class="pic">
+                                    <a href="#">
+                                        <img src="<?= site_url('assets/') ?>images/img-1.jpg" alt="">
+                                    </a>
+                                    <ul class="post-category">
+                                        <li><a href="#">Business</a></li>
+                                        <li><a href="#">Financ</a></li>
+                                    </ul>
+                                </div>
+                                <div class="post-header mb-0 text-center">
+                                    <ul class="post-bar mt-3 mb-0">
+                                        <li>Posted on : <i class="fa fa-calendar"></i>02 June 2018</li>
+                                    </ul>
+                                    <h4 class="title">
+                                        <a href="#">Latest blog Post</a>
+                                    </h4>
 
+                                </div>
+                                <p class="post-description text-center">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas gravida nulla eu
+                                    massa efficitur, eu hendrerit ipsum efficitur. Morbi vitae velit ac.
+                                </p>
+                            </div>
+                            <div class="post-slide">
+                                <a href="#" class="float-link"></a>
+                                <div class="pic">
+                                    <a href="#">
+                                        <img src="<?= site_url('assets/') ?>images/img-1.jpg" alt="">
+                                    </a>
+                                    <ul class="post-category">
+                                        <li><a href="#">Business</a></li>
+                                        <li><a href="#">Financ</a></li>
+                                    </ul>
+                                </div>
+                                <div class="post-header mb-0 text-center">
+                                    <ul class="post-bar mt-3 mb-0">
+                                        <li>Posted on : <i class="fa fa-calendar"></i>02 June 2018</li>
+                                    </ul>
+                                    <h4 class="title">
+                                        <a href="#">Latest blog Post</a>
+                                    </h4>
+
+                                </div>
+                                <p class="post-description text-center">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas gravida nulla eu
+                                    massa efficitur, eu hendrerit ipsum efficitur. Morbi vitae velit ac.
+                                </p>
+                            </div>
+                            <div class="post-slide">
+                                <a href="#" class="float-link"></a>
+                                <div class="pic">
+                                    <a href="#">
+                                        <img src="<?= site_url('assets/') ?>images/img-1.jpg" alt="">
+                                    </a>
+                                    <ul class="post-category">
+                                        <li><a href="#">Business</a></li>
+                                        <li><a href="#">Financ</a></li>
+                                    </ul>
+                                </div>
+                                <div class="post-header mb-0 text-center">
+                                    <ul class="post-bar mt-3 mb-0">
+                                        <li>Posted on : <i class="fa fa-calendar"></i>02 June 2018</li>
+                                    </ul>
+                                    <h4 class="title">
+                                        <a href="#">Latest blog Post</a>
+                                    </h4>
+
+                                </div>
+                                <p class="post-description text-center">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas gravida nulla eu
+                                    massa efficitur, eu hendrerit ipsum efficitur. Morbi vitae velit ac.
+                                </p>
+                            </div>
+                            <div class="post-slide">
+                                <a href="#" class="float-link"></a>
+                                <div class="pic">
+                                    <a href="#">
+                                        <img src="<?= site_url('assets/') ?>images/img-1.jpg" alt="">
+                                    </a>
+                                    <ul class="post-category">
+                                        <li><a href="#">Business</a></li>
+                                        <li><a href="#">Financ</a></li>
+                                    </ul>
+                                </div>
+                                <div class="post-header mb-0 text-center">
+                                    <ul class="post-bar mt-3 mb-0">
+                                        <li>Posted on : <i class="fa fa-calendar"></i>02 June 2018</li>
+                                    </ul>
+                                    <h4 class="title">
+                                        <a href="#">Latest blog Post</a>
+                                    </h4>
+
+                                </div>
+                                <p class="post-description text-center">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas gravida nulla eu
+                                    massa efficitur, eu hendrerit ipsum efficitur. Morbi vitae velit ac.
+                                </p>
+                            </div>
+                            <div class="post-slide">
+                                <a href="#" class="float-link"></a>
+                                <div class="pic">
+                                    <a href="#">
+                                        <img src="<?= site_url('assets/') ?>images/img-1.jpg" alt="">
+                                    </a>
+                                    <ul class="post-category">
+                                        <li><a href="#">Businesssssss</a></li>
+                                        <li><a href="#">Financ</a></li>
+                                    </ul>
+                                </div>
+                                <div class="post-header mb-0 text-center">
+                                    <ul class="post-bar mt-3 mb-0">
+                                        <li>Posted on : <i class="fa fa-calendar"></i>02 June 2018</li>
+                                    </ul>
+                                    <h4 class="title">
+                                        <a href="#">Latest blog Post</a>
+                                    </h4>
+
+                                </div>
+                                <p class="post-description text-center">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas gravida nulla eu
+                                    massa efficitur, eu hendrerit ipsum efficitur. Morbi vitae velit ac.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-lg-12 text-center">
+                        <a href="" class="btn btn-lg btn-primary">Lihat lebih banyak</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-main">
+            <div class="container">
+                <h2 class="mb-3">(FAQ) Pertanyaan Yang Sering Diajukan</h2>
+                <div class="row">
+                    <div class="col-md-5 d-flex align-items-center justify-content-center">
+                        <img src="<?= base_url('assets/images/kreatif.png') ?>" alt="Teknik Informatika Universitas Muhammadiyah Riau" class="img-fluid">
+                    </div>
+                    <div class="col-md-7">
+                        <div class="accordion pt-5" id="accordionExample">
+                            <div class="card accordion-single">
+                                <div class="card-header" id="1">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            Apa sih Teknik Informatika itu?
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        Teknik informatika adalah disiplin ilmu yang berfokus pada pengembangan sistem berbasis komputer dengan segala kemampuan pemograman komputer, kecerdasan buatan serta Jaringan Komputer.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card accordion-single">
+                                <div class="card-header" id="2">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            Apa yang kita pelajari dalam Prodi Teknik Informatika?
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseTwo" class="collapse" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        Yang dapat kita pelajari pada Teknik Informatika, mahasiswa akan diarahkan untuk bisa menguasai ilmu dan keterampilan rekayasa informatika yang berlandaskan pada kemampuan untuk memahami, menganalisis, menilai, menerapkan, serta menciptakan piranti lunak (Software) dalam pengolahan dengan komputer.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card accordion-single">
+                                <div class="card-header" id="3">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            Apa sih yang membedakan jurusan Teknik Informatika dan sistem informasi ?
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseThree" class="collapse" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        Perbedaan dari dua jurusan tersebut yaitu Teknik Informatika adalah ilmu yang memperdalam tentang ilmu pemograman bahasa Komputer seperti merekayasa sub sistem sedangkan sistem informasi yaitu lebih kepada perancangan, evaluasi dan penggunaan sebuah sistem , jadi sebuah sistem dirancang dan di evaluasi oleh Program Studi sistem informasi dan Program Studi informatika membuat pemograman sistem yang telah dirancang oleh Program Studi sistem informasi.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card accordion-single">
+                                <div class="card-header">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#c4" aria-expanded="false" aria-controls="collapseThree">
+                                            Bagaimana prospek kerja setelah lulus dari jurusan Teknik Informatika?
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="c4" class="collapse" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        Ketika teman-teman lulus dari Jurusan Teknik Informatika teman-teman bisa bekerja di beberapa bidang yang penting pada sebuah perusahaan contoh seperti: Sebagai seorang programmer, system analisis, IT Konsultan,Software Engineer, Database Engineer, Software Developer, Web Designer,IT Executive, Network Administrator, Network Support Engineer.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card accordion-single">
+                                <div class="card-header">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#c5" aria-expanded="false" aria-controls="collapseThree">
+                                            Komunitas apa saja sih yang ada di Teknik Informatika Universitas Muhammadiyah Riau?
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="c5" class="collapse" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        Ekstrakurikuler yang terdapat di Teknik Informatika cukup beragam dari pendidikan, olahraga bahkan kesenian,
+                                        <ul>
+                                            <li>
+                                                Kelompok Studi Pemograman
+                                            </li>
+                                            <li>
+                                                Student Software Developer
+                                            </li>
+                                            <li>
+                                                Kelompok Studi Robotik
+                                            </li>
+                                            <li>
+                                                Kelompok Paduan Suara
+                                            </li>
+                                            <li>
+                                                Kelompok Studi Desain
+                                            </li>
+                                            <li>
+                                                Kelompok Musik
+                                            </li>
+                                            <li>
+                                                Sanggar tari
+                                            </li>
+                                            <li>
+                                                Tim Futsal
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </>
+                </div>
+            </div>
+        </div>
 
         <div class="customers-box pt-5">
             <div class="container">
@@ -451,7 +472,9 @@
                     <div class="col-lg-12">
                         <div id="customers-slider" class="owl-carousel">
                             <div class="mb-4">
-                                <img class="img-fluid" src="<?= site_url('assets/') ?>images/logo_01.png" alt="" />
+                                <a href="#">
+                                    <img class="img-fluid" src="<?= site_url('assets/') ?>images/logo_01.png" alt="" />
+                                </a>
                             </div>
                             <div class="mb-4">
                                 <img class="img-fluid" src="<?= site_url('assets/') ?>images/logo_02.png" alt="" />
@@ -497,18 +520,21 @@
         <footer class="footer">
             <div class="container bottom_border">
                 <div class="row">
-
                     <div class="col-lg-4 col-md-6 col-sm-6 ">
                         <div class="news-box">
-                            <h5 class="headin5_amrc col_white_amrc pt2">Hubngi Kami</h5>
+                            <h5 class="headin5_amrc col_white_amrc pt2">Hubungi Kami</h5>
                             <p class="mb-0">
                                 Jl. KH. Ahmad Dahlan No.88, Kp. Melayu, Kec. Sukajadi, Kota Pekanbaru, Riau 28156
                             </p>
                             <p class="my-0">
                                 <i class="fas fa-phone fa-rotate-90"></i> (0761) 35008
                             </p>
-                            <p>
+                            <p class="mb-0">
                                 <i class="fas fa-envelope"></i> Informatika@umri.ac.id
+                            </p>
+                            <p>
+                                <img src="<?= base_url('assets/images/ban-pt.png') ?>" alt="akreditasi" style="width: 80px;">
+                                <img src="<?= base_url('assets/images/ban-pt-2.png') ?>" alt="akreditasi" style="width: 55px;">
                             </p>
                         </div>
                     </div>

@@ -1,0 +1,65 @@
+$primary:#485ea0;
+$brown: #ffe3b3;
+
+#akademik {
+    background-color: $primary;
+    padding: 70px;
+    color: $brown;
+
+    hr{
+        background-color: $brown;
+    }
+    h1 {
+        color: $brown;
+    }
+
+    .akademik-title {
+        margin: 0 auto;
+        max-width: 800px;
+        margin-bottom: 70px;
+    }
+
+    .akademik-item {
+        padding: 30px;
+        border-right: 1px solid $brown;
+        border-bottom: 1px solid $brown;
+        position: relative;
+        padding-left: 30px;
+        padding-top: 50px;
+        padding-right: 20px;
+        margin-bottom: 40px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            background: $brown;
+            top: 0;
+            right: 0;
+            left: 50px;
+            height: 1px;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            background: $brown;
+            width: 1px;
+            left: 0;
+            bottom: 0;
+            top: 50px;
+        }
+
+        .icon {
+            position: absolute;
+            left: -12px;
+            top: -12px;
+            border: 1px solid $brown;
+            height: 50px;
+            width: 50px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 20px;
+            color: $brown;
+        }
+    }
+}

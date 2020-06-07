@@ -363,10 +363,10 @@ button.btn-secondary:hover {
 	margin-bottom: 30px;
 }
 
+
+
 .services-bar {
 	padding: 20px 0px 30px 0px;
-	background: url(../images/bg.jpg);
-	background-attachment: fixed;
 }
 
 .services-bar h1 {
@@ -376,8 +376,9 @@ button.btn-secondary:hover {
 	margin-bottom: 0px;
 	color: #323232;
 }
-.text-header{
-	text-shadow: 0px 1px 0.5px ;
+
+.text-header {
+	text-shadow: 0px 1px 0.5px;
 }
 
 .services-bar .card {
@@ -385,7 +386,11 @@ button.btn-secondary:hover {
 	border: none;
 }
 
-.card a{
+.services-bar .card .card-body {
+	border-top: 3px solid #485ea0;
+}
+
+.card a {
 	cursor: pointer;
 	position: absolute;
 	width: 100%;
@@ -393,9 +398,9 @@ button.btn-secondary:hover {
 	z-index: 1;
 }
 
-.card:hover{
-	transform: translateY(40px);
-	transition: 1s;
+.services-bar .card:hover {
+	transform: translateY(-10px);
+	transition: .6s;
 }
 
 .services-bar .card h4.card-header {
@@ -578,12 +583,18 @@ button.btn-secondary:hover {
 	background-color: #fdfdfd;
 }
 
+.blog-slide {
+	padding: 20px 0px 30px 0px;
+	/* background: url(../images/bg.jpg);
+	background-attachment: fixed; */
+}
+
 .blog-slide h2 {
 	font-weight: 600;
 	font-size: 45px;
 	margin-bottom: 20px;
 	text-align: center;
-	color: #485ea0;
+	color: #323232;
 }
 
 .post-slide {
@@ -1797,6 +1808,14 @@ footer p {
 	letter-spacing: 1px;
 }
 
+.float-link {
+	cursor: pointer;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+}
+
 .error-contents {
 	padding: 30px 0px;
 	max-width: 980px;
@@ -2076,7 +2095,7 @@ footer p {
 		font-size: 14px;
 	}
 
-	#visimisi{
+	#visimisi {
 		background-color: #485ea0;
 	}
 }
