@@ -28,10 +28,6 @@ class Admin extends CI_Controller
         $data['judul'] = "Dashboard";
         $this->tampilan('index', $data);
     }
-    public function default()
-    {
-        $this->load->view('admin/default');
-    }
 
     public function slider()
     {
@@ -52,6 +48,9 @@ class Admin extends CI_Controller
 
         $this->form_validation->set_rules('judul', 'Judul', 'required|trim');
         $this->form_validation->set_rules('subjudul', 'Subjudul', 'required|trim');
+        // $this->form_validation->set_rules('namatombol', 'nama tombol', 'required|trim');
+        // $this->form_validation->set_rules('link', 'link', 'required|trim');
+        // $this->form_validation->set_rules('link_active', 'link_active', 'required|trim');
 
         if ($this->form_validation->run() == FALSE) {
             $data['error'] = $this->gambarSlider->display_errors();
@@ -188,6 +187,14 @@ class Admin extends CI_Controller
         }
     }
 
+    public function deleteMenu($id)
+    {
+        $this->db->delete('submenu', ['id_menu' => $id]);
+        $this->db->delete('menu', ['id_menu' => $id]);
+        $this->session->set_flashdata('message', '<div class="alert alert-success mt-4" role="alert">Berhasil menghapus menu!</div>');
+        redirect('admin/menu');
+    }
+
     public function submenu()
     {
         $this->form_validation->set_rules('submenu', 'submenu', 'required');
@@ -208,6 +215,13 @@ class Admin extends CI_Controller
             $this->session->set_flashdata('message', '<div class="alert alert-success mt-4" role="alert">Berhasil Menambahkan submenu!</div>');
             redirect('admin/submenu');
         }
+    }
+
+    public function deleteSubMenu($id)
+    {
+        $this->db->delete('submenu', ['id_submenu' => $id]);
+        $this->session->set_flashdata('message', '<div class="alert alert-success mt-4" role="alert">Berhasil menghapus submenu!</div>');
+        redirect('admin/submenu');
     }
 
     public function berita()
@@ -317,7 +331,7 @@ class Admin extends CI_Controller
             $data['judul'] = "Berita";
             $this->tampilan('editberita', $data);
         } else {
-            if($gambar){
+            if ($gambar) {
                 if ($this->gambar->do_upload('gambar')) {
                     $link = "./assets/images/berita/";
                     unlink($link . $berita['gambar']);
@@ -327,7 +341,7 @@ class Admin extends CI_Controller
                         'isi' => $this->input->post('isi'),
                         'gambar' => $this->gambar->data('file_name')
                     ];
-    
+
                     $this->db->update('berita', $data, ['id_berita' => $id]);
                     $this->session->set_flashdata('message', '<div class="alert alert-success mt-4" role="alert">Berhasil mengedit Berita!</div>');
                     redirect('admin/berita');
@@ -338,7 +352,7 @@ class Admin extends CI_Controller
                     $data['judul'] = "Berita";
                     $this->tampilan('editberita', $data);
                 }
-            }else {
+            } else {
                 $data = [
                     'judul' => $this->input->post('judul'),
                     'isi' => $this->input->post('isi')
@@ -359,5 +373,375 @@ class Admin extends CI_Controller
         $this->db->delete('berita', ['id_berita' => $id]);
         $this->session->set_flashdata('message', '<div class="alert alert-success mt-4" role="alert">Berhasil menghapus berita!</div>');
         redirect('admin/berita');
+    }
+
+    public function page()
+    {
+        $data['kategori'] = $this->db->get('kategori')->result_array();
+        $data['page'] = $this->db->get('page')->result_array();
+        $data['judul'] = "Tambah Page";
+        $this->tampilan('page', $data);
+    }
+
+    public function tambahPage()
+    {
+        $this->form_validation->set_rules('judul', 'Judul page', 'required|trim');
+        $this->form_validation->set_rules('isi', 'Isi page', 'required|trim');
+
+        $config['upload_path'] = './assets/images/page/';
+        $config['allowed_types'] = 'jpg|jpeg|png|gif';
+        $config['max_size'] = '1000000';
+        $config['file_name'] = 'page-';
+
+        $this->load->library('upload', $config, 'page');
+        $this->page->initialize($config);
+
+        if ($this->form_validation->run() == FALSE) {
+            $data['error'] = '';
+            $data['judul'] = "page";
+            $this->tampilan('tambahpage', $data);
+        } else {
+            if ($this->page->do_upload('gambar')) {
+                $data = [
+                    'judul' => $this->input->post('judul'),
+                    'isi' => $this->input->post('isi'),
+                    'gambar' => $this->page->data('file_name')
+                ];
+
+                $this->db->insert('page', $data);
+                $this->session->set_flashdata('message', '<div class="alert alert-success mt-4" role="alert">Berhasil mengupload page!</div>');
+                redirect('admin/page');
+            } else {
+                $data['error'] = $this->page->display_errors();
+                $data['judul'] = "page";
+                $this->tampilan('tambahpage', $data);
+            }
+        }
+    }
+
+    public function editPage($id, $gambar = '')
+    {
+        $this->form_validation->set_rules('judul', 'Judul page', 'required|trim');
+        $this->form_validation->set_rules('isi', 'Isi page', 'required|trim');
+        $cek_gambar = $this->input->post('cek');
+        $config['upload_path'] = './assets/images/page/';
+        $config['allowed_types'] = 'jpg|jpeg|png|gif';
+        $config['max_size'] = '1000000';
+        $config['file_name'] = 'page-';
+
+        $this->load->library('upload', $config, 'page');
+        $this->page->initialize($config);
+
+        $page = $this->db->get_where('page', ['id_page' => $id])->row_array();
+
+        if ($this->form_validation->run() == FALSE) {
+            $data['ubahgambar'] = $gambar;
+            $data['page'] = $page;
+            $data['error'] = '';
+            $data['judul'] = "page";
+            $this->tampilan('editpage', $data);
+        } else {
+            if ($cek_gambar) {
+                if ($this->page->do_upload('gambar')) {
+                    $link = "./assets/images/page/";
+                    unlink($link . $page['gambar']);
+
+                    $data = [
+                        'judul' => $this->input->post('judul'),
+                        'isi' => $this->input->post('isi'),
+                        'gambar' => $this->page->data('file_name')
+                    ];
+
+                    $this->db->update('page', $data, ['id_page' => $id]);
+                    $this->session->set_flashdata('message', '<div class="alert alert-success mt-4" role="alert">Berhasil mengubah page!</div>');
+                    redirect('admin/page');
+                } else {
+                    $data['error'] = $this->page->display_errors();
+                    $data['ubahgambar'] = $gambar;
+                    $data['page'] = $this->db->get_where('page', ['id_page' => $id])->row_array();
+                    $data['judul'] = "page";
+                    $this->tampilan('editpage', $data);
+                }
+            } else {
+                $data = [
+                    'judul' => $this->input->post('judul'),
+                    'isi' => $this->input->post('isi')
+                ];
+
+                $this->db->update('page', $data, ['id_page' => $id]);
+                $this->session->set_flashdata('message', '<div class="alert alert-success mt-4" role="alert">Berhasil mengedit page!</div>');
+                redirect('admin/page');
+            }
+        }
+    }
+    public function deletePage($id)
+    {
+        $this->db->delete('page', ['id_page' => $id]);
+        $this->session->set_flashdata('message', '<div class="alert alert-success mt-4" role="alert">Berhasil menghapus page!</div>');
+        redirect('admin/page');
+    }
+
+    public function pengaturanAkun()
+    {
+        $this->form_validation->set_rules('username', 'Username', 'required|trim');
+        if ($this->input->post('password1')) {
+            $this->form_validation->set_rules('password2', 'Konfirmasi Password', 'required|trim|matches[password1]');
+            $this->form_validation->set_rules('password1', 'Password', 'required|trim');
+        }
+
+        if ($this->form_validation->run() == FALSE) {
+            $data['judul'] = "Pengaturan Akun";
+            $this->tampilan('pengaturanakun', $data);
+        } else {
+            $id = $this->input->post('id');
+            $password = $this->input->post('password1');
+            $data['username'] = $this->input->post('username');
+            if ($this->input->post('password1')) {
+                $data['password'] = password_hash($password, PASSWORD_DEFAULT);
+            }
+            $this->db->update('admin', $data, ['id' => $id]);
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil mengubah akun!</div>');
+            redirect('admin/pengaturanakun');
+        }
+    }
+
+    public function instagram()
+    {
+        $data['error'] = null;
+
+
+        $config['upload_path'] = './assets/images/slider-ig/';
+        $config['allowed_types'] = 'gif|jpg|jpeg|png|pdf|';
+        $config['max_size'] = '100000';
+        $config['file_name'] = 'Slider-ig-';
+
+        $this->load->library('upload', $config, 'gambarPostInstagram');
+        $this->gambarPostInstagram->initialize($config);
+        if ($this->input->post('submit')) {
+            if ($this->gambarPostInstagram->do_upload('gambar')) {
+                $post['gambar'] = $this->gambarPostInstagram->data('file_name');
+                $this->db->insert('instagram', $post);
+                redirect('admin/instagram');
+            } else {
+                $data['error'] = $this->gambarPostInstagram->display_errors();
+            }
+        }
+        $data['instagram'] = $this->db->get('instagram')->result_array();
+        $data['judul'] = "Instagram Post";
+        $this->tampilan('instagram', $data);
+    }
+
+    public function deleteInstagram($id)
+    {
+        $instagram = $this->db->get_where('instagram', ['id_instagram' => $id])->row_array();
+        $link = "./assets/images/slider-ig/";
+        unlink($link . $instagram['gambar']);
+        $this->db->delete('instagram', ['id_instagram' => $id]);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Post berhasil dihapus!</div>');
+        redirect('admin/instagram');
+    }
+
+    public function pojokProdi($poster = null)
+    {
+        $data['poster'] = $poster;
+        $data['prodi'] = $this->db->get('pojok_prodi')->row_array();
+        $data['judul'] = "Update Pojok Prodi";
+        $this->tampilan('pojokprodi', $data);
+        // $this->form_validation->set_rules('link', 'link', 'required|trim');
+        // $config['upload_path'] = './assets/images/poster/';
+        // $config['allowed_types'] = 'gif|jpg|jpeg|png|pdf|';
+        // $config['max_size'] = '100000';
+        // $config['file_name'] = 'Poster-';
+
+        // $this->load->library('upload', $config, 'gambarPoster');
+        // $this->gambarPoster->initialize($config);
+        // if ($this->form_validation->run() == FALSE) {
+        //     $data['error'] = null;
+        //     $data['poster'] = $this->db->get('poster')->result_array();
+        //     $data['judul'] = "Update Poster";
+        //     $this->tampilan('poster', $data);
+        // }else{
+        //     if ($this->gambarPoster->do_upload('gambar')) {
+        //         $post['gambar'] = $this->gambarPoster->data('file_name');
+        //         $this->db->insert('poster', $post);
+        //         redirect('admin/poster');
+        //     } else {
+        //         $data['error'] = $this->gambarPoster->display_errors();
+        //         $data['poster'] = $this->db->get('poster')->result_array();
+        //         $data['judul'] = "Update Poster";
+        //         $this->tampilan('poster', $data);
+        //     }
+        // }
+    }
+    public function editpojokprodi($page, $id)
+    {
+        if ($page == 'poster') {
+            $config['upload_path'] = './assets/images/poster/';
+            $config['allowed_types'] = 'gif|jpg|jpeg|png|pdf|';
+            $config['max_size'] = '100000';
+            $config['file_name'] = 'Poster-';
+
+            $this->load->library('upload', $config, 'gambarPoster');
+            $this->gambarPoster->initialize($config);
+
+            if ($this->gambarPoster->do_upload('gambar')) {
+                $post['poster'] = $this->gambarPoster->data('file_name');
+                $this->db->update('pojok_prodi', $post, ['id_pojok_prodi' => $id]);
+                $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil mengubah poster!</div>');
+                redirect('admin/pojokprodi');
+            }
+        } else {
+            $data = [
+                $page => $this->input->post('page')
+            ];
+
+            $this->db->update('pojok_prodi', $data, ['id_pojok_prodi' => $id]);
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil mengubah page!</div>');
+            redirect('admin/pojokprodi');
+        }
+    }
+
+    public function organisasi()
+    {
+        $data['error'] = null;
+
+        $config['upload_path'] = './assets/images/organisasi/';
+        $config['allowed_types'] = 'gif|jpg|jpeg|png|pdf|';
+        $config['max_size'] = '100000';
+        $config['file_name'] = 'organisasi-';
+
+        $this->load->library('upload', $config, 'logoOrganisasi');
+        $this->logoOrganisasi->initialize($config);
+        if ($this->input->post('submit')) {
+            if ($this->logoOrganisasi->do_upload('gambar')) {
+                $post = [
+                    'nama' => $this->input->post('nama'),
+                    'gambar' => $this->logoOrganisasi->data('file_name'),
+                    'link' => $this->input->post('link')
+                ];
+                $this->db->insert('organisasi', $post);
+                $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil menambah organisasi!</div>');
+                redirect('admin/organisasi');
+            } else {
+                $data['error'] = $this->logoOrganisasi->display_errors();
+            }
+        }
+        $data['organisasi'] = $this->db->get('organisasi')->result_array();
+        $data['judul'] = "Logo Organisasi";
+        $this->tampilan('organisasi', $data);
+    }
+
+    public function deleteLogoOrganisasi($id)
+    {
+        $organisasi = $this->db->get_where('organisasi', ['id_organisasi' => $id])->row_array();
+        $link = "./assets/images/organisasi/";
+        unlink($link . $organisasi['gambar']);
+        $this->db->delete('organisasi', ['id_organisasi' => $id]);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Logo berhasil dihapus!</div>');
+        redirect('admin/organisasi');
+    }
+
+    public function dosen()
+    {
+        $data['dosen'] = $this->db->get('dosen')->result_array();
+        $data['judul'] = "Dosen TIF";
+        $this->tampilan('dosen', $data);
+    }
+
+    public function tambahdosen()
+    {
+        $config['upload_path'] = './assets/images/dosen/';
+        $config['allowed_types'] = 'gif|jpg|jpeg|png|pdf|';
+        $config['max_size'] = '100000';
+        $config['file_name'] = 'Dosen-';
+
+        $this->load->library('upload', $config, 'foto');
+        $this->foto->initialize($config);
+
+        $this->form_validation->set_rules('nama', 'nama', 'required|trim');
+        $this->form_validation->set_rules('jabatan', 'jabatan', 'required|trim');
+
+        if ($this->form_validation->run() == FALSE) {
+            $data['error'] = $this->foto->display_errors();
+            $data['judul'] = "Tambah Dosen";
+            $this->tampilan('tambahdosen', $data);
+        } else {
+            if ($this->foto->do_upload('foto')) {
+                $data = [
+                    'foto' => $this->foto->data('file_name'),
+                    'nama' => $this->input->post('nama'),
+                    'jabatan' => $this->input->post('jabatan')
+                ];
+                $this->db->insert('dosen', $data);
+                $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil menambah dosen!</div>');
+                redirect('admin/dosen');
+            } else {
+                $data['error'] = $this->foto->display_errors();
+                $data['judul'] = "Tambah Dosen";
+                $this->tampilan('tambahdosen', $data);
+            }
+        }
+    }
+
+    public function deleteDosen($id)
+    {
+        $dosen = $this->db->get_where('dosen', ['id_dosen' => $id])->row_array();
+        $link = "./assets/images/dosen/";
+        unlink($link . $dosen['foto']);
+        $this->db->delete('dosen', ['id_dosen' => $id]);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">dosen dihapus!</div>');
+        redirect('admin/dosen');
+    }
+
+    public function editDosen($id, $foto = 0)
+    {
+        $config['upload_path'] = './assets/images/dosen/';
+        $config['allowed_types'] = 'gif|jpg|jpeg|png|pdf|';
+        $config['max_size'] = '100000';
+        $config['file_name'] = 'Dosen-';
+
+        $this->load->library('upload', $config, 'foto');
+        $this->foto->initialize($config);
+
+        $this->form_validation->set_rules('nama', 'nama', 'required|trim');
+        $this->form_validation->set_rules('jabatan', 'jabatan', 'required|trim');
+
+        if ($this->form_validation->run() == FALSE) {
+            $data['error'] = $this->foto->display_errors();
+            $data['foto'] = $foto;
+            $data['dosen'] = $this->db->get_where('dosen', ['id_dosen' => $id])->row_array();
+            $data['judul'] = "Dosen TIF";
+            $this->tampilan('editdosen', $data);
+        }else{
+            if($foto){
+                $dosen = $this->db->get_where('dosen', ['id_dosen' => $id])->row_array();
+                $link = "./assets/images/dosen/";
+                unlink($link . $dosen['foto']);
+                if ($this->foto->do_upload('foto')) {
+                    $data = [
+                        'foto' => $this->foto->data('file_name'),
+                        'nama' => $this->input->post('nama'),
+                        'jabatan' => $this->input->post('jabatan')
+                    ];
+                    $this->db->update('dosen', $data, ['id_dosen' => $id]);
+                    $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil mengubah dosen!</div>');
+                    redirect('admin/dosen');
+                } else {
+                    $data['error'] = $this->foto->display_errors();
+                    $data['foto'] = $foto;
+                    $data['dosen'] = $this->db->get_where('dosen', ['id_dosen' => $id])->row_array();
+                    $data['judul'] = "Dosen TIF";
+                    $this->tampilan('editdosen', $data);
+                }
+            }else{
+                $data = [
+                    'nama' => $this->input->post('nama'),
+                    'jabatan' => $this->input->post('jabatan')
+                ];
+                $this->db->update('dosen', $data, ['id_dosen' => $id]);
+                $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil mengubah dosen!</div>');
+                redirect('admin/dosen');
+            }
+        }
     }
 }

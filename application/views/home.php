@@ -4,9 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="<?= base_url('assets/images/favicon.ico') ?>">
+    <title><?= $judul ?> | Teknik Informatika UMRI</title>
     <meta name="description" content="Web Profil Universitas Muhammadiyah Riau">
     <meta name="author" content="TIFTECH UMRI">
-    <title><?= $judul ?> | Teknik Informatika UMRI</title>
     <!-- Bootstrap core CSS -->
     <link href="<?= site_url('assets/') ?>vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Fontawesome CSS -->
@@ -55,9 +56,9 @@
                         ?>
                             <div class="carousel-item <?= ($i == 1) ? "active" : "" ?>" style="background-image: url('<?= site_url('assets/images/slider/') . $s['gambar'] ?>')">
                                 <div class="carousel-caption d-none d-md-block" id="coklat">
-                                    <h3><?= $s['judul'] ?></h3>
+                                    <!-- <h3><?= $s['judul'] ?></h3>
                                     <p><?= $s['subjudul'] ?></p>
-                                    <a href="#" class="btn btn-lg btn-primary mb-3">tes</a>
+                                    <a href="#" class="btn btn-lg btn-primary mb-3">Daftar Sekarang!</a> -->
                                 </div>
                             </div>
                         <?php $i++;
@@ -74,10 +75,24 @@
                 </div>
             </header>
         <?php endif; ?>
-
         <?php
         $profil = $this->db->get('profil')->row_array();
         ?>
+
+        <div class="daftar">
+            <div class="container pt-4 mb-5">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <p id="judulpmb">PENERIMAAN MAHASISWA BARU TEKNIK INFORMATIKA</p>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-3">
+                        <a class="btn btn-lg btn-coklat btn-block" id="tombolpmb" href="http://daftar.umri.ac.id/"><i class="far fa-paper-plane"></i> Daftar Sekarang</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Page Content -->
         <section id="tentang">
@@ -86,76 +101,67 @@
                 <div class="about-main">
                     <div class="row justify-content-between">
                         <div class="col-lg-6">
-                            <h3 id="judul"><?= $profil['judul'] ?></h3>
-                            <hr class="mt-0 mb-4">
+                            <h2 id="judul"><?= $profil['judul'] ?></h2>
+                            <!-- <hr class="mt-0 mb-4"> -->
                             <?= $profil['paragraf'] ?>
-                            <div class="row mt-1">
-                                <div class="col-lg-12 justify-content-center">
-                                    <a href="<?= site_url('home/about') ?>" class="btn btn-coklat btn-block">
-                                        <h3>Visi dan Misi</h3>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="row mt-3 mb-0">
-                                <div class="col-lg-12">
-                                    <a href="" class="btn btn-coklat btn-block">
-                                        <h3>Kurikulum</h3>
-                                    </a>
-                                </div>
-                            </div>
                         </div>
-                        <div class="col-lg-5 ml-5">
-                            <img class="img-fluid rounded mx-auto d-block" src="<?= site_url('assets/images/') . $profil['gambar'] ?>" alt="Teknik Informatika" />
+                        <div class="col-lg-5 ml-5 d-flex justify-content-center align-items-center">
+                            <div class="ig-slide">
+                                <a href="https://www.instagram.com/informatika_umri/" target="_blank" class="link-ig"></a>
+                                <?php foreach ($instagram as $ig) : ?>
+                                    <img class="img-fluid ig-slide-item" src="<?= base_url('assets/images/slider-ig/') . $ig['gambar'] ?>" alt="Teknik Informatika Instagram Post">
+                                <?php endforeach; ?>
+                            </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
 
 
-
-        <div class="services-bar mb-5">
-            <div class="container">
-                <h1 class="h5 py-4 text-header mb-5">Pojok Program Studi</h1>
-                <!-- Services Section -->
-                <div class="row">
-                    <div class="col-lg-4 mb-4">
-                        <div class="card h-100">
-                            <a href="#"></a>
-                            <div class="card-img">
-                                <img class="img-fluid" src="<?= site_url('assets/') ?>images/services-img-01.jpg" alt="" />
+        <section id="prodi">
+            <div class="services-bar pb-5">
+                <div class="container">
+                    <h1 class="h5 py-4 text-header mb-5">Pojok Program Studi</h1>
+                    <!-- Services Section -->
+                    <div class="row">
+                        <?php $page1 = $this->db->get_where('page', ['id_page' => $prodi['page-1']])->row_array(); ?>
+                        <div class="col-lg-4 mb-4">
+                            <div class="card h-100">
+                                <a href="<?= base_url('page/detail/') . $prodi['page-1'] ?>"></a>
+                                <div class="card-img">
+                                    <img class="img-fluid" src="<?= site_url('assets/images/page/') . $page1['gambar'] ?>" alt="<?= $page1['judul'] ?>" />
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-header"><?= $page1['judul'] ?></h4>
+                                    <p class="card-text"><?= substr($page1['isi'], 0, 100) . '...' ?></p>
+                                </div>
                             </div>
-                            <div class="card-body">
-                                <h4 class="card-header"> Analytics </h4>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente
-                                    esse necessitatibus neque.</p>
+                        </div>
+                        <?php $page2 = $this->db->get_where('page', ['id_page' => $prodi['page-2']])->row_array(); ?>
+                        <div class="col-lg-4 mb-4">
+                            <div class="card h-100">
+                                <a href="<?= base_url('page/detail/') . $prodi['page-2'] ?>"></a>
+                                <div class="card-img">
+                                    <img class="img-fluid" src="<?= site_url('assets/images/page/') . $page2['gambar'] ?>" alt="<?= $page2['judul'] ?>" />
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-header"><?= $page2['judul'] ?></h4>
+                                    <p class="card-text"><?= substr($page2['isi'], 0, 100) . '...' ?></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mb-4">
+                            <div class="card">
+                                <a href="#"></a>
+                                <img src="<?= base_url('assets/images/poster/') . $prodi['poster'] ?>" class="card-img-top" alt="Poster Event Teknik Informatika Muhammadiyah Riau">
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 mb-4">
-                        <div class="card h-100">
-                            <a href="#"></a>
-                            <div class="card-img">
-                                <img class="img-fluid" src="<?= site_url('assets/') ?>images/services-img-02.jpg" alt="" />
-                            </div>
-                            <div class="card-body">
-                                <h4 class="card-header"> Applications </h4>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente
-                                    esse necessitatibus neque.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mb-4">
-                        <div class="card">
-                            <a href="#"></a>
-                            <img src="<?= site_url('assets/') ?>images/kuliah_umum.jpeg" class="card-img-top" alt="...">
-                        </div>
-                    </div>
+                    <!-- /.row -->
                 </div>
-                <!-- /.row -->
             </div>
-        </div>
+        </section>
 
         <section id="akademik">
             <div class="container">
@@ -171,11 +177,11 @@
                                 <i class="fa fa fa-desktop"></i>
                             </div>
                             <div class="akademik-item-text">
-                                <h3 class="mb-3">Profil</h3>
+                                <h3 class="mb-3"><?= $page[0]['judul'] ?></h3>
                                 <p class="mb-4">
-                                    Mempersiapkan Para Profesional Teknologi Informasi Sejak didirikan pada tahun 2008 di Pekanbaru, Prodi Teknik Informatika FASILKOM UMRI tetap menjaga komitmennya untuk terus belajar dan berkembang serta
+                                    <?= substr($page[0]['isi'], 59, 190) . '...' ?>
                                 </p>
-                                <a href="#" class="btn btn-coklat">KENALI LEBIH DEKAT</a>
+                                <a href="<?= base_url('page/detail/1') ?>" class="btn btn-coklat">KENALI LEBIH DEKAT</a>
                             </div>
                         </div>
                     </div>
@@ -185,11 +191,11 @@
                                 <i class="fas fa-book"></i>
                             </div>
                             <div class="akademik-item-text">
-                                <h3 class="mb-3">KURIKULUM</h3>
+                                <h3 class="mb-3"><?= $page[1]['judul'] ?></h3>
                                 <p class="mb-4">
-                                    Kurikulum Program Studi Teknik Informatika Universitas Muhammadiyah Riau disusun dengan fokus yang terletak pada teori, riset dan penerapan di bidang Teknik Informatika, bidang ilmu lainnya serta masyarakat dan
+                                    <?= substr($page[1]['isi'], 0, 190) . '...' ?>
                                 </p>
-                                <a href="#" class="btn btn-coklat">KENALI LEBIH DEKAT</a>
+                                <a href="<?= base_url('page/detail/2') ?>" class="btn btn-coklat">KENALI LEBIH DEKAT</a>
                             </div>
                         </div>
                     </div>
@@ -199,11 +205,11 @@
                                 <i class="fas fa-user-friends"></i>
                             </div>
                             <div class="akademik-item-text">
-                                <h3 class="mb-3">PROFIL LULUSAN</h3>
+                                <h3 class="mb-3"><?= $page[2]['judul'] ?></h3>
                                 <p class="mb-4">
-                                    Program Studi Teknik Informatika Menetapkan peran yang dapat dilakukan oleh lulusan/Alumni nya baik dibidang keahlian atau bidang kerja tertentu. Penetapan profil lulusan yaitu menetapkan peran yang dapat dilakukan
+                                    <?= substr($page[2]['isi'], 0, 190) . '...' ?>
                                 </p>
-                                <a href="#" class="btn btn-coklat">KENALI LEBIH DEKAT</a>
+                                <a href="<?= base_url('page/detail/3') ?>" class="btn btn-coklat">KENALI LEBIH DEKAT</a>
                             </div>
                         </div>
                     </div>
@@ -213,13 +219,14 @@
 
         <div class="blog-slide py-5">
             <div class="container">
-                <h2 class="text-header">Berita TIF</h2>
+                <h2 class="text-header">Berita Pilihan</h2>
+                <p class="text-center">Tetap terhubung dengan berita dan informasi terbaru tentang berbagai aktivitas di prodi Teknik Informatika</p>
                 <div class="row mt-5">
                     <div class="col-lg-12">
                         <div id="blog-slider" class="owl-carousel">
                             <?php foreach ($berita as $b) : ?>
                                 <div class="post-slide">
-                                    <a href="#" class="float-link"></a>
+                                    <a href="<?= base_url('page/berita/') . $b['id_berita'] ?>" class="float-link"></a>
                                     <div class="pic">
                                         <a href="#">
                                             <img src="<?= site_url('assets/images/berita/') . $b['gambar'] ?>" alt="">
@@ -238,13 +245,13 @@
                                         <ul class="post-bar mt-3 mb-0">
                                             <li>Posted on : <i class="fa fa-calendar"></i><?= date("j F Y ", strtotime($b['datetime'])) ?></li>
                                         </ul>
-                                        <h4 class="title">
+                                        <h4 class="title mb-3">
                                             <a href="#"><?= $b['judul'] ?></a>
                                         </h4>
 
                                     </div>
                                     <div class="post-description text-center">
-                                        <?= substr($b['isi'], 0, 150) . '...' ?>
+                                        <?= substr($b['isi'], 0, 100) . '...' ?>
                                     </div>
                                 </div>
                             <?php endforeach; ?>
@@ -253,7 +260,7 @@
                 </div>
                 <div class="row mt-5">
                     <div class="col-lg-12 text-center">
-                        <a href="" class="btn btn-lg btn-primary">Lihat lebih banyak</a>
+                        <a href="<?= base_url('page/beritatif') ?>" class="btn btn-lg btn-primary">Lihat lebih banyak</a>
                     </div>
                 </div>
             </div>
@@ -369,128 +376,40 @@
                     </div>
                 </div>
             </div>
-
-            <div class="customers-box pt-5">
-                <div class="container">
-                    <!-- Our Customers -->
-                    <h2>Our Customers</h2>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div id="customers-slider" class="owl-carousel">
-                                <div class="mb-4">
-                                    <a href="#">
-                                        <img class="img-fluid" src="<?= site_url('assets/') ?>images/logo_01.png" alt="" />
-                                    </a>
-                                </div>
-                                <div class="mb-4">
-                                    <img class="img-fluid" src="<?= site_url('assets/') ?>images/logo_02.png" alt="" />
-                                </div>
-                                <div class="mb-4">
-                                    <img class="img-fluid" src="<?= site_url('assets/') ?>images/logo_03.png" alt="" />
-                                </div>
-                                <div class="mb-4">
-                                    <img class="img-fluid" src="<?= site_url('assets/') ?>images/logo_04.png" alt="" />
-                                </div>
-                                <div class="mb-4">
-                                    <img class="img-fluid" src="<?= site_url('assets/') ?>images/logo_05.png" alt="" />
-                                </div>
-                                <div class="mb-4">
-                                    <img class="img-fluid" src="<?= site_url('assets/') ?>images/logo_06.png" alt="" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.row -->
-                </div>
-                <!-- /.container -->
-            </div>
-
-            <!-- Contact Us -->
-            <div class="touch-line">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 text-center">
-                            <p id="judulpmb">PENERIMAAN MAHASISWA BARU TEKNIK INFORMATIKA</p>
-                        </div>
-                    </div>
-                    <div class="row justify-content-center mt-3">
-                        <div class="col-md-3">
-                            <a class="btn btn-lg btn-secondary btn-block" id="tombolpmb" href="#"><i class="far fa-paper-plane"></i> Daftar Sekarang</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- /.container -->
-            <!--footer starts from here-->
-            <footer class="footer">
-                <div class="container bottom_border">
-                    <div class="row">
-                        <div class="col-lg-4 col-md-6 col-sm-6 ">
-                            <div class="news-box">
-                                <h5 class="headin5_amrc col_white_amrc pt2">Hubungi Kami</h5>
-                                <p class="mb-0">
-                                    Jl. KH. Ahmad Dahlan No.88, Kp. Melayu, Kec. Sukajadi, Kota Pekanbaru, Riau 28156
-                                </p>
-                                <p class="my-0">
-                                    <i class="fas fa-phone fa-rotate-90"></i> (0761) 35008
-                                </p>
-                                <p class="mb-0">
-                                    <i class="fas fa-envelope"></i> Informatika@umri.ac.id
-                                </p>
-                                <p>
-                                    <img src="<?= base_url('assets/images/ban-pt.png') ?>" alt="akreditasi" style="width: 80px;">
-                                    <img src="<?= base_url('assets/images/ban-pt-2.png') ?>" alt="akreditasi" style="width: 55px;">
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6 pl-5">
-                            <h5 class="headin5_amrc col_white_amrc pt2">Pranala</h5>
-                            <!--headin5_amrc-->
-                            <ul class="footer_ul_amrc">
-                                <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>umri.ac.id</a></li>
-                                <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Daftar UMRI</a></li>
-                                <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Perpustakaan</a></li>
-                                <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Fakultas</a></li>
-                                <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Celscitech</a></li>
-                                <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>E-Journal</a></li>
-                                <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Repositori TA</a></li>
-                            </ul>
-                            <!--footer_ul_amrc ends here-->
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <h5 class="headin5_amrc col_white_amrc pt2">Ikuti Kami Di</h5>
-                            <!--headin5_amrc-->
-                            <!-- <p class="mb10">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                            Ipsum has been the industry's standard dummy text ever since the 1500s</p> -->
-                            <ul class="footer-social">
-                                <li><a class="facebook hb-xs-margin" href="#"><span class="hb hb-xs spin hb-facebook"><i class="fab fa-facebook-f"></i></span></a></li>
-                                <li><a class="twitter hb-xs-margin" href="#"><span class="hb hb-xs spin hb-twitter"><i class="fab fa-twitter"></i></span></a></li>
-                                <li><a class="instagram hb-xs-margin" href="#"><span class="hb hb-xs spin hb-instagram"><i class="fab fa-instagram"></i></span></a></li>
-                                <li><a class="googleplus hb-xs-margin" href="#"><span class="hb hb-xs spin hb-google-plus"><i class="fab fa-google-plus-g"></i></span></a></li>
-                                <li><a class="dribbble hb-xs-margin" href="#"><span class="hb hb-xs spin hb-dribbble"><i class="fab fa-dribbble"></i></span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <p class="copyright text-center">
-                        Copyright &copy; TIFTECH UMRI <?= date('Y') ?>
-                    </p>
-                </div>
-            </footer>
         </div>
 
-        <!-- Bootstrap core JavaScript -->
-        <script src="<?= site_url('assets/') ?>vendor/jquery/jquery.min.js"></script>
-        <script src="<?= site_url('assets/') ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="<?= site_url('assets/') ?>js/imagesloaded.pkgd.min.js"></script>
-        <script src="<?= site_url('assets/') ?>js/isotope.pkgd.min.js"></script>
-        <script src="<?= site_url('assets/') ?>js/filter.js"></script>
-        <script src="<?= site_url('assets/') ?>js/jquery.appear.js"></script>
-        <script src="<?= site_url('assets/') ?>js/owl.carousel.min.js"></script>
-        <script src="<?= site_url('assets/') ?>js/jquery.fancybox.min.js"></script>
-        <script src="<?= site_url('assets/') ?>js/script.js"></script>
+        <?php $this->load->view('template/footer'); ?>
+    </div>
+
+    <script>
+        var myIndex = 0;
+        carousel();
+
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("ig-slide-item");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            myIndex++;
+            if (myIndex > x.length) {
+                myIndex = 1
+            }
+            x[myIndex - 1].style.display = "block";
+            setTimeout(carousel, 2000); // Change image every 2 seconds
+        }
+    </script>
+    <!-- Bootstrap core JavaScript -->
+    <script src="<?= site_url('assets/') ?>vendor/jquery/jquery.min.js"></script>
+    <script src="<?= site_url('assets/') ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?= site_url('assets/') ?>js/imagesloaded.pkgd.min.js"></script>
+    <script src="<?= site_url('assets/') ?>js/isotope.pkgd.min.js"></script>
+    <script src="<?= site_url('assets/') ?>js/filter.js"></script>
+    <script src="<?= site_url('assets/') ?>js/jquery.appear.js"></script>
+    <script src="<?= site_url('assets/') ?>js/owl.carousel.min.js"></script>
+    <script src="<?= site_url('assets/') ?>js/jquery.fancybox.min.js"></script>
+    <script src="<?= site_url('assets/') ?>js/script.js"></script>
+
 </body>
 
 </html>

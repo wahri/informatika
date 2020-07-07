@@ -32,8 +32,8 @@
                                     <td><?= $s['menu'] ?></td>
                                     <td><?= $s['link'] ?></td>
                                     <td class="align-middle text-center">
-                                        <a href="" class="btn btn-warning">Edit</a>
-                                        <a href="" class="btn btn-danger">Delete</a>
+                                        <!-- <a href="" class="btn btn-warning">Edit</a> -->
+                                        <a href="<?= base_url('admin/deletemenu/') . $s['id_menu'] ?>" class="btn btn-danger">Delete</a>
                                     </td>
                                 </tr>
 

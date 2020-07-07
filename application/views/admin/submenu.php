@@ -19,7 +19,6 @@
                                 <th width="10%">No</th>
                                 <th>Nama Menu</th>
                                 <th>Nama Submenu</th>
-                                <th>Link</th>
                                 <th width="30%" class="text-center">Action</th>
                             </tr>
                         </thead>
@@ -33,10 +32,9 @@
                                     <td class="align-middle text-center"><?= $i ?></td>
                                     <td><?= $nama_menu['menu'] ?></td>
                                     <td><?= $s['submenu'] ?></td>
-                                    <td><?= $s['link'] ?></td>
                                     <td class="align-middle text-center">
-                                        <a href="" class="btn btn-warning">Edit</a>
-                                        <a href="" class="btn btn-danger">Delete</a>
+                                        <!-- <a href="" class="btn btn-warning">Edit</a> -->
+                                        <a href="<?= base_url('admin/deletesubmenu/') . $s['id_submenu'] ?>" class="btn btn-danger">Delete</a>
                                     </td>
                                 </tr>
 
@@ -84,8 +82,15 @@
                             <small id="error" class="form-text text-danger"><?= form_error('submenu') ?></small>
                         </div>
                         <div class="form-group">
-                            <label for="link">Link</label>
-                            <input type="text" class="form-control" id="link" name="link">
+                            <label for="link">Link page</label>
+                            <?php
+                            $page = $this->db->get('page')->result_array();
+                            ?>
+                            <select class="custom-select" name="link" id="link">
+                                <?php foreach ($page as $p) : ?>
+                                    <option value="page/detail/<?= $p['id_page'] ?>"><?= $p['judul'] ?></option>
+                                <?php endforeach; ?>
+                            </select>
                             <small id="error" class="form-text text-danger"><?= form_error('link') ?></small>
                         </div>
                 </div>

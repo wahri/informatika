@@ -31,14 +31,15 @@ a.btn-primary:hover {
 }
 
 a.btn-coklat {
-	background-color: #ffe3b3;
-	border-color: #ffe3b3;
+	background-color: #fff;
+	border-color: #fff;
 	color: #323232;
 }
 
 a.btn-coklat:hover {
-	background-color: #ffffff;
-	border-color: #ffffff;
+	background-color: #323232;
+	border-color: #323232;
+	color: #fff;
 }
 
 button.btn-primary {
@@ -108,7 +109,7 @@ button.btn-secondary:hover {
 
 .social-media ul li a {
 	font-size: 16px;
-	color: #ffe3b3;
+	color: #fff;
 }
 
 .social-media ul li a:hover {
@@ -125,7 +126,7 @@ button.btn-secondary:hover {
 .contact-details ul li {
 	display: inline-block;
 	padding: 0px 5px;
-	color: #ffe3b3;
+	color: #fff;
 }
 
 .wrapper-main {
@@ -134,7 +135,7 @@ button.btn-secondary:hover {
 }
 
 .top-nav {
-	background-color: #ffe3b3 !important;
+	background-color: #fff !important;
 }
 
 .navbar-expand-lg.top-nav .navbar-nav .nav-link {
@@ -337,7 +338,6 @@ button.btn-secondary:hover {
 .slider-main .carousel .carousel-inner .carousel-item:before {
 	content: "";
 	position: absolute;
-	background: rgba(0, 0, 0, 0.5);
 	top: 0px;
 	left: 0px;
 	width: 100%;
@@ -346,7 +346,7 @@ button.btn-secondary:hover {
 
 .slider-main h3,
 .slider-main p {
-	color: #ffe3b3;
+	color: #fff;
 }
 
 .carousel-item {
@@ -367,6 +367,7 @@ button.btn-secondary:hover {
 
 .services-bar {
 	padding: 20px 0px 30px 0px;
+	background: url(../images/dott.jpg);
 }
 
 .services-bar h1 {
@@ -390,7 +391,7 @@ button.btn-secondary:hover {
 	border-top: 3px solid #485ea0;
 }
 
-.card a {
+.services-bar .card a {
 	cursor: pointer;
 	position: absolute;
 	width: 100%;
@@ -416,14 +417,12 @@ button.btn-secondary:hover {
 .services-bar .card .card-footer {
 	background-color: #323232;
 }
-
 .about-main {
 	padding: 30px 0px;
-	color: #ffe3b3;
 }
 
 .about-main h2 {
-	font-size: 38px;
+	font-size: 30px;
 	font-weight: 600;
 	margin-bottom: 20px;
 	padding-bottom: 10px;
@@ -433,10 +432,10 @@ button.btn-secondary:hover {
 .about-main h2:after {
 	content: "";
 	position: absolute;
-	border-bottom: 2px dotted #ffe3b3;
+	border-bottom: 2px dotted #000000;
 	bottom: 0px;
 	height: 2px;
-	width: 100px;
+	width: 100%;
 	left: 0px;
 }
 
@@ -461,10 +460,6 @@ button.btn-secondary:hover {
 	font-size: 15px;
 }
 
-.about-main hr {
-	background-color: #ffe3b3;
-}
-
 .about-main ul li:before {
 	content: "\f0da";
 	font-family: 'Font Awesome 5 Free';
@@ -472,7 +467,7 @@ button.btn-secondary:hover {
 	position: absolute;
 	left: -15px;
 	top: 0px;
-	color: #ffe3b3;
+	color: #1273eb;
 }
 
 .card-img img {
@@ -488,7 +483,7 @@ button.btn-secondary:hover {
 	font-size: 45px;
 	margin-bottom: 20px;
 	text-align: center;
-	color: #ffe3b3;
+	color: #fff;
 }
 
 .project-menu {
@@ -770,9 +765,14 @@ button.btn-secondary:hover {
 }
 
 .touch-line a.btn-secondary {
-	background-color: #ffe3b3;
-	color: #485ea0;
-	border-color: #ffe3b3;
+	background-color: #fff;
+	color: #323232;
+	border-color: #fff;
+}
+.touch-line a.btn-secondary:hover {
+	background-color: #323232;
+	color: #fff;
+	border-color: #323232;
 }
 
 .footer {
@@ -1107,8 +1107,8 @@ footer p {
 .hb-twitter,
 .hb-twitter:before,
 .hb-twitter:after {
-	background: #55ACEE;
-	border-color: #55ACEE;
+	background: #be2727;
+	border-color: #be2727;
 	color: #ffffff;
 }
 
@@ -1116,8 +1116,8 @@ footer p {
 .hb-twitter:hover:before,
 .hb-twitter:hover:after {
 	background: transparent;
-	border-color: #55ACEE;
-	color: #55ACEE;
+	border-color: #be2727;
+	color: #be2727;
 }
 
 /* Twitter inverts */
@@ -1296,7 +1296,7 @@ footer p {
 }
 
 .breadcrumb-main .breadcrumb li {
-	color: #ffe3b3;
+	color: #fff;
 	display: inline-block;
 	font-size: 15px;
 }
@@ -1340,7 +1340,7 @@ footer p {
 	position: absolute;
 	left: -15px;
 	top: 0px;
-	color: #ffe3b3;
+	color: #fff;
 }
 
 .team-members-box {
@@ -1365,8 +1365,10 @@ footer p {
 }
 
 .our-team img {
+	object-fit: contain;
+	max-height: 350px;
 	width: 100%;
-	height: auto;
+	background-color: #1f1f1f;
 }
 
 .our-team .team-content {
@@ -1405,7 +1407,7 @@ footer p {
 	display: block;
 	font-size: 15px;
 	font-style: italic;
-	color: #323232;
+	color: #fff;
 	text-transform: capitalize;
 	height: 0;
 	opacity: 0;
@@ -1454,10 +1456,10 @@ footer p {
 	transition: all 0.5s ease 0s;
 }
 
-#tentang,
+/* #tentang,
 #portfolio {
 	background-color: #485ea0;
-}
+} */
 
 
 .our-team .social li a:hover {

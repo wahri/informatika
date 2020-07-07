@@ -1,14 +1,15 @@
 $primary:#485ea0;
-$brown: #ffe3b3;
+$brown: #fff;
 
 #akademik {
     background-color: $primary;
     padding: 70px;
     color: $brown;
 
-    hr{
+    hr {
         background-color: $brown;
     }
+
     h1 {
         color: $brown;
     }
@@ -61,5 +62,102 @@ $brown: #ffe3b3;
             font-size: 20px;
             color: $brown;
         }
+    }
+}
+
+#page {
+    background-color: $primary;
+    padding: 3rem 0 3rem 0;
+    margin-top: -20px;
+    color: $brown;
+
+    h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+        font-size: 24px;
+    }
+
+    p {
+        text-align: justify;
+    }
+
+    blockquote {
+        border-left: 3px solid $brown;
+        padding-left: 20px;
+    }
+
+    blockquote p {
+        font-style: italic;
+        font-size: 20px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        border: 1px solid $brown;
+    }
+}
+
+#tentang {
+    .about-main {
+        .ig-slide {
+            width: 400px;
+            height: 400px;
+            box-sizing: border-box;
+            transform: scale(1.1);
+            transition: .25s transform ease-in-out;
+            cursor: pointer;
+            box-shadow: 3px 5px 15px rgba(0, 0, 0, .15);
+
+            a {
+                &.link-ig {
+                    cursor: pointer;
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 1;
+                }
+            }
+
+
+            .ig-slide-item {
+                display: none;
+            }
+
+            &:hover {
+                transform: scale(1, 1);
+                transition: .6s;
+            }
+        }
+
+
+    }
+}
+
+.daftar {
+    background: $primary;
+    position: relative;
+
+    p {
+        color: #ffffff;
+        font-size: 15px;
+        font-weight: 600;
+        font-size: 22px;
+    }
+
+    :after {
+        position: absolute;
+        content: "";
+        z-index: -1;
+        left: 0;
+        top: auto;
+        bottom: -46px;
+        right: auto;
+        z-index: -1;
+        width: 100%;
+        height: 50px;
+        background-size: cover;
+        background-position: 50% 50%;
+        background-image: url(../images/path-reverse.png);
     }
 }

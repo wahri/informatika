@@ -6,10 +6,10 @@
                 <div class="social-media">
                     <ul>
                         <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                        <!-- <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li> -->
+                        <li><a href="https://www.instagram.com/informatika_umri/" target="_blank"><i class="fab fa-instagram"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -59,6 +59,9 @@
                     endif;
                 endforeach;
                 ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://sites.google.com/umri.ac.id/sipenol/home" target="_blank">Info KP/TA</a>
+                </li>
             </ul>
         </div>
     </div>
