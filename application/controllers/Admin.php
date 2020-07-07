@@ -744,4 +744,13 @@ class Admin extends CI_Controller
             }
         }
     }
+
+    public function datapage()
+    {
+        $this->db->select('id_page');
+        $this->db->select('judul');
+        $page = $this->db->get('page')->result_array();
+
+        echo json_encode($page);
+    }
 }

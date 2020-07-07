@@ -11,7 +11,6 @@
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 <script src="<?= site_url('assets/admin/') ?>js/scripts.js"></script>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
 <!-- <script src="<?= site_url('assets/admin/') ?>assets/demo/chart-area-demo.js"></script>
 <script src="<?= site_url('assets/admin/') ?>assets/demo/chart-bar-demo.js"></script> -->
@@ -26,12 +25,57 @@
             var recipient = button.data('whatever') // Extract info from data-* attributes
             // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
             // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-            var modal = $(this)
-            modal.find('.modal-title').text('New message to ' + recipient)
-            modal.find('.modal-body input').val(recipient)
+            // var modal = $(this)
+            // modal.find('.modal-title').text('New message to ' + recipient)
+            // modal.find('.modal-body input').val(recipient)
+            $('#hapus').attr("href", "<?= base_url('admin/deletepage/') ?>" + recipient)
         })
     });
 </script>
+
+<script>
+    $(function() {
+        $("#link").change(function() {
+            let link = $('#link').val()
+            if (link === "link") {
+                $("#pilihanPage").remove()
+                $("#pilihan-link").append(
+                    $('<input>', {
+                        type: 'text',
+                        class: "form-control",
+                        name: "link",
+                        id: "pilihanPage",
+                        placeholder: "Masukkan link"
+                    })
+                )
+            } else {
+                $.ajax({
+                    method: "GET",
+                    url: "<?= base_url('admin/datapage') ?>"
+                }).done(function(data) {
+                    $("#pilihanPage").remove()
+                    $("#pilihan-link").append(
+                        $('<select>', {
+                            type: 'text',
+                            class: "form-control",
+                            name: "link",
+                            id: "pilihanPage"
+
+                        })
+                    )
+                    $("#pilihanPage").append(new Option('Pilih'))
+                    let j = JSON.parse(data)
+                    for (let i = 0; i < j.length; i++) {
+                        $("#pilihanPage").append(new Option(j[i].judul, "<?= base_url('page/detail/') ?>" + j[i].id_page))
+                        // console.log(j[i])
+                    }
+                })
+            }
+        })
+    });
+</script>
+
+
 
 </body>
 

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="<?= base_url('assets/images/favicon.ico') ?>">
     <title><?= $judul ?> | Teknik Informatika UMRI</title>
     <meta name="description" content="Web Profil Universitas Muhammadiyah Riau">
