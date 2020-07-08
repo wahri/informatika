@@ -41,16 +41,12 @@ class Admin extends CI_Controller
         $config['upload_path'] = './assets/images/slider/';
         $config['allowed_types'] = 'gif|jpg|jpeg|png|pdf|';
         $config['max_size'] = '100000';
-        $config['file_name'] = 'Slider - ' . $this->input->post('judul');
+        $config['file_name'] = 'Slider-';
 
         $this->load->library('upload', $config, 'gambarSlider');
         $this->gambarSlider->initialize($config);
 
-        $this->form_validation->set_rules('judul', 'Judul', 'required|trim');
-        $this->form_validation->set_rules('subjudul', 'Subjudul', 'required|trim');
-        // $this->form_validation->set_rules('namatombol', 'nama tombol', 'required|trim');
-        // $this->form_validation->set_rules('link', 'link', 'required|trim');
-        // $this->form_validation->set_rules('link_active', 'link_active', 'required|trim');
+        $this->form_validation->set_rules('link', 'Link', 'trim');
 
         if ($this->form_validation->run() == FALSE) {
             $data['error'] = $this->gambarSlider->display_errors();
@@ -60,8 +56,7 @@ class Admin extends CI_Controller
             if ($this->gambarSlider->do_upload('gambar')) {
                 $data = [
                     'gambar' => $this->gambarSlider->data('file_name'),
-                    'judul' => $this->input->post('judul'),
-                    'subjudul' => $this->input->post('subjudul')
+                    'link' => $this->input->post('link')
                 ];
                 $this->db->insert('slider', $data);
                 redirect('admin/slider');
@@ -71,6 +66,11 @@ class Admin extends CI_Controller
                 $this->tampilan('tambahslider', $data);
             }
         }
+    }
+
+    public function editSlider($id)
+    {
+        echo "tes";
     }
 
     public function deleteSlider($id)
@@ -712,8 +712,8 @@ class Admin extends CI_Controller
             $data['dosen'] = $this->db->get_where('dosen', ['id_dosen' => $id])->row_array();
             $data['judul'] = "Dosen TIF";
             $this->tampilan('editdosen', $data);
-        }else{
-            if($foto){
+        } else {
+            if ($foto) {
                 $dosen = $this->db->get_where('dosen', ['id_dosen' => $id])->row_array();
                 $link = "./assets/images/dosen/";
                 unlink($link . $dosen['foto']);
@@ -733,7 +733,7 @@ class Admin extends CI_Controller
                     $data['judul'] = "Dosen TIF";
                     $this->tampilan('editdosen', $data);
                 }
-            }else{
+            } else {
                 $data = [
                     'nama' => $this->input->post('nama'),
                     'jabatan' => $this->input->post('jabatan')
@@ -752,5 +752,16 @@ class Admin extends CI_Controller
         $page = $this->db->get('page')->result_array();
 
         echo json_encode($page);
+    }
+
+    public function aktifkan()
+    {
+        $id = $this->input->post('id_slider');
+        $is_active = $this->input->post('is_active');
+
+        // echo $id;
+        $data['is_active'] = !$is_active;
+        $this->db->update('slider', $data, ['id_slider' => $id]);
+        redirect('admin');
     }
 }

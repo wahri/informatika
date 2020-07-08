@@ -41,43 +41,12 @@
                                 <button class="btn btn-primary" type="submit">Edit Profil</button>
             </form>
         </div>
-</div>
-</div>
-<?php if ($profil['gambar'] != null) : ?>
-    <div class="col-md-3 text-center">
-        <div class="row">
-            <div class="col-md-12">
-                <img src="<?= site_url('assets/images/') . $profil['gambar'] ?>" class="img-fluid">
-            </div>
-        </div>
-        <div class="row mt-3">
-            <div class="col-md-12">
-                <a href="<?= site_url('admin/hapusgambarprofil') ?>" class="btn btn-danger">Ganti Gambar</a>
-            </div>
-        </div>
-    </div>
-<?php else : ?>
-    <?php echo form_open_multipart('admin/uploadgambarprofil'); ?>
-    <div class="row">
-        <div class="col-md-7 justify-content-center">
-            <div class="form-inline mt-3 border py-4 px-4">
-                <div class="form-group mb-2">
-                    <label for="exampleFormControlFile1">Upload gambar</label>
-                    <input type="file" class="form-control-file" id="gambar" name="gambar">
-                </div>
-                <button class="btn btn-primary" type="submit">Upload gambar</button>
-            </div>
-            </form>
-        </div>
-    </div>
-<?php endif; ?>
-</div>
-</div>
-</main>
-<script>
-    ClassicEditor
-        .create(document.querySelector('#editor'))
-        .catch(error => {
-            console.error(error);
-        });
-</script>
+
+    </main>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#editor'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>

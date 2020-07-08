@@ -39,7 +39,7 @@
                                                     <!-- <a href="<?= base_url('admin/deletepage/') . $p['id_page'] ?>" class="btn btn-sm btn-danger">
                                                         <span class="text">Delete</span>
                                                     </a> -->
-                                                    <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#exampleModal" data-whatever="<?= $p['id_page'] ?>">Delete</button>
+                                                    <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#exampleModal" data-idpage="<?= $p['id_page'] ?>" data-method="deletepage">Delete</button>
                                                 </td>
 
                                             </tr>

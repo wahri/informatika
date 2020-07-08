@@ -19,16 +19,26 @@
 <script src="<?= site_url('assets/admin/') ?>assets/demo/datatables-demo.js"></script>
 
 <script>
+    $(function() {
+        $("#is_active").click(function() {
+            // const id = $(this).data('sliderid')
+            // const aktif = $(this).data('isactive')
+
+            console.log("berhasil")
+        })
+    });
+</script>
+
+<script>
     $(document).ready(function() {
         $('#exampleModal').on('show.bs.modal', function(event) {
             var button = $(event.relatedTarget) // Button that triggered the modal
-            var recipient = button.data('whatever') // Extract info from data-* attributes
+            var idPage = button.data('idpage') // Extract info from data-* attributes
+            var method = button.data('method')
             // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
             // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-            // var modal = $(this)
-            // modal.find('.modal-title').text('New message to ' + recipient)
-            // modal.find('.modal-body input').val(recipient)
-            $('#hapus').attr("href", "<?= base_url('admin/deletepage/') ?>" + recipient)
+
+            $('#hapus').attr("href", "<?= base_url('admin/') ?>" + method + "/" + idPage)
         })
     });
 </script>
@@ -60,7 +70,6 @@
                             class: "form-control",
                             name: "link",
                             id: "pilihanPage"
-
                         })
                     )
                     $("#pilihanPage").append(new Option('Pilih'))
@@ -74,6 +83,7 @@
         })
     });
 </script>
+
 
 
 

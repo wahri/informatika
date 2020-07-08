@@ -32,7 +32,7 @@
         ?>
             <header class="slider-main">
                 <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
-                    <ol class="carousel-indicators">
+                    <!-- <ol class="carousel-indicators">
                         <?php
 
                         $j = 0;
@@ -47,7 +47,7 @@
                             $j++;
                         endforeach;
                         ?>
-                    </ol>
+                    </ol> -->
                     <div class="carousel-inner" role="listbox">
                         <!-- Slider -->
                         <?php

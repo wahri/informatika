@@ -40,9 +40,7 @@
                                                     <a href="<?= base_url('admin/editberita/') . $b['id_berita'] ?>" class="btn btn-sm btn-warning">
                                                         <span class="text">Edit</span>
                                                     </a>
-                                                    <a href="<?= base_url('admin/deleteberita/') . $b['id_berita'] ?>" class="btn btn-sm btn-danger">
-                                                        <span class="text">Delete</span>
-                                                    </a>
+                                                    <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#exampleModal" data-idpage="<?= $b['id_berita'] ?>" data-method="deleteberita">Delete</button>
                                                     <a href="<?= base_url('admin/kategoriberita/') . $b['id_berita'] ?>" class="btn btn-sm btn-info">
                                                         <span class="text">Tambah Kategori</span>
                                                     </a>
@@ -86,11 +84,8 @@
                                                     <?= $k['nama_kategori'] ?>
                                                 </td>
                                                 <td>
-                                                    <a href="<?= base_url('admin/deletekategoriberita/') . $k['id_kategori'] ?>" class="badge badge-danger">
-                                                        <span class="text">Delete</span>
-                                                    </a>
+                                                    <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#exampleModal" data-idpage="<?= $k['id_kategori'] ?>" data-method="deletekategoriberita">Delete</button>
                                                 </td>
-
                                             </tr>
                                         <?php endforeach; ?>
 
@@ -131,6 +126,26 @@
                     <button type="submit" class="btn btn-primary">Tambah</button>
                     </form>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Apakah anda yakin?</h5>
+                    <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button> -->
+                    <a id="hapus" href="" class="btn btn-danger ml-auto">Hapus</a>
+                </div>
+                <!-- <div class="modal-body">
+                    <p>Apakah anda yakin?</p>
+                </div> -->
+                <!-- <div class="modal-footer">
+
+                </div> -->
             </div>
         </div>
     </div>
