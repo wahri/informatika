@@ -123,7 +123,7 @@
         <section id="prodi">
             <div class="services-bar pb-5">
                 <div class="container">
-                    <h1 class="h5 py-4 text-header mb-5">Pojok Program Studi</h1>
+                    <h1 class="h5 py-4 text-header mb-5">Pojok Program Studii</h1>
                     <!-- Services Section -->
                     <div class="row">
                         <?php $page1 = $this->db->get_where('page', ['id_page' => $prodi['page-1']])->row_array(); ?>
