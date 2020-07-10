@@ -1,7 +1,7 @@
 <div id="layoutSidenav_content">
     <main>
         <div class="container-fluid">
-            <h1 class="mt-4"><?= $judul ?></h1>
+            <h1 class="mt-4"><?= $judul ?> tes</h1>
             <hr>
             <div class="col-md-8">
                 <div class="card">
