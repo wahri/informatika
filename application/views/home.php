@@ -27,7 +27,7 @@
         <?php $this->load->view('template/header'); ?>
 
         <?php
-        $slider = $this->db->get('slider')->result_array();
+        $slider = $this->db->get_where('slider', ['is_active' => 1])->result_array();
         if ($slider > 0) :
         ?>
             <header class="slider-main">
@@ -55,6 +55,7 @@
                         foreach ($slider as $s) :
                         ?>
                             <div class="carousel-item <?= ($i == 1) ? "active" : "" ?>" style="background-image: url('<?= site_url('assets/images/slider/') . $s['gambar'] ?>')">
+                                <a href="<?= $s['link']; ?>" class="link-slider"></a>
                                 <div class="carousel-caption d-none d-md-block" id="coklat">
                                     <!-- <h3><?= $s['judul'] ?></h3>
                                     <p><?= $s['subjudul'] ?></p>
@@ -258,7 +259,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row mt-5">
+                <div class="row mt-3">
                     <div class="col-lg-12 text-center">
                         <a href="<?= base_url('page/beritatif') ?>" class="btn btn-lg btn-primary">Lihat lebih banyak</a>
                     </div>

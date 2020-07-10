@@ -1,4 +1,7 @@
-<script src="https://cdn.ckeditor.com/ckeditor5/19.0.0/classic/ckeditor.js"></script>
+<!-- <script src="https://cdn.ckeditor.com/ckeditor5/19.0.0/classic/ckeditor.js"></script> -->
+<!-- <script src="https://cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script> -->
+<script src="<?= base_url('assets/ckeditor/ckeditor.js') ?>"></script>
+
 
 <div id="layoutSidenav_content">
     <main>
@@ -41,10 +44,14 @@
 
 
 
-    <script>
+    <!-- <script>
         ClassicEditor
             .create(document.querySelector('#editor'))
             .catch(error => {
                 console.error(error);
             });
+    </script> -->
+
+    <script>
+        CKEDITOR.replace('isi');
     </script>

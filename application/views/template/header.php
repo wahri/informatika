@@ -27,7 +27,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-light top-nav">
     <div class="container">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="<?= base_url() ?>">
             <img src="<?= site_url('assets/images/') ?>logo.png" alt="logo" height="50px">
         </a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,21 +47,18 @@
                             <a class="nav-link <?= ($link == $m['menu']) ? "active" : "" ?>" href="<?= $m['link'] ?>" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?= $m['menu'] ?><i class="fas fa-sort-down"></i></a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
                                 <?php foreach ($submenu as $sm) : ?>
-                                    <a class="dropdown-item" href="<?= site_url() . $sm['link'] ?>"><?= $sm['submenu'] ?></a>
+                                    <a class="dropdown-item" href="<?= $sm['link'] ?>"><?= $sm['submenu'] ?></a>
                                 <?php endforeach; ?>
                             </div>
                         </li>
                     <?php else : ?>
                         <li class="nav-item">
-                            <a class="nav-link <?= ($link == $m['menu']) ? "active" : "" ?>" href="<?= site_url() . $m['link'] ?>"><?= $m['menu'] ?></a>
+                            <a class="nav-link <?= ($link == $m['menu']) ? "active" : "" ?>" href="<?= $m['link'] ?>"><?= $m['menu'] ?></a>
                         </li>
                 <?php
                     endif;
                 endforeach;
                 ?>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://sites.google.com/umri.ac.id/sipenol/home" target="_blank">Info KP/TA</a>
-                </li>
             </ul>
         </div>
     </div>

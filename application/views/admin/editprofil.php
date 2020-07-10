@@ -1,5 +1,6 @@
 <div id="layoutSidenav_content">
-    <script src="https://cdn.ckeditor.com/ckeditor5/19.0.0/classic/ckeditor.js"></script>
+    <!-- <script src="https://cdn.ckeditor.com/ckeditor5/19.0.0/classic/ckeditor.js"></script> -->
+    <script src="<?= base_url('assets/ckeditor/ckeditor.js') ?>"></script>
 
     <main>
         <div class="container-fluid">
@@ -26,7 +27,7 @@
                     </div>
                 </div>
                 <div class="row mt-4">
-                    <div class="col-md-9">
+                    <div class="col-md-12">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
@@ -43,10 +44,13 @@
         </div>
 
     </main>
-    <script>
+    <!-- <script>
         ClassicEditor
             .create(document.querySelector('#editor'))
             .catch(error => {
                 console.error(error);
             });
+    </script> -->
+    <script>
+        CKEDITOR.replace('paragraf');
     </script>

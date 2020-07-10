@@ -26,12 +26,12 @@
                                     <td rowspan="2" class="align-middle text-center"><?= $i ?></td>
                                     <td rowspan="2"><img src="<?= base_url('assets/images/slider/') . $s['gambar'] ?>" width="100%"></td>
                                     <td class="align-middle text-center">
-                                        <a href="" class="btn btn-warning">Edit</a>
+                                        <a href="<?= base_url('admin/editslider/').$s['id_slider'] ?>" class="btn btn-warning">Edit</a>
                                     </td>
                                     <td rowspan="2" class="align-middle text-center">
                                         <div id="switchonoff">
                                             <label class="switch">
-                                                <input id="is_active" type="checkbox" data-sliderid="<?= $s['id_slider'] ?>" data-isactive="<?= $s['is_active'] ?>" <?= $s['is_active'] == 1 ? "checked" : "" ?>>
+                                                <input class="switch_active" type="checkbox" data-sliderid="<?= $s['id_slider'] ?>" data-isactive="<?= $s['is_active'] ?>" <?= $s['is_active'] == 1 ? "checked" : "" ?>>
                                                 <span class="slider round"></span>
                                             </label>
                                         </div>

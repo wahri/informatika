@@ -68,9 +68,49 @@ class Admin extends CI_Controller
         }
     }
 
-    public function editSlider($id)
+    public function editSlider($id, $ubahgambar = 0)
     {
-        echo "tes";
+        $config['upload_path'] = './assets/images/slider/';
+        $config['allowed_types'] = 'gif|jpg|jpeg|png|pdf|';
+        $config['max_size'] = '100000';
+        $config['file_name'] = 'Slider-';
+
+        $data['ubahgambar'] = $ubahgambar;
+        $data['slider'] = $this->db->get_where('slider', ['id_slider' => $id])->row_array();
+
+        $this->load->library('upload', $config, 'gambarSlider');
+        $this->gambarSlider->initialize($config);
+
+        $this->form_validation->set_rules('link', 'Link', 'trim');
+
+        if ($this->form_validation->run() == FALSE) {
+            $data['error'] = $this->gambarSlider->display_errors();
+            $data['judul'] = "Edit Slider";
+            $this->tampilan('editslider', $data);
+        } else {
+            if($ubahgambar == 1){
+                if ($this->gambarSlider->do_upload('gambar')) {
+                    $dataa = [
+                        'gambar' => $this->gambarSlider->data('file_name'),
+                        'link' => $this->input->post('link')
+                    ];
+                    $this->db->update('slider', $dataa, ['id_slider' => $id]);
+                    $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil mengubah slider!</div>');
+                    redirect('admin/slider');
+                } else {
+                    $data['error'] = $this->gambarSlider->display_errors();
+                    $data['judul'] = "Edit Slider";
+                    $this->tampilan('editslider', $data);
+                }
+            }else if($ubahgambar == 0){
+                $dataa['link'] = $this->input->post('link');
+                $this->db->update('slider', $dataa, ['id_slider' => $id]);
+                $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil mengubah slider!</div>');
+                redirect('admin/slider');
+            }else{
+                echo "something is wrong!";
+            }
+        }
     }
 
     public function deleteSlider($id)
@@ -165,7 +205,7 @@ class Admin extends CI_Controller
 
     public function menu()
     {
-        $this->form_validation->set_rules('urutan', 'Urutan', 'required');
+        $this->form_validation->set_rules('urutan', 'Urutan', 'required|is_unique[menu.urutan]');
         $this->form_validation->set_rules('menu', 'Menu', 'required');
         $this->form_validation->set_rules('link', 'Link', 'required');
 
@@ -183,6 +223,30 @@ class Admin extends CI_Controller
             ];
             $this->db->insert('menu', $data);
             $this->session->set_flashdata('message', '<div class="alert alert-success mt-4" role="alert">Berhasil Menambahkan Menu!</div>');
+            redirect('admin/menu');
+        }
+    }
+
+    public function editMenu()
+    {
+        $this->form_validation->set_rules('urutan', 'Urutan', 'required');
+        $this->form_validation->set_rules('menu', 'Menu', 'required');
+        $this->form_validation->set_rules('link', 'Link', 'required');
+
+        if ($this->form_validation->run() == FALSE) {
+            $this->db->from('menu');
+            $this->db->order_by('urutan', 'asc');
+            $data['menu'] = $this->db->get()->result_array();
+            $data['judul'] = "Tambah Menu";
+            $this->tampilan('menu', $data);
+        } else {
+            $data = [
+                'urutan' => $this->input->post('urutan'),
+                'menu' => $this->input->post('menu'),
+                'link' => $this->input->post('link')
+            ];
+            $this->db->update('menu', $data, ['id_menu' => $this->input->post('id_menu')]);
+            $this->session->set_flashdata('message', '<div class="alert alert-success mt-4" role="alert">Berhasil Mengubah Menu!</div>');
             redirect('admin/menu');
         }
     }
@@ -213,6 +277,29 @@ class Admin extends CI_Controller
             ];
             $this->db->insert('submenu', $data);
             $this->session->set_flashdata('message', '<div class="alert alert-success mt-4" role="alert">Berhasil Menambahkan submenu!</div>');
+            redirect('admin/submenu');
+        }
+    }
+
+    public function editSubmenu()
+    {
+        $this->form_validation->set_rules('submenu', 'submenu', 'required');
+        $this->form_validation->set_rules('link', 'Link', 'required');
+
+        $id_submenu = $this->input->post('id_submenu');
+        if ($this->form_validation->run() == FALSE) {
+            $data['menu'] = $this->db->get('menu')->result_array();
+            $data['submenu'] = $this->db->get('submenu')->result_array();
+            $data['judul'] = "Tambah submenu";
+            $this->tampilan('submenu', $data);
+        } else {
+            $data = [
+                'id_menu' => $this->input->post('id_menu'),
+                'submenu' => $this->input->post('submenu'),
+                'link' => $this->input->post('link')
+            ];
+            $this->db->update('submenu', $data, ['id_submenu' => $id_submenu]);
+            $this->session->set_flashdata('message', '<div class="alert alert-success mt-4" role="alert">Berhasil mengubah submenu!</div>');
             redirect('admin/submenu');
         }
     }
@@ -309,7 +396,7 @@ class Admin extends CI_Controller
         redirect('admin/berita');
     }
 
-    public function editBerita($id, $gambar = '')
+    public function editBerita($id, $gambar = 0)
     {
         $this->form_validation->set_rules('judul', 'Judul Berita', 'required|trim');
         $this->form_validation->set_rules('isi', 'Isi Berita', 'required|trim');
@@ -331,7 +418,7 @@ class Admin extends CI_Controller
             $data['judul'] = "Berita";
             $this->tampilan('editberita', $data);
         } else {
-            if ($gambar) {
+            if ($gambar == 1) {
                 if ($this->gambar->do_upload('gambar')) {
                     $link = "./assets/images/berita/";
                     unlink($link . $berita['gambar']);
@@ -412,17 +499,25 @@ class Admin extends CI_Controller
                 $this->session->set_flashdata('message', '<div class="alert alert-success mt-4" role="alert">Berhasil mengupload page!</div>');
                 redirect('admin/page');
             } else {
-                $data['error'] = $this->page->display_errors();
-                $data['judul'] = "page";
-                $this->tampilan('tambahpage', $data);
+                // $data['error'] = $this->page->display_errors();
+                // $data['judul'] = "page";
+                // $this->tampilan('tambahpage', $data);
+                $data = [
+                    'judul' => $this->input->post('judul'),
+                    'isi' => $this->input->post('isi')
+                ];
+
+                $this->db->insert('page', $data);
+                $this->session->set_flashdata('message', '<div class="alert alert-success mt-4" role="alert">Berhasil mengupload page!</div>');
+                redirect('admin/page');
             }
         }
     }
 
-    public function editPage($id, $gambar = '')
+    public function editPage($id, $ubahgambar = 0)
     {
-        $this->form_validation->set_rules('judul', 'Judul page', 'required|trim');
-        $this->form_validation->set_rules('isi', 'Isi page', 'required|trim');
+        $this->form_validation->set_rules('judul', 'Judul page', 'trim');
+        $this->form_validation->set_rules('isi', 'Isi page', 'trim');
         $cek_gambar = $this->input->post('cek');
         $config['upload_path'] = './assets/images/page/';
         $config['allowed_types'] = 'jpg|jpeg|png|gif';
@@ -435,13 +530,13 @@ class Admin extends CI_Controller
         $page = $this->db->get_where('page', ['id_page' => $id])->row_array();
 
         if ($this->form_validation->run() == FALSE) {
-            $data['ubahgambar'] = $gambar;
+            $data['ubahgambar'] = $ubahgambar;
             $data['page'] = $page;
             $data['error'] = '';
             $data['judul'] = "page";
             $this->tampilan('editpage', $data);
         } else {
-            if ($cek_gambar) {
+            if ($ubahgambar == 1) {
                 if ($this->page->do_upload('gambar')) {
                     $link = "./assets/images/page/";
                     unlink($link . $page['gambar']);
@@ -457,7 +552,7 @@ class Admin extends CI_Controller
                     redirect('admin/page');
                 } else {
                     $data['error'] = $this->page->display_errors();
-                    $data['ubahgambar'] = $gambar;
+                    $data['ubahgambar'] = $ubahgambar;
                     $data['page'] = $this->db->get_where('page', ['id_page' => $id])->row_array();
                     $data['judul'] = "page";
                     $this->tampilan('editpage', $data);
@@ -756,12 +851,13 @@ class Admin extends CI_Controller
 
     public function aktifkan()
     {
-        $id = $this->input->post('id_slider');
-        $is_active = $this->input->post('is_active');
+        $id = $this->input->post('id');
+        $is_active = $this->input->post('aktif');
 
         // echo $id;
         $data['is_active'] = !$is_active;
         $this->db->update('slider', $data, ['id_slider' => $id]);
-        redirect('admin');
+
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil mengganti status slider!</div>');
     }
 }

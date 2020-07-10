@@ -10,14 +10,21 @@
                         <?php
                         if ($foto) :
                         ?>
-                            <div class="form-group">
-                                <label for="foto">Upload foto</label>
-                                <input type="file" class="form-control-file" id="foto" name="foto">
-                                <small id="error" class="form-text text-danger"><?= $error ?></small>
+                            <div class="row">
+                                <div class="col-auto">
+                                    <div class="form-group">
+                                        <label for="foto">Upload foto</label>
+                                        <input type="file" class="form-control-file" id="foto" name="foto">
+                                        <small id="error" class="form-text text-danger"><?= $error ?></small>
+                                    </div>
+                                </div>
+                                <div class="col-auto d-flex align-items-center ml-auto">
+                                    <a href="<?= base_url('admin/editdosen/') . $dosen['id_dosen'] ?>" class="btn btn-secondary">Batal</a>
+                                </div>
                             </div>
                         <?php else : ?>
                             <img src="<?= base_url('assets/images/dosen/') . $dosen['foto'] ?>" alt="..." class="img-thumbnail mb-3" style="max-height: 200px;">
-                            <a href="<?= base_url('admin/editdosen/') . $dosen['id_dosen'] ?>/1" class="btn btn-danger ml-3">Hapus Foto</a>
+                            <a href="<?= base_url('admin/editdosen/') . $dosen['id_dosen'] ?>/1" class="btn btn-danger ml-3">Ganti Foto</a>
                         <?php endif; ?>
                         <div class="form-group">
                             <label for="nama">Nama</label>

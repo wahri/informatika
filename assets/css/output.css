@@ -56,10 +56,10 @@
 }
 
 #page {
-  background-color: #485ea0;
+  background-color: #ffffff;
   padding: 3rem 0 3rem 0;
   margin-top: -20px;
-  color: #fff;
+  color: rgb(0, 0, 0);
 }
 #page h2 {
   text-align: center;
