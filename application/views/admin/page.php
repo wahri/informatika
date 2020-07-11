@@ -11,7 +11,7 @@
                             <h1 class="h3 text-light"><?= $judul ?></h1>
                         </div>
                         <div class="card-body">
-                            <a href="<?= base_url('admin/tambahpage') ?>" class="btn btn-primary mb-3">Tambah Page</a>
+                            <a href="<?= base_url('admin/tambahpage') ?>" class="btn btn-primary mb-3"> Tambah Halaman</a>
                             <div class="table-responsive">
                                 <table class="table table-sm table-bordered" id="dataTable">
                                     <thead>

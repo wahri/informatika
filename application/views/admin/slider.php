@@ -5,14 +5,15 @@
             <hr>
             <?= $this->session->flashdata('message'); ?>
 
-            <a href="<?= site_url('admin/tambahslider') ?>" class="btn btn-primary mt-3">Tambah slider</a>
+            <a href="<?= site_url('admin/tambahslider') ?>" class="btn btn-primary mt-3">Tambah Slider</a>
+
             <div class="row">
                 <div class="col-md-8">
                     <table class="table mt-3">
                         <thead class="thead-dark">
                             <tr>
                                 <th width="10%">No</th>
-                                <th>Slider</th>
+                                <th>Image</th>
                                 <th width="20%">Action</th>
                                 <th width="15%">Active</th>
                             </tr>
@@ -50,6 +51,7 @@
                 </div>
             </div>
         </div>
+
     </main>
 
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

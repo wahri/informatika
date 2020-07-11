@@ -12,29 +12,13 @@
                         Halaman Home
                     </a> -->
 
-                    <a class="nav-link" href="<?= site_url('admin/pengaturanakun') ?>">
-                        <div class="sb-nav-link-icon"><i class="fas fa-user-cog"></i></div>
-                        Pengaturan Akun
-                    </a>
+
                     <!-- <a class="nav-link" href="<?= site_url('admin/tambahuser') ?>">
                         <div class="sb-nav-link-icon"><i class="fas fa-user-plus"></i></div>
                         Tambah User
                     </a> -->
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                        <div class="sb-nav-link-icon"><i class="fas fa-bars"></i></div>
-                        Navbar
-                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                    </a>
-                    <div class="collapse" id="navbar" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
-                        <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="<?= site_url('admin/menu') ?>">
-                                Tambah Menu
-                            </a>
-                            <a class="nav-link" href="<?= site_url('admin/submenu') ?>">
-                                Tambah Submenu
-                            </a>
-                        </nav>
-                    </div>
+
+
 
                     <!-- <a class="nav-link" href="<?= site_url('admin/default') ?>">
                         <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
@@ -50,7 +34,7 @@
                         <nav class="sb-sidenav-menu-nested nav">
                             <a class="nav-link" href="<?= site_url('admin/slider') ?>">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                Slider
+                                Slider Banner
                             </a>
                             <a class="nav-link" href="<?= site_url('admin/editprofil') ?>">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
@@ -66,21 +50,41 @@
                             </a>
                             <a class="nav-link" href="<?= site_url('admin/organisasi') ?>">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                Organisasi
+                                Unit Kemahasiswaan
+                            </a>
+                        </nav>
+                    </div>
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <div class="sb-nav-link-icon"><i class="fas fa-bars"></i></div>
+                        Menu
+                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    </a>
+                    <div class="collapse" id="navbar" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav">
+                            <a class="nav-link" href="<?= site_url('admin/menu') ?>">
+                                Tambah Menu
+                            </a>
+                            <a class="nav-link" href="<?= site_url('admin/submenu') ?>">
+                                Tambah Submenu
                             </a>
                         </nav>
                     </div>
                     <a class="nav-link" href="<?= site_url('admin/dosen') ?>">
                         <div class="sb-nav-link-icon"><i class="fas fa-user-edit"></i></div>
-                        Dosen TIF
+                        Daftar Dosen
                     </a>
                     <a class="nav-link" href="<?= site_url('admin/berita') ?>">
                         <div class="sb-nav-link-icon"><i class="fas fa-edit"></i></div>
-                        Buat Berita
+                        Tulis Berita
                     </a>
                     <a class="nav-link" href="<?= site_url('admin/page') ?>">
                         <div class="sb-nav-link-icon"><i class="fas fa-file-alt"></i></div>
-                        Tambah Page
+                        Tambah Halaman
+                    </a>
+                    <div class="sb-sidenav-menu-heading">Pengaturan</div>
+                    <a class="nav-link" href="<?= site_url('admin/pengaturanakun') ?>">
+                        <div class="sb-nav-link-icon"><i class="fas fa-user-cog"></i></div>
+                        Ganti Password
                     </a>
 
 
