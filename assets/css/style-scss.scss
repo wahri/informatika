@@ -1,17 +1,18 @@
-$primary:#485ea0;
-$brown: #fff;
-
+$white:#485ea0;
+$black: #fff;
+$white: #ffffff;
+$black: #323232;
 #akademik {
-    background-color: $primary;
+    background-color: $white;
     padding: 70px;
-    color: $brown;
+    color: $black;
 
     hr {
-        background-color: $brown;
+        background-color: $black;
     }
 
     h1 {
-        color: $brown;
+        color: $black;
     }
 
     .akademik-title {
@@ -22,8 +23,8 @@ $brown: #fff;
 
     .akademik-item {
         padding: 30px;
-        border-right: 1px solid $brown;
-        border-bottom: 1px solid $brown;
+        border-right: 1px solid $black;
+        border-bottom: 1px solid $black;
         position: relative;
         padding-left: 30px;
         padding-top: 50px;
@@ -33,7 +34,7 @@ $brown: #fff;
         &::before {
             content: '';
             position: absolute;
-            background: $brown;
+            background: $black;
             top: 0;
             right: 0;
             left: 50px;
@@ -43,7 +44,7 @@ $brown: #fff;
         &::after {
             content: '';
             position: absolute;
-            background: $brown;
+            background: $black;
             width: 1px;
             left: 0;
             bottom: 0;
@@ -54,22 +55,22 @@ $brown: #fff;
             position: absolute;
             left: -12px;
             top: -12px;
-            border: 1px solid $brown;
+            border: 1px solid $black;
             height: 50px;
             width: 50px;
             text-align: center;
             line-height: 50px;
             font-size: 20px;
-            color: $brown;
+            color: $black;
         }
     }
 }
 
 #page {
-    background-color: $primary;
+    background-color: $white;
     padding: 3rem 0 3rem 0;
     margin-top: -20px;
-    color: $brown;
+    color: $black;
 
     h2 {
         text-align: center;
@@ -82,7 +83,7 @@ $brown: #fff;
     }
 
     blockquote {
-        border-left: 3px solid $brown;
+        border-left: 3px solid $black;
         padding-left: 20px;
     }
 
@@ -94,7 +95,7 @@ $brown: #fff;
     table {
         width: 100%;
         border-collapse: collapse;
-        border: 1px solid $brown;
+        border: 1px solid $black;
     }
 }
 
@@ -135,7 +136,7 @@ $brown: #fff;
 }
 
 .daftar {
-    background: $primary;
+    background: $white;
     position: relative;
 
     p {
