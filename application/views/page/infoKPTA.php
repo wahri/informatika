@@ -182,7 +182,7 @@
     <section id="content-section" class="content-section">
       <div class="container">
         <div class="single-col-max mx-auto">
-        <h2 class="section-heading text-center mb-5">LINK PENGAJUAN/PENDAFTARAN</h2>
+        <h2 class="section-heading text-center mb-5">PENGAJUAN DAN PENDAFTARAN KP/SKRIPSI</h2>
           <div class="row">
             <div class="col-12 col-md-6">
               <div class="figure-holder mb-5">
@@ -260,7 +260,7 @@
                         </div>
                         <!--//item-heading-->
                         <div class="item-desc">
-                            Standar Operasional Prosedur / tata cara Seminar Proposal daring.
+                            Standar Operasional Prosedur / tata cara Seminar Proposal Online.
                         </div>
                         <!--//item-desc-->
                         <div class="text-center"><a class="btn btn-primary mt-3" href="https://drive.google.com/open?id=1A54-K9Yl79wX8kKOrpk2KEDi_Zs82WWl" target="_blank">Unduh</a></div>
@@ -276,7 +276,7 @@
                         </div>
                         <!--//item-heading-->
                         <div class="item-desc">
-                            Standar Operasional Prosedur / tata cara Seminar Hasil daring.
+                            Standar Operasional Prosedur / tata cara Seminar Hasil Online.
                         </div>
                         <!--//item-desc-->
                         <div class="text-center"><a class="btn btn-primary mt-3" href="#" target="_blank">Unduh</a></div>
@@ -295,7 +295,7 @@
                             Standar Operasional Prosedur / tata cara Sidang Komprehensif
                         </div>
                         <!--//item-desc-->
-                        <div class="text-center"><a class="btn btn-primary mt-3" href="http://www.google.com/url?q=http%3A%2F%2Fsopkompre&sa=D&sntz=1&usg=AFQjCNEcF_eUg9BLdhopMQCsokQTLGnBpg" target="_blank">Unduh</a></div>
+                        <div class="text-center"><a class="btn btn-primary mt-3" href="#" target="_blank">Unduh</a></div>
 
                     </div>
                     <!--//item-inner-->
@@ -310,10 +310,10 @@
                         <!--//item-heading-->
 
                         <div class="item-desc">
-                            Standar Operasional Prosedur / tata cara Seminar Kerja Praktek secara daring
+                            Standar Operasional Prosedur / tata cara Seminar Kerja Praktek Online
                         </div>
                         <!--//item-desc-->
-                        <div class="text-center"><a class="btn btn-primary mt-3" href="http://www.google.com/url?q=http%3A%2F%2Fsopkp&sa=D&sntz=1&usg=AFQjCNEQ9v82wL2KeTqs-WmrnjiG93qQfg" target="_blank">Unduh</a></div>
+                        <div class="text-center"><a class="btn btn-primary mt-3" href="#" target="_blank">Unduh</a></div>
 
                     </div>
                     <!--//item-inner-->
