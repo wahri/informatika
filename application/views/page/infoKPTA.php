@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
-    <title>DevBook - Bootstrap 4 Book/eBook Landing Page Template For Developers</title>
+    <title>Sistem Terpadu Kerja Praktek & Skripsi</title>
 
     <!-- Meta -->
     <meta charset="utf-8">
@@ -25,6 +26,7 @@
 
 <body>
     <header class="header">
+
         <div class="branding">
             <div class="container-fluid position-relative py-3">
                 <!-- <div class="logo-wrapper">
@@ -71,14 +73,14 @@
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
                                         <blockquote class="quote p-4 theme-bg-light">
-                                            "Kini urusan bimbingan, mendaftar, cek dosen pembimbing dan jadwal jadi lebih mudah dan cepat. Tanpa harus datang kekampus semua urusan Administrasi selesai dari rumah.
+                                            "Kini urusan bimbingan, mendaftar, cek dosen pembimbing dan jadwal jadi lebih mudah dan cepat. Tanpa harus datang kekampus semua urusan administrasi selesai dari rumah.
                                             Terimakasih Prodi Teknik Informatika - UMRI"
                                         </blockquote>
                                         <!--//item-->
                                         <div class="source media flex-column flex-md-row align-items-center">
                                             <img class="source-profile mr-md-3" src="<?= base_url('assets/infoKPTA/') ?>images/profiles/profile-1.png" alt="image">
                                             <div class="source-info media-body text-center text-md-left">
-                                                <div class="source-name">James Doe</div>
+                                                <div class="source-name">Rahmad</div>
                                                 <div class="soure-title">Mahasiswa Teknik Informatika Angkatan 2016</div>
                                             </div>
                                         </div>
@@ -153,15 +155,15 @@
                 <div class="item col-12 col-md-6 col-lg-4">
                     <div class="item-inner p-3 p-lg-4">
                         <div class="item-header mb-3">
-                            <div class="item-icon"><i class="fas fa-laptop-code"></i></div>
+                            <div class="item-icon"><i class="fas fa-book"></i></div>
                             <h3 class="item-heading">Panduan Skripsi</h3>
                         </div>
                         <!--//item-heading-->
                         <div class="item-desc">
-                            Panduan penulisan dan tata cara Kerja Praktek.
+                            Panduan penulisan dan tata cara Pengerjaan Skripsi.
                         </div>
                         <!--//item-desc-->
-                        <div class="text-center"><a class="btn btn-primary" href="#">Unduh</a></div>
+                        <div class="text-center"><a class="btn btn-primary mt-3" href="https://drive.google.com/open?id=1FQCl6USOttHfvOZ-OXMJAtxnYyQfvTjw" target="_blank">Unduh</a></div>
                     </div>
                     <!--//item-inner-->
                 </div>
@@ -169,7 +171,7 @@
                 <div class="item col-12 col-md-6 col-lg-4">
                     <div class="item-inner p-3 p-lg-4">
                         <div class="item-header mb-3">
-                            <div class="item-icon"><i class="fab fa-js-square"></i></div>
+                            <div class="item-icon"><i class="fas fa-book"></i></div>
                             <h3 class="item-heading">Panduan Kerja Praktek Covid-19</h3>
                         </div>
                         <!--//item-heading-->
@@ -177,7 +179,7 @@
                             Panduan penulisan dan tata cara Kerja Praktek.
                         </div>
                         <!--//item-desc-->
-                        <div class="text-center"><a class="btn btn-primary" href="#">Unduh</a></div>
+                        <div class="text-center"><a class="btn btn-primary mt-3" href="#" target="_blank">Unduh</a></div>
                     </div>
                     <!--//item-inner-->
                 </div>
@@ -185,7 +187,7 @@
                 <div class="item col-12 col-md-6 col-lg-4">
                     <div class="item-inner p-3 p-lg-4">
                         <div class="item-header mb-3">
-                            <div class="item-icon"><i class="fab fa-rocketchat"></i></div>
+                            <div class="item-icon"><i class="fab fa-leanpub"></i></div>
                             <h3 class="item-heading">SOP Seminar Proposal</h3>
                         </div>
                         <!--//item-heading-->
@@ -193,7 +195,7 @@
                             Standar Operasional Prosedur / tata cara Seminar Proposal daring.
                         </div>
                         <!--//item-desc-->
-                        <div class="text-center"><a class="btn btn-primary" href="#">Unduh</a></div>
+                        <div class="text-center"><a class="btn btn-primary mt-3" href="https://drive.google.com/open?id=1A54-K9Yl79wX8kKOrpk2KEDi_Zs82WWl" target="_blank">Unduh</a></div>
                     </div>
                     <!--//item-inner-->
                 </div>
@@ -201,7 +203,7 @@
                 <div class="item col-12 col-md-6 col-lg-4">
                     <div class="item-inner p-3 p-lg-4">
                         <div class="item-header mb-3">
-                            <div class="item-icon"><i class="fab fa-angular"></i></div>
+                            <div class="item-icon"><i class="fab fa-leanpub"></i></div>
                             <h3 class="item-heading">SOP Seminar Hasil</h3>
                         </div>
                         <!--//item-heading-->
@@ -209,7 +211,7 @@
                             Standar Operasional Prosedur / tata cara Seminar Hasil daring.
                         </div>
                         <!--//item-desc-->
-                        <div class="text-center"><a class="btn btn-primary" href="#">Unduh</a></div>
+                        <div class="text-center"><a class="btn btn-primary mt-3" href="#" target="_blank">Unduh</a></div>
                     </div>
                     <!--//item-inner-->
                 </div>
@@ -217,15 +219,15 @@
                 <div class="item col-12 col-md-6 col-lg-4">
                     <div class="item-inner p-3 p-lg-4">
                         <div class="item-header mb-3">
-                            <div class="item-icon"><i class="fas fa-code-branch"></i></div>
+                            <div class="item-icon"><i class="fab fa-leanpub"></i></div>
                             <h3 class="item-heading">SOP Seminar Komprehensif</h3>
                         </div>
                         <!--//item-heading-->
                         <div class="item-desc">
-                            Standar Operasional Prosedur / tata cara Seminar Komprehensif
+                            Standar Operasional Prosedur / tata cara Sidang Komprehensif
                         </div>
                         <!--//item-desc-->
-                        <div class="text-center"><a class="btn btn-primary" href="#">Unduh</a></div>
+                        <div class="text-center"><a class="btn btn-primary mt-3" href="http://www.google.com/url?q=http%3A%2F%2Fsopkompre&sa=D&sntz=1&usg=AFQjCNEcF_eUg9BLdhopMQCsokQTLGnBpg" target="_blank">Unduh</a></div>
 
                     </div>
                     <!--//item-inner-->
@@ -234,8 +236,8 @@
                 <div class="item col-12 col-md-6 col-lg-4">
                     <div class="item-inner p-3 p-lg-4">
                         <div class="item-header mb-3">
-                            <div class="item-icon"><i class="fas fa-hand-holding-usd"></i></div>
-                            <h3 class="item-heading">SOP Kerja Praktek</h3>
+                            <div class="item-icon"><i class="fab fa-leanpub"></i></div>
+                            <h3 class="item-heading">SOP Seminar Kerja Praktek</h3>
                         </div>
                         <!--//item-heading-->
 
@@ -243,7 +245,7 @@
                             Standar Operasional Prosedur / tata cara Seminar Kerja Praktek secara daring
                         </div>
                         <!--//item-desc-->
-                        <div class="text-center"><a class="btn btn-primary" href="#">Unduh</a></div>
+                        <div class="text-center"><a class="btn btn-primary mt-3" href="http://www.google.com/url?q=http%3A%2F%2Fsopkp&sa=D&sntz=1&usg=AFQjCNEQ9v82wL2KeTqs-WmrnjiG93qQfg" target="_blank">Unduh</a></div>
 
                     </div>
                     <!--//item-inner-->
@@ -260,20 +262,19 @@
 
     <section id="author-section" class="author-section section theme-bg-primary py-5">
         <div class="container py-3">
-            <div class="author-profile text-center mb-5">
-                <img class="author-pic" src="<?= base_url('assets/infoKPTA/') ?>images/profiles/author-profile.png" alt="image">
+            <div class="author-profile text-center mb-2">
+                <!-- <img class="author-pic" src="<?= base_url('assets/infoKPTA/') ?>images/profiles/author-profile.png" alt="image"> -->
             </div>
             <!--//author-profile-->
-            <h2 class="section-heading text-center text-white mb-3">About The Author</h2>
+            <h2 class="section-heading text-center text-white mb-3">PERHATIAN</h2>
             <div class="author-bio single-col-max mx-auto">
-                <p>This book landing page template is made by product designer <a class="theme-link" href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers. You can use this template to self-publish and promote your book/ebook. You can easily use platforms such as <a class="theme-link" href="https://gumroad.com/" target="_blank">Gumroad</a> to handle your book payment and delivery.</p>
-                <p> This template is 100% FREE as long as you <strong>keep the footer attribution link</strong>. You do not have the rights to resell, sublicense or redistribute (even for free) the template on its own or as a separate attachment from any of your work. If you’d like to use this template without the footer attribution link, you can buy the <a class="theme-link" href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/devbook-free-bootstrap-4-book-ebook-landing-page-template-for-developers/" target="_blank"><strong>commercial license</strong></a>.</p>
-                <div class="author-links text-center pt-4">
+                <p>Seluruh aktivitas Pengajuan, Pendaftaran dan Unduh, diakses menggunakan<strong> email @student.umri.ac.id.
+                <!-- <div class="author-links text-center pt-4">
                     <h5 class="text-white mb-4">Follow Author</h5>
                     <ul class="social-list list-unstyled">
                         <li class="list-inline-item"><a href="https://twitter.com/3rdwave_themes"><i class="fab fa-twitter"></i></a></li>
                         <li class="list-inline-item"><a href="https://github.com/xriley"><i class="fab fa-github-alt"></i></a></li>
-                        <li class="list-inline-item"><a href="https://medium.com/@3rdwave_themes"><i class="fab fa-medium-m"></i></a></li>
+                        <li class="li2st-inline-item"><a href="https://medium.com/@3rdwave_themes"><i class="fab fa-medium-m"></i></a></li>
 
                         <li class="list-inline-item"><a href="https://themes.3rdwavemedia.com/"><i class="fas fa-globe-europe"></i></a></li>
                     </ul>
@@ -296,7 +297,7 @@
         <div class="footer-bottom text-center py-5">
 
             <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
-            <small class="copyright">Modificated Designed with <i class="@" style="color: #fb866a;"></i> by <a class="theme-link" href="#" target="_blank">TIFTECH</a> 2020</small>
+            <small class="copyright">copyright <i class="@" style="color: #fb866a;"></i> by <a class="theme-link" href="#" target="_blank">TIFTECH</a> 2020</small>
 
         </div>
 
