@@ -154,7 +154,7 @@
                         </div>
                         <div class="col-lg-4 mb-4">
                             <div class="card">
-                                <a href="#"></a>
+                                <a href="<?= $prodi['link'] ?>"></a>
                                 <img src="<?= base_url('assets/images/poster/') . $prodi['poster'] ?>" class="card-img-top" alt="Poster Event Teknik Informatika Muhammadiyah Riau">
                             </div>
                         </div>

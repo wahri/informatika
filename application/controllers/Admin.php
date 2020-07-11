@@ -681,6 +681,12 @@ class Admin extends CI_Controller
 
             if ($this->gambarPoster->do_upload('gambar')) {
                 $post['poster'] = $this->gambarPoster->data('file_name');
+                $post['link'] = $this->input->post('link');
+                $this->db->update('pojok_prodi', $post, ['id_pojok_prodi' => $id]);
+                $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil mengubah poster!</div>');
+                redirect('admin/pojokprodi');
+            }else{
+                $post['link'] = $this->input->post('link');
                 $this->db->update('pojok_prodi', $post, ['id_pojok_prodi' => $id]);
                 $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil mengubah poster!</div>');
                 redirect('admin/pojokprodi');

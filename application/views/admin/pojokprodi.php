@@ -1,6 +1,6 @@
 <div id="layoutSidenav_content">
     <main>
-        <div class="container-fluid">
+        <div class="container-fluid mb-3">
             <h1 class="mt-4"><?= $judul ?></h1>
             <hr>
             <?php
@@ -72,20 +72,31 @@
                 <?php if ($poster) : ?>
                     <div class="col-md-4 justify-content-center">
                         <?php echo form_open_multipart('admin/editpojokprodi/poster/' . $prodi['id_pojok_prodi']); ?>
-                        <div class="form-inline mt-3 border pl-4 pt-2">
-                            <div class="form-group mb-2">
+                        <div class="mt-3 border px-4 pt-2">
+                            <div class="form-group mb-3">
                                 <label for="poster">Upload poster</label>
                                 <input type="file" class="form-control-file" id="gambar" name="gambar">
                             </div>
-                            <button class="btn btn-primary mb-3" type="submit">Upload poster</button>
+                            <div class="form-group">
+                                <!-- <label for="link">Pilihan Link</label> -->
+                                <select id="link" class="form-control">
+                                    <option selected>Pilihan Link</option>
+                                    <option value="link">Link</option>
+                                    <option value="page">Page</option>
+                                </select>
+                            </div>
+                            <div class="form-group" id="pilihan-link">
+                                <input type="text" class="form-control" name="link" id="pilihanPage" placeholder="Masukkan link" value="<?= $prodi['link'] ?>">
+                            </div>
+                            <a class="btn btn-secondary mb-3" href="<?= base_url('admin/pojokprodi') ?>">Batal</a>
+                            <button class="btn btn-primary mb-3 ml-1" type="submit">Upload poster</button>
                         </div>
                         </form>
                     </div>
                 <?php else : ?>
                     <div class="col-md-4">
-                        <?php $poster = $this->db->get_where('poster', ['id_poster' => $prodi['page-2']])->row_array(); ?>
                         <div class="text-center">
-                            <img src="<?= base_url('assets/images/poster/') . $prodi['poster'] ?>" class="img-thumbnail rounded">
+                            <img src="<?= base_url('assets/images/poster/') . $prodi['poster'] ?>" class="img-thumbnail rounded" style="height: 350px;">
                         </div>
                     </div>
                 <?php endif; ?>

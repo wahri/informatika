@@ -55,4 +55,12 @@ class Page extends CI_Controller
         $data['dosen'] = $this->db->get('dosen')->result_array();
         $this->load->view('page/dosen', $data);
     }
+
+    public function infoKPTA()
+    {
+        $data['judul'] = "Dosen Teknik Informatika";
+        $data['link'] = "Profil";
+        $data['dosen'] = $this->db->get('dosen')->result_array();
+        $this->load->view('page/infoKPTA', $data);
+    }
 }
