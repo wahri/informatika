@@ -24,6 +24,7 @@
 
 </head>
 
+
 <body>
     <!--<header class="header">
 
@@ -47,6 +48,7 @@
             </div>
             <!--//author-profile-->
             <h3 class="section-heading text-center text-white mb-3">PERHATIAN</h3>
+
             <div class="author-bio single-col-max mx-auto">
                 <p>Seluruh aktivitas Pengajuan, Pendaftaran dan Unduh, diakses menggunakan<strong> email @student.umri.ac.id.
                 <!-- <div class="author-links text-center pt-4">
@@ -86,8 +88,8 @@
                         <!--//subheading-->
 
                         <div class="cta-holder">
-                            <a class="btn btn-primary mr-lg-2" href="https://sites.google.com/umri.ac.id/sipenol/kerja-praktek?authuser=0">KERJA PRAKTEK</a>
-                            <a class="btn btn-secondary scrollto" href="https://sites.google.com/umri.ac.id/sipenol/skripsi?authuser=0">SKRIPSI</a>
+                            <a class="btn btn-primary mr-lg-2" href="#content-section">KERJA PRAKTEK</a>
+                            <a class="btn btn-secondary scrollto" href="#content-section">SKRIPSI</a>
 
                         </div>
                         <!--//cta-holder-->
@@ -176,6 +178,42 @@
         <!--//container-->
     </section>
     <!--//hero-section-->
+
+    <section id="content-section" class="content-section">
+      <div class="container">
+        <div class="single-col-max mx-auto">
+        <h2 class="section-heading text-center mb-5">LINK PENGAJUAN/PENDAFTARAN</h2>
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <div class="figure-holder mb-5">
+                <img class="img-fluid" src="<?= base_url('assets/infoKPTA/') ?>images/graduation.png" alt="image" >
+              </div><!--//figure-holder-->
+            </div><!--//col-->
+
+            <div class="col-12 col-md-6 mb-5">
+              <div class="key-points mb-4 text-center">
+                <ul class="key-points-list list-unstyled mb-4 mx-auto d-inline-block text-left">
+                  <li>KERJA PRAKTEK</li>
+                  <li><i class="fas fa-hand-point-right mr-2"></i><a class="theme-link scrollto" href="https://docs.google.com/forms/d/e/1FAIpQLSe0EkYstPaRzhmTJ-bQxTpbAfVd2UpPZMjj8Y0fX4910IV0Ew/viewform" target="_blank">Pengajuan Kerja Praktek.</a></li>
+                  <li><i class="fas fa-hand-point-right mr-2"></i><a class="theme-link scrollto" href="https://drive.google.com/open?id=1uBy2FvcHJWFEuVxMeon3Ppe7QvvKTNWzspnlrPN5mLA" target="_blank">Pendaftaran Seminar Kerja Praktek.</a></li>
+                  <br>
+                  <li>SKRIPSI</li>
+                  <li><i class="fas fa-hand-point-right mr-2"></i><a class="theme-link scrollto" href="https://drive.google.com/open?id=1rJb88xphg2LYmXl7p_oL8ktr1tiEsFLP77b_TDOj2zE" target="_blank">Pengajuan Pra-Proposal Skripsi.</a></li>
+                  <li><i class="fas fa-hand-point-right mr-2"></i><a class="theme-link scrollto" href="https://forms.gle/Ah2VxQVtJytoxFiX6" target="_blank">pendaftaran Seminar Proposal.</a></li>
+                  <li><i class="fas fa-hand-point-right mr-2"></i><a class="theme-link scrollto" href="https://drive.google.com/open?id=1lxhE2kdiilYvcJq_gvAZjdozMU8xHF2HC1t61jKnK6M" target="_blank">Pendaftaran Seminar Hasil.</a></li>
+                  <li><i class="fas fa-user-graduate mr-2"></i><a class="theme-link scrollto" href="https://docs.google.com/forms/d/1QnISDBA_-5JNbwSmcOTyghBWtxhnnrYbiLss5vPwJu8/edit?usp=sharing" target="_blank">Pendaftaran Sidang Komprehensif.</a></li>
+                  <br>
+                  <li>INFORMASI & PENGUMUMAN</li>
+                  <li><i class="fas fa-calendar-alt mr-2"></i><a class="theme-link scrollto" href="https://sites.google.com/umri.ac.id/sipenol/jadwal-seminar?authuser=0" target="_blank">Jadwal Seminar/Sidang.</a></li>
+                  <li><i class="fas fa-user-tie mr-2"></i><a class="theme-link scrollto" href="https://sites.google.com/umri.ac.id/sipenol/pembimbing?authuser=0" target="_blank">Distribusi Pembimbing.</a></li>
+                </ul>
+                <!-- <div class="text-center"><a class="btn btn-primary" href="#" target="_blank">I want this book</a></div> -->
+              </div><!--//key-points-->
+            </div><!--//col-12-->
+          </div><!--//row-->
+        </div><!--//single-col-max-->
+      </div><!--//container-->
+    </section><!--//content-section-->
 
     <section id="benefits-section" class="benefits-section theme-bg-light-gradient py-5">
         <div class="container py-5">
@@ -298,7 +336,7 @@
             <!--//author-profile-->
             <h2 class="section-heading text-center text-white mb-3">Koordinator</h2>
             <div class="author-bio single-col-max mx-auto">
-                <p>Seluruh aktivitas Pengajuan, Pendaftaran dan Unduh, diakses menggunakan<strong> email @student.umri.ac.id.
+                <p>Ada Pertanyaan? Silahkan hubungi kami melalui <strong>destimualfah@umri.ac.id</strong> atau <strong>informatika@umri.ac.id</strong>
                 <!-- <div class="author-links text-center pt-4">
                     <h5 class="text-white mb-4">Follow Author</h5>
                     <ul class="social-list list-unstyled">
