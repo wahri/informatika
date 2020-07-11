@@ -38,35 +38,54 @@
             </div>
         </div>
 
-        <div class="blog-main">
+        <div class="portfolio-col">
             <div class="container">
                 <div class="row">
-                    <!-- Blog Entries Column -->
-                    <?php
-                    foreach ($berita as $b) :
-                    ?>
-                        <div class="col-md-4 blog-entries">
-                            <div class="card mb-4">
-                                <img class="card-img-top" src="<?= base_url('assets/images/berita/') . $b['gambar'] ?>" alt="<?= $b['judul'] ?>" />
-                                <div class="card-body">
-                                    <div class="by-post">
-                                        Posted on <?= date("j F Y ", strtotime($b['datetime'])) ?>
+                    <?php foreach ($berita as $b) : ?>
+                        <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+                            <div class="card h-100">
+                                <a class="hover-box" href="<?= base_url('page/berita/') . $b['id_berita'] ?>">
+                                    <div class="dot-full">
+                                        <i class="fas fa-link"></i>
                                     </div>
-                                    <h2 class="card-title">
-                                        <?= $b['judul'] ?>
-                                    </h2>
-                                    <p class="card-text">
-                                        <?= substr($b['isi'], 0, 100) . '...' ?>
-                                    </p>
-                                    <a href="<?= base_url('page/berita/') . $b['id_berita'] ?>" class="btn btn-primary">Baca lebih lanjut &rarr;</a>
+                                    <img class="card-img-top" src="<?= base_url('assets/images/berita/') . $b['gambar'] ?>" alt="<?= $b['judul'] ?>" />
+                                </a>
+                                <div class="card-body">
+                                    <h4><a href="<?= base_url('page/berita/') . $b['id_berita'] ?>"><?= $b['judul'] ?></a></h4>
+                                    <p>Posted on <?= date("j F Y ", strtotime($b['datetime'])) ?></p>
                                 </div>
                             </div>
-
                         </div>
                     <?php endforeach; ?>
-
                 </div>
-                <!-- /.row -->
+
+                <div class="pagination_bar">
+                    <!-- Pagination -->
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">1</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">3</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
             </div>
             <!-- /.container -->
         </div>

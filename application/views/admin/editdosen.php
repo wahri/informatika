@@ -35,6 +35,36 @@
                             <label for="jabatan">Jabatan</label>
                             <input type="text" class="form-control" id="jabatan" name="jabatan" value="<?= $dosen['jabatan'] ?>"> <small id="error" class="form-text text-danger"><?= form_error('jabatan') ?></small>
                         </div>
+                        <div class="form-group">
+                            <div class="input-group flex-nowrap">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="addon-wrapping">
+                                        <i class="fab fa-facebook"></i>
+                                    </span>
+                                </div>
+                                <input type="text" name="facebook" class="form-control" placeholder="URL Facebook" aria-label="Username" aria-describedby="addon-wrapping" value="<?= $dosen['facebook'] ?>">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group flex-nowrap">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="addon-wrapping">
+                                        <i class="fab fa-instagram"></i>
+                                    </span>
+                                </div>
+                                <input type="text" name="instagram" class="form-control" placeholder="URL Instagram" aria-label="Username" aria-describedby="addon-wrapping" value="<?= $dosen['instagram'] ?>">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group flex-nowrap">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="addon-wrapping">
+                                        <i class="fab fa-linkedin"></i>
+                                    </span>
+                                </div>
+                                <input type="text" name="linkedin" class="form-control" placeholder="URL Linkedin" aria-label="Username" aria-describedby="addon-wrapping" value="<?= $dosen['linkedin'] ?>">
+                            </div>
+                        </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
                     </div>

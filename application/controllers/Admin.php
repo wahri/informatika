@@ -771,7 +771,10 @@ class Admin extends CI_Controller
                 $data = [
                     'foto' => $this->foto->data('file_name'),
                     'nama' => $this->input->post('nama'),
-                    'jabatan' => $this->input->post('jabatan')
+                    'jabatan' => $this->input->post('jabatan'),
+                    'facebook' => $this->input->post('facebook'),
+                    'instagram' => $this->input->post('instagram'),
+                    'linkedin' => $this->input->post('linkedin')
                 ];
                 $this->db->insert('dosen', $data);
                 $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil menambah dosen!</div>');
@@ -822,7 +825,10 @@ class Admin extends CI_Controller
                     $data = [
                         'foto' => $this->foto->data('file_name'),
                         'nama' => $this->input->post('nama'),
-                        'jabatan' => $this->input->post('jabatan')
+                        'jabatan' => $this->input->post('jabatan'),
+                        'facebook' => $this->input->post('facebook'),
+                        'instagram' => $this->input->post('instagram'),
+                        'linkedin' => $this->input->post('linkedin')
                     ];
                     $this->db->update('dosen', $data, ['id_dosen' => $id]);
                     $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil mengubah dosen!</div>');
@@ -837,7 +843,10 @@ class Admin extends CI_Controller
             } else {
                 $data = [
                     'nama' => $this->input->post('nama'),
-                    'jabatan' => $this->input->post('jabatan')
+                    'jabatan' => $this->input->post('jabatan'),
+                    'facebook' => $this->input->post('facebook'),
+                    'instagram' => $this->input->post('instagram'),
+                    'linkedin' => $this->input->post('linkedin')
                 ];
                 $this->db->update('dosen', $data, ['id_dosen' => $id]);
                 $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil mengubah dosen!</div>');

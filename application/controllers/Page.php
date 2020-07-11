@@ -11,7 +11,7 @@ class Page extends CI_Controller
         $data['judul'] = "Home";
         $data['link'] = "Home";
         $this->db->order_by('datetime', 'DESC');
-        $this->db->limit(5);
+        $this->db->limit(4);
         $data['berita'] = $this->db->get('berita')->result_array();
         $this->load->view('home', $data);
     }
@@ -32,8 +32,8 @@ class Page extends CI_Controller
 
     public function beritaTIF()
     {
-        $this->db->order_by('id_berita', 'DESC');
-        $this->db->limit(4);
+        $this->db->order_by('datetime', 'DESC');
+        $this->db->limit(8);
         $data['berita'] = $this->db->get('berita')->result_array();
         $data['judul'] = "Berita TIF";
         $data['link'] = "Berita TIF";

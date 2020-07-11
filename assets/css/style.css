@@ -1505,6 +1505,11 @@ footer p {
 	border: none;
 }
 
+.portfolio-item .card .card-img-top{
+	height: 200px;
+	object-fit: cover;
+}
+
 .portfolio-item .card .card-body {
 	box-shadow: 3px 5px 15px rgba(0, 0, 0, .15);
 }

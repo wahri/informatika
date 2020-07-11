@@ -1,7 +1,7 @@
 <div id="layoutSidenav_content">
     <main>
         <div class="container-fluid">
-            <h1 class="mt-4"><?= $judul ?> tes</h1>
+            <h1 class="mt-4"><?= $judul ?></h1>
             <hr>
             <div class="col-md-8">
                 <div class="card">
@@ -20,7 +20,7 @@
                         <div class="form-group">
                             <label for="foto">Upload foto</label>
                             <input type="file" class="form-control-file" id="foto" name="foto">
-                            <!-- <small id="error" class="form-text text-danger"><?= $error ?></small> -->
+                            <small id="error" class="form-text text-danger"><?= $error ?></small>
                         </div>
                         <div class="form-group">
                             <div class="input-group flex-nowrap">
@@ -29,7 +29,7 @@
                                         <i class="fab fa-facebook"></i>
                                     </span>
                                 </div>
-                                <input type="text" class="form-control" placeholder="URL Facebook" aria-label="Username" aria-describedby="addon-wrapping">
+                                <input type="text" name="facebook" class="form-control" placeholder="URL Facebook" aria-label="Username" aria-describedby="addon-wrapping">
                             </div>
                         </div>
                         <div class="form-group">
@@ -39,7 +39,7 @@
                                         <i class="fab fa-instagram"></i>
                                     </span>
                                 </div>
-                                <input type="text" class="form-control" placeholder="URL Instagram" aria-label="Username" aria-describedby="addon-wrapping">
+                                <input type="text" name="instagram" class="form-control" placeholder="URL Instagram" aria-label="Username" aria-describedby="addon-wrapping">
                             </div>
                         </div>
                         <div class="form-group">
@@ -49,7 +49,7 @@
                                         <i class="fab fa-linkedin"></i>
                                     </span>
                                 </div>
-                                <input type="text" class="form-control" placeholder="URL Linkedin" aria-label="Username" aria-describedby="addon-wrapping">
+                                <input type="text" name="linkedin" class="form-control" placeholder="URL Linkedin" aria-label="Username" aria-describedby="addon-wrapping">
                             </div>
                         </div>
                         <button type="" class="btn btn-secondary">Cancel</button>
