@@ -25,15 +25,25 @@
                     <small id="error" class="form-text text-danger"><?= form_error('isi') ?></small>
                 </div>
             </div>
-            <div class="row mt-5 justify-content-between">
-                <div class="col-md-5 border">
+            <div class="row mt-5">
+                <div class="col-md-auto border">
                     <div class="form-group">
                         <label for="gambar berita">Upload gambar</label>
                         <input type="file" class="form-control-file" name="gambar">
                         <small id="error" class="form-text text-danger"><?= $error ?></small>
                     </div>
                 </div>
-                <div class="col-md-3 text-right">
+                <div class="col-md-3 ml-3">
+                    <div class="form-group">
+                        <label for="link">Kategori</label>
+                        <select id="link" class="form-control">
+                            <option selected>Pilih kategori...</option>
+                            <option value="link">Link</option>
+                            <option value="page">Page</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col text-right">
                     <button class="btn btn-primary mt-3 btn-lg" type="submit">Upload Page</button>
                 </div>
             </div>
