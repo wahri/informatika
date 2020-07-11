@@ -25,7 +25,7 @@
 </head>
 
 <body>
-    <header class="header">
+    <!--<header class="header">
 
         <div class="branding">
             <div class="container-fluid position-relative py-3">
@@ -39,6 +39,36 @@
         <!--//branding-->
     </header>
     <!--//header-->
+
+    <section id="author-section" class="author-section section theme-bg-primary py-1">
+        <div class="container py-3">
+            <div class="author-profile text-center mb-2">
+                <!-- <img class="author-pic" src="<?= base_url('assets/infoKPTA/') ?>images/profiles/author-profile.png" alt="image"> -->
+            </div>
+            <!--//author-profile-->
+            <h3 class="section-heading text-center text-white mb-3">PERHATIAN</h3>
+            <div class="author-bio single-col-max mx-auto">
+                <p>Seluruh aktivitas Pengajuan, Pendaftaran dan Unduh, diakses menggunakan<strong> email @student.umri.ac.id.
+                <!-- <div class="author-links text-center pt-4">
+                    <h5 class="text-white mb-4">Follow Author</h5>
+                    <ul class="social-list list-unstyled">
+                        <li class="list-inline-item"><a href="https://twitter.com/3rdwave_themes"><i class="fab fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="https://github.com/xriley"><i class="fab fa-github-alt"></i></a></li>
+                        <li class="li2st-inline-item"><a href="https://medium.com/@3rdwave_themes"><i class="fab fa-medium-m"></i></a></li>
+
+                        <li class="list-inline-item"><a href="https://themes.3rdwavemedia.com/"><i class="fas fa-globe-europe"></i></a></li>
+                    </ul>
+                    <!--//social-list-->
+                </div>
+                <!--//author-links-->
+
+            </div>
+            <!--//author-bio-->
+
+        </div>
+        <!--//container-->
+    </section>
+    <!--//author-section-->
 
     <section class="hero-section">
         <div class="container">
@@ -263,10 +293,10 @@
     <section id="author-section" class="author-section section theme-bg-primary py-5">
         <div class="container py-3">
             <div class="author-profile text-center mb-2">
-                <!-- <img class="author-pic" src="<?= base_url('assets/infoKPTA/') ?>images/profiles/author-profile.png" alt="image"> -->
+                <img class="author-pic" src="<?= base_url('assets/infoKPTA/') ?>images/profiles/desti.png" class="rounded-circle" alt="image">
             </div>
             <!--//author-profile-->
-            <h2 class="section-heading text-center text-white mb-3">PERHATIAN</h2>
+            <h2 class="section-heading text-center text-white mb-3">Koordinator</h2>
             <div class="author-bio single-col-max mx-auto">
                 <p>Seluruh aktivitas Pengajuan, Pendaftaran dan Unduh, diakses menggunakan<strong> email @student.umri.ac.id.
                 <!-- <div class="author-links text-center pt-4">
