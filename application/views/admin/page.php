@@ -11,13 +11,13 @@
                             <h1 class="h3 text-light"><?= $judul ?></h1>
                         </div>
                         <div class="card-body">
-                            <a href="<?= base_url('admin/tambahpage') ?>" class="btn btn-primary mb-3"> Tambah Halaman</a>
+                            <a href="<?= base_url('admin/tambahpage') ?>" class="btn btn-primary mb-3"><i class="fa fa-plus-square"></i> Add Page</a>
                             <div class="table-responsive">
                                 <table class="table table-sm table-bordered" id="dataTable">
                                     <thead>
                                         <tr>
                                             <th width="8%">No</th>
-                                            <th width="80%">Judul Berita</th>
+                                            <th width="80%">Page Title</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -34,12 +34,12 @@
                                                 </td>
                                                 <td class="align-middle">
                                                     <a href="<?= base_url('admin/editpage/') . $p['id_page'] ?>" class="btn btn-sm btn-warning">
-                                                        <span class="text">Edit</span>
+                                                        <span class="text"><i class="fas fa-highlighter"></i> Edit</span>
                                                     </a>
                                                     <!-- <a href="<?= base_url('admin/deletepage/') . $p['id_page'] ?>" class="btn btn-sm btn-danger">
                                                         <span class="text">Delete</span>
                                                     </a> -->
-                                                    <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#exampleModal" data-idpage="<?= $p['id_page'] ?>" data-method="deletepage">Delete</button>
+                                                    <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#exampleModal" data-idpage="<?= $p['id_page'] ?>" data-method="deletepage"><i class="fa fa-trash"></i></button>
                                                 </td>
 
                                             </tr>

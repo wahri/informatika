@@ -53,7 +53,7 @@
                             </div>
                         </div>
                         <button type="" class="btn btn-secondary">Cancel</button>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary"><i class="fa fa-user-plus"></i> Submit</button>
                         </form>
                     </div>
                 </div>

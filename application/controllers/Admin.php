@@ -171,6 +171,12 @@ class Admin extends CI_Controller
         }
     }
 
+    public function KPTA()
+    {
+            $data['judul'] = "KPTA Manajement";
+            $this->tampilan('kpta', $data);
+    }
+
     public function hapusGambarProfil()
     {
         $profil = $this->db->get('profil')->row_array();
@@ -313,7 +319,7 @@ class Admin extends CI_Controller
 
     public function berita()
     {
-        $data['judul'] = "Berita";
+        $data['judul'] = "News Management";
         $data['kategori'] = $this->db->get('kategori')->result_array();
         $data['berita'] = $this->db->get('berita')->result_array();
         $this->tampilan('berita', $data);
@@ -466,7 +472,7 @@ class Admin extends CI_Controller
     {
         $data['kategori'] = $this->db->get('kategori')->result_array();
         $data['page'] = $this->db->get('page')->result_array();
-        $data['judul'] = "Tambah Page";
+        $data['judul'] = "Page Management";
         $this->tampilan('page', $data);
     }
 
@@ -745,7 +751,7 @@ class Admin extends CI_Controller
     public function dosen()
     {
         $data['dosen'] = $this->db->get('dosen')->result_array();
-        $data['judul'] = "Dosen TIF";
+        $data['judul'] = "Lecturer Members";
         $this->tampilan('dosen', $data);
     }
 
@@ -875,4 +881,6 @@ class Admin extends CI_Controller
 
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil mengganti status slider!</div>');
     }
+
+
 }

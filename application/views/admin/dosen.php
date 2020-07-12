@@ -3,7 +3,7 @@
         <div class="container-fluid">
             <h1 class="mt-4"><?= $judul ?></h1>
             <hr>
-            <a href="<?= base_url('admin/tambahdosen') ?>" class="btn btn-primary mb-3">Tambah Dosen</a>
+            <a href="<?= base_url('admin/tambahdosen') ?>" class="btn btn-primary mb-3"><i class="fa fa-user-plus"></i> Add Lecturer</a>
             <div class="container">
                 <div class="row">
                     <?php
@@ -15,8 +15,8 @@
                                 <div class="card-body text-center">
                                     <h5 class="card-title"><?= $d['nama'] ?></h5>
                                     <p class="card-text"><?= $d['jabatan'] ?></p>
-                                    <a href="<?= base_url('admin/editdosen/') . $d['id_dosen'] ?>" class="btn btn-warning">Edit</a>
-                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" data-idpage="<?= $d['id_dosen'] ?>" data-method="deletedosen">Delete</button>
+                                    <a href="<?= base_url('admin/editdosen/') . $d['id_dosen'] ?>" class="btn btn-warning"><i class="fas fa-highlighter"></i> Edit</a>
+                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" data-idpage="<?= $d['id_dosen'] ?>" data-method="deletedosen"><i class="fa fa-user-times"></i></button>
                                 </div>
                             </div>
                         </div>
