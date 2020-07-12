@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
 <head>
     <title>Sistem Terpadu Kerja Praktek & Skripsi</title>
 
@@ -9,8 +7,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Bootstrap 4 Book/eBook Landing Page Template For Developers">
-    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">
+    <!-- <meta name="description" content="Bootstrap 4 Book/eBook Landing Page Template For Developers"> -->
+    <!-- <meta name="author" content="Xiaoying Riley at 3rd Wave Media"> -->
     <link rel="shortcut icon" href="favicon.ico">
 
     <!-- Google Font -->
@@ -22,10 +20,30 @@
     <!-- Theme CSS -->
     <link id="theme-style" rel="stylesheet" href="<?= base_url('assets/infoKPTA/') ?>css/theme.css">
 
+
+    <!-- Codes by HTML.am -->
+
+<!-- CSS Code -->
+<style type="text/css" scoped>
+.GeneratedMarquee {
+font-family:Corbel, sans-serif;
+font-size:1.2em;
+line-height:1.3em;
+color:#FFFFFF;
+background-color:#ed6524;
+padding:1mm;
+position: fixed;
+z-index:9999;
+
+}
+</style>
+
 </head>
 
-
 <body>
+
+  <marquee class="GeneratedMarquee" direction="left" scrollamount="6" behavior="scroll">PERHATIAN: AKTIVITAS PENGAJUAN, PENDAFTARAN DAN UNDUH, DIAKSES MELALUI EMAIL @student.umri.ac.id</marquee>
+
     <!--<header class="header">
 
         <div class="branding">
@@ -47,18 +65,19 @@
                 <!-- <img class="author-pic" src="<?= base_url('assets/infoKPTA/') ?>images/profiles/author-profile.png" alt="image"> -->
             </div>
             <!--//author-profile-->
-            <h3 class="section-heading text-center text-white mb-3">PERHATIAN</h3>
+            <!-- <h3 class="section-heading text-center text-white mb-3">PERHATIAN</h3> -->
 
             <div class="author-bio single-col-max mx-auto">
-                <p>Seluruh aktivitas Pengajuan, Pendaftaran dan Unduh, diakses menggunakan<strong> email @student.umri.ac.id.
-                <!-- <div class="author-links text-center pt-4">
-                    <h5 class="text-white mb-4">Follow Author</h5>
-                    <ul class="social-list list-unstyled">
-                        <li class="list-inline-item"><a href="https://twitter.com/3rdwave_themes"><i class="fab fa-twitter"></i></a></li>
-                        <li class="list-inline-item"><a href="https://github.com/xriley"><i class="fab fa-github-alt"></i></a></li>
-                        <li class="li2st-inline-item"><a href="https://medium.com/@3rdwave_themes"><i class="fab fa-medium-m"></i></a></li>
+                <!-- <p>Seluruh aktivitas Pengajuan, Pendaftaran dan Unduh, diakses menggunakan<strong> email @student.umri.ac.id. -->
 
-                        <li class="list-inline-item"><a href="https://themes.3rdwavemedia.com/"><i class="fas fa-globe-europe"></i></a></li>
+
+                 <div class="author-links text-center pt-4" >
+                    <!-- <h5 class="text-white mb-4">Follow Author</h5> -->
+                    <ul class="social-list list-unstyled">
+                        <li class="list-inline-item"><a href="http://informatika.umri.ac.id/"><span="tooltip"><i class="fa fa-home"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fas fa-laptop-code"></i></a></li>
+                        <li class="li2st-inline-item"><a href="https://meet.google.com/" target="_blank"><i class="fas fa-video"></i></a></li>
+                        <li class="list-inline-item"><a href="#informasi"><i class="fas fa-bell"></i></a></li>
                     </ul>
                     <!--//social-list-->
                 </div>
@@ -73,6 +92,8 @@
     <!--//author-section-->
 
     <section class="hero-section">
+      <!-- HTML Code -->
+
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-7 pt-5 mb-5 align-self-center">
@@ -107,13 +128,12 @@
                                         <blockquote class="quote p-4 theme-bg-light">
                                             "Kini urusan bimbingan, mendaftar, cek dosen pembimbing dan jadwal jadi lebih mudah dan cepat. Tanpa harus datang kekampus semua urusan administrasi selesai dari rumah.
                                             Terimakasih Prodi Teknik Informatika - UMRI"
-                                        </blockquote>
-                                        <!--//item-->
+                                        </blockquote><!--//item-->
                                         <div class="source media flex-column flex-md-row align-items-center">
-                                            <img class="source-profile mr-md-3" src="<?= base_url('assets/infoKPTA/') ?>images/profiles/profile-1.png" alt="image">
+                                            <img class="source-profile mr-md-3" src="<?= base_url('assets/infoKPTA/') ?>images/profiles/rahmad.png" alt="image">
                                             <div class="source-info media-body text-center text-md-left">
                                                 <div class="source-name">Rahmad</div>
-                                                <div class="soure-title">Mahasiswa Teknik Informatika Angkatan 2016</div>
+                                                <div class="soure-title">Mahasiswa Teknik Informatika Angkatan 2017</div>
                                             </div>
                                         </div>
                                         <!--//source-->
@@ -153,7 +173,6 @@
                                 <!--//carousel-inner-->
                             </div>
                             <!--//quotes-carousel-->
-
                         </div>
                         <!--//hero-quotes-->
                     </div>
@@ -180,10 +199,12 @@
     <!--//hero-section-->
 
     <section id="content-section" class="content-section">
+
       <div class="container">
         <div class="single-col-max mx-auto">
         <h2 class="section-heading text-center mb-5">PENGAJUAN DAN PENDAFTARAN KP/SKRIPSI</h2>
           <div class="row">
+
             <div class="col-12 col-md-6">
               <div class="figure-holder mb-5">
                 <img class="img-fluid" src="<?= base_url('assets/infoKPTA/') ?>images/graduation.png" alt="image" >
@@ -203,9 +224,12 @@
                   <li><i class="fas fa-hand-point-right mr-2"></i><a class="theme-link scrollto" href="https://drive.google.com/open?id=1lxhE2kdiilYvcJq_gvAZjdozMU8xHF2HC1t61jKnK6M" target="_blank">Pendaftaran Seminar Hasil.</a></li>
                   <li><i class="fas fa-user-graduate mr-2"></i><a class="theme-link scrollto" href="https://docs.google.com/forms/d/1QnISDBA_-5JNbwSmcOTyghBWtxhnnrYbiLss5vPwJu8/edit?usp=sharing" target="_blank">Pendaftaran Sidang Komprehensif.</a></li>
                   <br>
-                  <li>INFORMASI & PENGUMUMAN</li>
+                  <div id="informasi" class="informasi">
+                  <li> INFORMASI & PENGUMUMAN</li>
                   <li><i class="fas fa-calendar-alt mr-2"></i><a class="theme-link scrollto" href="https://sites.google.com/umri.ac.id/sipenol/jadwal-seminar?authuser=0" target="_blank">Jadwal Seminar/Sidang.</a></li>
                   <li><i class="fas fa-user-tie mr-2"></i><a class="theme-link scrollto" href="https://sites.google.com/umri.ac.id/sipenol/pembimbing?authuser=0" target="_blank">Distribusi Pembimbing.</a></li>
+                </div>
+
                 </ul>
                 <!-- <div class="text-center"><a class="btn btn-primary" href="#" target="_blank">I want this book</a></div> -->
               </div><!--//key-points-->
@@ -231,7 +255,7 @@
                             Panduan penulisan dan tata cara Pengerjaan Skripsi.
                         </div>
                         <!--//item-desc-->
-                        <div class="text-center"><a class="btn btn-primary mt-3" href="https://drive.google.com/open?id=1FQCl6USOttHfvOZ-OXMJAtxnYyQfvTjw" target="_blank">Unduh</a></div>
+                        <div class="text-center"><a class="btn btn-primary mt-3" href="https://drive.google.com/open?id=1FQCl6USOttHfvOZ-OXMJAtxnYyQfvTjw" target="_blank"><i class="fa fa-download"></i> Unduh</a></div>
                     </div>
                     <!--//item-inner-->
                 </div>
@@ -247,7 +271,8 @@
                             Panduan penulisan dan tata cara Kerja Praktek.
                         </div>
                         <!--//item-desc-->
-                        <div class="text-center"><a class="btn btn-primary mt-3" href="#" target="_blank">Unduh</a></div>
+                        <div class="text-center"><a class="btn btn-primary mt-3" href="#" target="_blank"><i class="fa fa-download"></i> Unduh</a></div>
+
                     </div>
                     <!--//item-inner-->
                 </div>
@@ -263,7 +288,7 @@
                             Standar Operasional Prosedur / tata cara Seminar Proposal Online.
                         </div>
                         <!--//item-desc-->
-                        <div class="text-center"><a class="btn btn-primary mt-3" href="https://drive.google.com/open?id=1A54-K9Yl79wX8kKOrpk2KEDi_Zs82WWl" target="_blank">Unduh</a></div>
+                        <div class="text-center"><a class="btn btn-primary mt-3" href="https://drive.google.com/open?id=1A54-K9Yl79wX8kKOrpk2KEDi_Zs82WWl" target="_blank"><i class="fa fa-download"></i> Unduh</a></div>
                     </div>
                     <!--//item-inner-->
                 </div>
@@ -276,10 +301,10 @@
                         </div>
                         <!--//item-heading-->
                         <div class="item-desc">
-                            Standar Operasional Prosedur / tata cara Seminar Hasil Online.
+                            Standar Operasional Prosedur / tata cara Seminar Hasil daring.
                         </div>
                         <!--//item-desc-->
-                        <div class="text-center"><a class="btn btn-primary mt-3" href="#" target="_blank">Unduh</a></div>
+                        <div class="text-center"><a class="btn btn-primary mt-3" href="#" target="_blank"><i class="fa fa-download"></i> Unduh</a></div>
                     </div>
                     <!--//item-inner-->
                 </div>
@@ -295,7 +320,7 @@
                             Standar Operasional Prosedur / tata cara Sidang Komprehensif
                         </div>
                         <!--//item-desc-->
-                        <div class="text-center"><a class="btn btn-primary mt-3" href="#" target="_blank">Unduh</a></div>
+                        <div class="text-center"><a class="btn btn-primary mt-3" href="#" target="_blank"><i class="fa fa-download"></i> Unduh</a></div>
 
                     </div>
                     <!--//item-inner-->
@@ -313,7 +338,7 @@
                             Standar Operasional Prosedur / tata cara Seminar Kerja Praktek Online
                         </div>
                         <!--//item-desc-->
-                        <div class="text-center"><a class="btn btn-primary mt-3" href="#" target="_blank">Unduh</a></div>
+                        <div class="text-center"><a class="btn btn-primary mt-3" href="#" target="_blank"><i class="fa fa-download"></i> Unduh</a></div>
 
                     </div>
                     <!--//item-inner-->
@@ -334,9 +359,10 @@
                 <img class="author-pic" src="<?= base_url('assets/infoKPTA/') ?>images/profiles/desti.png" class="rounded-circle" alt="image">
             </div>
             <!--//author-profile-->
-            <h2 class="section-heading text-center text-white mb-3">Koordinator</h2>
-            <div class="author-bio single-col-max mx-auto">
-                <p>Ada Pertanyaan? Silahkan hubungi kami melalui <strong>destimualfah@umri.ac.id</strong> atau <strong>informatika@umri.ac.id</strong>
+            <h2 class="section-heading text-center text-white mb-3">Koordinator KP & Skripsi</h2>
+            <div class="author-bio single-col-max text-center mx-auto">
+              <p>Program studi Teknik Informatika terus fokus dan serius dalam mewujudkan peningkatan kualitas akademik serta pelayanan terhadap seluruh mahasiswa.
+                <p>Ajukan pertanyaan melalui <strong><i cl ass="fa fa-envelope" aria-hidden="true"></i>  destimualfah@umri.ac.id</strong> / <strong>informatika@umri.ac.id</strong>
                 <!-- <div class="author-links text-center pt-4">
                     <h5 class="text-white mb-4">Follow Author</h5>
                     <ul class="social-list list-unstyled">
