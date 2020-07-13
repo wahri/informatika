@@ -87,7 +87,7 @@
     </div>
     <div class="container">
         <p class="copyright text-center">
-            Copyright &copy; TIFTECH UMRI <?= date('Y') ?>
+            TIFTECH - Prodi Teknik Informatika | Copyright &copy; 2019 - <?= date('Y') ?>
         </p>
     </div>
 </footer>

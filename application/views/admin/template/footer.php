@@ -1,7 +1,7 @@
 <footer class="py-4 bg-light mt-auto">
     <div class="container-fluid">
         <div class="d-flex align-items-center justify-content-center small">
-            <div class="text-muted">Copyright &copy; TIFTECH UMRI <?= date('Y') ?></div>
+            <div class="text-muted">TIFTECH - Prodi Teknik Informatika | Copyright &copy; 2019 - <?= date('Y') ?></div>
         </div>
     </div>
 </footer>

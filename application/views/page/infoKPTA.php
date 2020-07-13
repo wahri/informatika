@@ -106,12 +106,12 @@
 						</div>
 						<!--//subheading-->
 						<div class="cta-holder">
-							<a class="btn btn-primary mr-lg-2" href="#content-section">KERJA PRAKTEK</a>
-							<a class="btn btn-secondary scrollto" href="#content-section">SKRIPSI</a>
+							<a class="btn btn-primary scrollto mr-lg-2" href="#content-section">MULAI</a>
+							<a class="btn btn-secondary scrollto" href="#benefits-section">UNDUH PANDUAN</a>
 						</div>
 						<!--//cta-holder-->
 						<div class="hero-quotes mt-5">
-							<div id="quotes-carousel" class="quotes-carousel carousel slide carousel-fade mb-5" data-ride="carousel" data-interval="8000">
+							<div id="quotes-carousel" class="quotes-carousel carousel slide carousel-fade mb-5" data-ride="carousel" data-interval="4000">
 								<ol class="carousel-indicators">
 									<li data-target="#quotes-carousel" data-slide-to="0" class="active"></li>
 									<li data-target="#quotes-carousel" data-slide-to="1"></li>
@@ -137,14 +137,14 @@
 									<!--//carousel-item-->
 									<div class="carousel-item">
 										<blockquote class="quote p-4 theme-bg-light">
-											"Pengembangan program studi khususnya pada domain pelayanan kepada mahasiswa harus terus ditingkatkan. Dukungan penggunaan Teknologi yang diterapkan tentunya sangat membantu para Mahasiswa dalam aktivitas akademiknya. Sukses dan maju terus Prodi Teknik Informatika"
+											"Pengembangan program studi khususnya pada domain pelayanan mahasiswa harus terus ditingkatkan. Dukungan penggunaan Teknologi yang diterapkan tentunya sangat membantu para Mahasiswa dalam aktivitas akademiknya. Sukses dan maju terus Prodi Teknik Informatika"
 										</blockquote>
 										<!--//item-->
 										<div class="source media flex-column flex-md-row align-items-center">
 											<img class="source-profile mr-md-3" src="
-																			<?= base_url('assets/infoKPTA/') ?>images/profiles/profile-2.png" alt="image">
+																			<?= base_url('assets/infoKPTA/') ?>images/profiles/harun.png" alt="image">
 											<div class="source-info media-body text-center text-md-left">
-												<div class="source-name">Harun Mukhtar, S.Kom.,M.Kom</div>
+												<div class="source-name">Harun Mukhtar, S.Kom., M.Kom</div>
 												<div class="soure-title">Dekan Fakultas Ilmu Komputer - UMRI</div>
 											</div>
 										</div>
@@ -153,15 +153,15 @@
 									<!--//carousel-item-->
 									<div class="carousel-item">
 										<blockquote class="quote p-4 theme-bg-light">
-											"Terimakasih Program studi Teknik Informatika, atas trobosan-trobosannya dilakkan dalam rangka pelayanan terhadap kami. Sekarang kami bisa lebih bersemangat dan mudah dalam menggapai Ke-Sarjanaan!!"
+											"Terimakasih Program studi Teknik Informatika, atas trobosan-trobosan yang dilakukan dalam rangka pelayanan terhadap kami khususnya di pendaftaran Kerja Peraktek dan Skripsi. Sekarang kami lebih bersemangat dan mudah dalam menggapai Ke-Sarjanaan!!"
 										</blockquote>
 										<!--//item-->
 										<div class="source media flex-column flex-md-row align-items-center">
 											<img class="source-profile mr-md-3" src="
-																				<?= base_url('assets/infoKPTA/') ?>images/profiles/profile-3.png" alt="image">
+																				<?= base_url('assets/infoKPTA/') ?>images/profiles/andrian.png" alt="image">
 											<div class="source-info media-body text-center text-md-left">
-												<div class="source-name">Andy Doe</div>
-												<div class="soure-title">Frontend Developer, Company Lorem</div>
+												<div class="source-name">Andriansyah</div>
+												<div class="soure-title">Ketua HMTIF periode tahun 2020-2021</div>
 											</div>
 										</div>
 										<!--//source-->
@@ -198,11 +198,12 @@
 		</div>
 		<!--//container-->
 	</section>
+
 	<!--//hero-section-->
 	<section id="content-section" class="content-section">
 		<div class="container">
 			<div class="single-col-max mx-auto">
-				<h2 class="section-heading text-center mb-5">PENGAJUAN DAN PENDAFTARAN KP/SKRIPSI</h2>
+				<h2 class="section-heading text-center mb-5">PENGAJUAN DAN PENDAFTARAN <P>KERJA PRAKTEK/SKRIPSI</h2>
 				<div class="row">
 					<div class="col-12 col-md-6">
 						<div class="figure-holder mb-5">
@@ -217,40 +218,40 @@
 								<li>KERJA PRAKTEK</li>
 								<li>
 									<i class="fas fa-hand-point-right mr-2"></i>
-									<a class="theme-link scrollto" href="https://docs.google.com/forms/d/e/1FAIpQLSe0EkYstPaRzhmTJ-bQxTpbAfVd2UpPZMjj8Y0fX4910IV0Ew/viewform" target="_blank">Pengajuan Kerja Praktek.</a>
+									<a class="theme-link" href="https://docs.google.com/forms/d/e/1FAIpQLSe0EkYstPaRzhmTJ-bQxTpbAfVd2UpPZMjj8Y0fX4910IV0Ew/viewform" target="_blank">Pengajuan Kerja Praktek.</a>
 								</li>
 								<li>
 									<i class="fas fa-hand-point-right mr-2"></i>
-									<a class="theme-link scrollto" href="https://drive.google.com/open?id=1uBy2FvcHJWFEuVxMeon3Ppe7QvvKTNWzspnlrPN5mLA" target="_blank">Pendaftaran Seminar Kerja Praktek.</a>
+									<a class="theme-link" href="https://drive.google.com/open?id=1uBy2FvcHJWFEuVxMeon3Ppe7QvvKTNWzspnlrPN5mLA" target="_blank">Pendaftaran Seminar Kerja Praktek.</a>
 								</li>
 								<br>
 								<li>SKRIPSI</li>
 								<li>
 									<i class="fas fa-hand-point-right mr-2"></i>
-									<a class="theme-link scrollto" href="https://drive.google.com/open?id=1rJb88xphg2LYmXl7p_oL8ktr1tiEsFLP77b_TDOj2zE" target="_blank">Pengajuan Pra-Proposal Skripsi.</a>
+									<a class="theme-link" href="https://drive.google.com/open?id=1rJb88xphg2LYmXl7p_oL8ktr1tiEsFLP77b_TDOj2zE" target="_blank">Pengajuan Pra-Proposal Skripsi.</a>
 								</li>
 								<li>
 									<i class="fas fa-hand-point-right mr-2"></i>
-									<a class="theme-link scrollto" href="https://forms.gle/Ah2VxQVtJytoxFiX6" target="_blank">pendaftaran Seminar Proposal.</a>
+									<a class="theme-link" href="https://forms.gle/Ah2VxQVtJytoxFiX6" target="_blank">pendaftaran Seminar Proposal.</a>
 								</li>
 								<li>
 									<i class="fas fa-hand-point-right mr-2"></i>
-									<a class="theme-link scrollto" href="https://drive.google.com/open?id=1lxhE2kdiilYvcJq_gvAZjdozMU8xHF2HC1t61jKnK6M" target="_blank">Pendaftaran Seminar Hasil.</a>
+									<a class="theme-link" href="https://drive.google.com/open?id=1lxhE2kdiilYvcJq_gvAZjdozMU8xHF2HC1t61jKnK6M" target="_blank">Pendaftaran Seminar Hasil.</a>
 								</li>
 								<li>
 									<i class="fas fa-user-graduate mr-2"></i>
-									<a class="theme-link scrollto" href="https://docs.google.com/forms/d/1QnISDBA_-5JNbwSmcOTyghBWtxhnnrYbiLss5vPwJu8/edit?usp=sharing" target="_blank">Pendaftaran Sidang Komprehensif.</a>
+									<a class="theme-link" href="https://docs.google.com/forms/d/1QnISDBA_-5JNbwSmcOTyghBWtxhnnrYbiLss5vPwJu8/edit?usp=sharing" target="_blank">Pendaftaran Sidang Komprehensif.</a>
 								</li>
 								<br>
 								<div id="informasi" class="informasi">
 									<li> INFORMASI & PENGUMUMAN</li>
 									<li>
 										<i class="fas fa-calendar-alt mr-2"></i>
-										<a class="theme-link scrollto" href="https://sites.google.com/umri.ac.id/sipenol/jadwal-seminar?authuser=0" target="_blank">Jadwal Seminar/Sidang.</a>
+										<a class="theme-link" href="https://sites.google.com/umri.ac.id/sipenol/jadwal-seminar?authuser=0" target="_blank">Cek Jadwal Seminar/Sidang.</a>
 									</li>
 									<li>
 										<i class="fas fa-user-tie mr-2"></i>
-										<a class="theme-link scrollto" href="https://sites.google.com/umri.ac.id/sipenol/pembimbing?authuser=0" target="_blank">Distribusi Pembimbing.</a>
+										<a class="theme-link" href="https://sites.google.com/umri.ac.id/sipenol/pembimbing?authuser=0" target="_blank">Cek Pembagian Pembimbing.</a>
 									</li>
 								</div>
 							</ul>
@@ -270,7 +271,7 @@
 	<section id="benefits-section" class="benefits-section theme-bg-light-gradient py-5">
 		<div class="container py-5">
 			<h2 class="section-heading text-center mb-3">Unduh Panduan dan SOP </h2>
-			<div class="section-intro single-col-max mx-auto text-center mb-5"> Silahkan me-Unduh panduan Kerja Praktek, Skripsi dan Dokumen lainnya sebagai referensi dalam pelaksanaan dan penulisan KP/SKRIPSI </div>
+			<div class="section-intro single-col-max mx-auto text-center mb-5"> Silahkan mengunduh panduan Kerja Praktek, Skripsi dan Dokumen lainnya sebagai referensi dalam pelaksanaan dan penulisan KP/SKRIPSI </div>
 			<div class="row text-center">
 				<div class="item col-12 col-md-6 col-lg-4">
 					<div class="item-inner p-3 p-lg-4">
@@ -286,7 +287,7 @@
 						</div>
 						<!--//item-desc-->
 						<div class="text-center">
-							<a class="btn btn-primary mt-3" href="https://drive.google.com/open?id=1FQCl6USOttHfvOZ-OXMJAtxnYyQfvTjw" target="_blank">
+							<a class="btn btn-secondary mt-3" href="https://drive.google.com/open?id=1FQCl6USOttHfvOZ-OXMJAtxnYyQfvTjw" target="_blank">
 								<i class="fa fa-download"></i> Unduh
 							</a>
 						</div>
@@ -308,7 +309,7 @@
 						</div>
 						<!--//item-desc-->
 						<div class="text-center">
-							<a class="btn btn-primary mt-3" href="#" target="_blank">
+							<a class="btn btn-secondary mt-3" href="#" target="_blank">
 								<i class="fa fa-download"></i> Unduh
 							</a>
 						</div>
@@ -330,7 +331,7 @@
 						</div>
 						<!--//item-desc-->
 						<div class="text-center">
-							<a class="btn btn-primary mt-3" href="https://drive.google.com/open?id=1A54-K9Yl79wX8kKOrpk2KEDi_Zs82WWl" target="_blank">
+							<a class="btn btn-secondary mt-3" href="https://drive.google.com/open?id=1A54-K9Yl79wX8kKOrpk2KEDi_Zs82WWl" target="_blank">
 								<i class="fa fa-download"></i> Unduh
 							</a>
 						</div>
@@ -352,7 +353,7 @@
 						</div>
 						<!--//item-desc-->
 						<div class="text-center">
-							<a class="btn btn-primary mt-3" href="#" target="_blank">
+							<a class="btn btn-secondary mt-3" href="#" target="_blank">
 								<i class="fa fa-download"></i> Unduh
 							</a>
 						</div>
@@ -374,7 +375,7 @@
 						</div>
 						<!--//item-desc-->
 						<div class="text-center">
-							<a class="btn btn-primary mt-3" href="#" target="_blank">
+							<a class="btn btn-secondary mt-3" href="#" target="_blank">
 								<i class="fa fa-download"></i> Unduh
 							</a>
 						</div>
@@ -396,7 +397,7 @@
 						</div>
 						<!--//item-desc-->
 						<div class="text-center">
-							<a class="btn btn-primary mt-3" href="#" target="_blank">
+							<a class="btn btn-secondary mt-3" href="#" target="_blank">
 								<i class="fa fa-download"></i> Unduh
 							</a>
 						</div>
@@ -438,9 +439,9 @@
 	<footer class="footer">
 		<div class="footer-bottom text-center py-5">
 			<!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
-			<small class="copyright">copyright
-				<i class="@" style="color: #fb866a;"></i> by
-				<a class="theme-link" href="#" target="_blank">TIFTECH</a> 2020
+			<small class="copyright">TIFTECH - Prodi Teknik Informatika |
+				<i class="" style="color: #fb866a;"></i>Copyright ©
+				<a class="theme-link" href="#" target="_blank"> </a> 2019 - 2020
 			</small>
 		</div>
 	</footer>
