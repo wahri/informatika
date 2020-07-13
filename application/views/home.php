@@ -172,21 +172,35 @@
                     <p class="text-center">Bekal karier masa depan Anda dipelajari mulai saat ini Bersama Program Studi Teknik Informatika, Fakultas Ilmu Komputer, Universitas Muhammadiyah Riau. Anda akan menemukan pengalaman pembelajaran yang unik dengan memadukan nilai-nilai keislaman dan teknologi untuk mengembangkan potensi anda.</p>
                 </div>
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="akademik-item">
-                            <div class="icon">
-                                <i class="fa fa fa-desktop"></i>
-                            </div>
-                            <div class="akademik-item-text">
-                                <h3 class="mb-3"><?= $page[0]['judul'] ?></h3>
-                                <p class="mb-4">
-                                    <?= substr($page[0]['isi'], 59, 190) . '...' ?>
-                                </p>
-                                <a href="<?= base_url('page/detail/1') ?>" class="btn btn-coklat">KENALI LEBIH DEKAT</a>
+                    <?php foreach ($akademik as $key => $a) : ?>
+                        <div class="col-md-4">
+                            <div class="akademik-item">
+                                <div class="icon">
+                                    <?php if ($key == 0) : ?>
+                                        <i class="fa fa fa-desktop"></i>
+                                    <?php elseif ($key == 1) : ?>
+                                        <i class="fas fa-book"></i>
+                                    <?php else : ?>
+                                        <i class="fas fa-user-friends"></i>
+                                    <?php endif; ?>
+                                </div>
+                                <div class="akademik-item-text">
+                                    <h3 class="mb-3"><?= $a['judul'] ?></h3>
+                                    <p class="mb-4">
+                                        <?php
+                                        // $text = substr($a['isi'], 0, 100) . '...';
+                                        $awal = strpos($a['isi'], '<p>');
+                                        $text = substr($a['isi'], $awal, 120) . '...';
+                                        echo $text;
+
+                                        ?>
+                                    </p>
+                                    <a href="<?= base_url('page/detail/') . $a['id_page'] ?>" class="btn btn-coklat">KENALI LEBIH DEKAT</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
+                    <?php endforeach; ?>
+                    <!-- <div class="col-md-4">
                         <div class="akademik-item">
                             <div class="icon">
                                 <i class="fas fa-book"></i>
@@ -213,7 +227,7 @@
                                 <a href="<?= base_url('page/detail/3') ?>" class="btn btn-coklat">KENALI LEBIH DEKAT</a>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </section>

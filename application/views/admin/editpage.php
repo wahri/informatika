@@ -31,6 +31,8 @@
                     ?>
                         <div class="row justify-content-center">
                             <img class="img-thumbnail rounded" src="<?= base_url('assets/images/page/') . $page['gambar'] ?>">
+                        </div>
+                        <div class="row justify-content-center">
                             <a href="<?= base_url('admin/editpage/') . $page['id_page'] . "/1" ?>" class="btn btn-danger mt-3">Ubah Gambar</a>
                         </div>
                     <?php else : ?>
@@ -43,13 +45,42 @@
                                     <small id="error" class="form-text text-danger"><?= $error ?></small>
                                 </div>
                             </div>
-                            <div class="col-auto d-flex align-items-center ml-auto">
-                                <a href="<?= base_url('admin/editpage/') . $page['id_page'] ?>" class="btn btn-secondary">Batal</a>
-                            </div>
+                            <?php if ($page['gambar'] != null) : ?>
+                                <div class="col-auto d-flex align-items-center ml-auto">
+                                    <a href="<?= base_url('admin/editpage/') . $page['id_page'] ?>" class="btn btn-secondary">Batal</a>
+                                </div>
+                            <?php endif; ?>
                         </div>
                     <?php endif; ?>
                 </div>
-                <div class="col-md-3 text-right">
+                <div class="col-md-3 ml-3">
+                    <div class="form-group">
+                        <label for="link">Kategori</label>
+                        <?php
+                        $this->db->select('kategori');
+                        $this->db->where('kategori is NOT NULL', NULL, FALSE);
+                        $this->db->distinct();
+                        $kategori = $this->db->get('page')->result_array();
+                        // print_r($kategori);
+                        // die;
+                        ?>
+                        <select id="link" name="kategori" class="form-control">
+                            <option>Pilih kategori...</option>
+                            <?php foreach ($kategori as $k) : ?>
+                                <option value=<?= $k['kategori'] ?> <?= $k['kategori'] == $page['kategori'] ? 'selected' : '' ?>><?= $k['kategori'] ?></option>
+                            <?php endforeach; ?>
+                            <option value="tambah_kategori">[+] Tambah Kategori</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col mt-4">
+                    <div class="form-group" id="pilihan-link">
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col text-right">
                     <button class="btn btn-primary mt-3 btn-lg" type="submit">Upload Page</button>
                 </div>
             </div>

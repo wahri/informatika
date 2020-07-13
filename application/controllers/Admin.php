@@ -492,6 +492,7 @@ class Admin extends CI_Controller
                 $data = [
                     'judul' => $this->input->post('judul'),
                     'isi' => $this->input->post('isi'),
+                    'kategori' => $this->input->post('kategori'),
                     'gambar' => $this->page->data('file_name')
                 ];
 
@@ -504,7 +505,8 @@ class Admin extends CI_Controller
                 // $this->tampilan('tambahpage', $data);
                 $data = [
                     'judul' => $this->input->post('judul'),
-                    'isi' => $this->input->post('isi')
+                    'isi' => $this->input->post('isi'),
+                    'kategori' => $this->input->post('kategori')
                 ];
 
                 $this->db->insert('page', $data);
@@ -544,6 +546,7 @@ class Admin extends CI_Controller
                     $data = [
                         'judul' => $this->input->post('judul'),
                         'isi' => $this->input->post('isi'),
+                        'kategori' => $this->input->post('kategori'),
                         'gambar' => $this->page->data('file_name')
                     ];
 
@@ -560,7 +563,8 @@ class Admin extends CI_Controller
             } else {
                 $data = [
                     'judul' => $this->input->post('judul'),
-                    'isi' => $this->input->post('isi')
+                    'isi' => $this->input->post('isi'),
+                    'kategori' => $this->input->post('kategori')
                 ];
 
                 $this->db->update('page', $data, ['id_page' => $id]);

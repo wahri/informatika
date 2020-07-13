@@ -26,7 +26,7 @@
                 </div>
             </div>
             <div class="row mt-5">
-                <div class="col-md-auto border">
+                <div class="col-md-auto">
                     <div class="form-group">
                         <label for="gambar berita">Upload gambar</label>
                         <input type="file" class="form-control-file" name="gambar">
@@ -36,11 +36,25 @@
                 <div class="col-md-3 ml-3">
                     <div class="form-group">
                         <label for="link">Kategori</label>
+                        <?php
+                        $this->db->select('kategori');
+                        $this->db->where('kategori is NOT NULL', NULL, FALSE);
+                        $this->db->distinct();
+                        $kategori = $this->db->get('page')->result_array();
+                        // print_r($kategori);
+                        // die;
+                        ?>
                         <select id="link" class="form-control">
                             <option selected>Pilih kategori...</option>
-                            <option value="link">Link</option>
-                            <option value="page">Page</option>
+                        <?php foreach($kategori as $k): ?>
+                            <option value=<?= $k['kategori'] ?>><?= $k['kategori'] ?></option>
+                        <?php endforeach; ?>
+                            <option value="tambah_kategori">[+] Tambah Kategori</option>
                         </select>
+                    </div>
+                </div>
+                <div class="col d-flex align-items-end">
+                    <div class="form-group" id="pilihan-link">
                     </div>
                 </div>
                 <div class="col text-right">

@@ -19,7 +19,7 @@
 <script src="<?= site_url('assets/admin/') ?>assets/demo/datatables-demo.js"></script>
 
 
-
+<!-- modal untuk confirm hapus -->
 <script>
     $(document).ready(function() {
         $('#exampleModal').on('show.bs.modal', function(event) {
@@ -34,6 +34,7 @@
     });
 </script>
 
+<!-- modal untuk edit menu -->
 <script>
     $(document).ready(function() {
         $('#editmenu').on('show.bs.modal', function(event) {
@@ -53,6 +54,7 @@
     });
 </script>
 
+<!-- modal untuk edit submenu -->
 <script>
     $(document).ready(function() {
         $('#editsubmenu').on('show.bs.modal', function(event) {
@@ -73,6 +75,7 @@
     });
 </script>
 
+<!-- pilihan page atau link untuk edit menu dan submenu navbar-->
 <script>
     $(function() {
         $("#link-edit").change(function() {
@@ -114,6 +117,7 @@
     });
 </script>
 
+<!-- pilihan page atau link -->
 <script>
     $(function() {
         $("#link").change(function() {
@@ -129,7 +133,7 @@
                         placeholder: "Masukkan link"
                     })
                 )
-            } else {
+            } else if (link === "page") {
                 $.ajax({
                     method: "GET",
                     url: "<?= base_url('admin/datapage') ?>"
@@ -150,11 +154,25 @@
                         // console.log(j[i])
                     }
                 })
+            } else if (link === "tambah_kategori") {
+                $("#pilihanPage").remove()
+                $("#pilihan-link").append(
+                    $('<input>', {
+                        type: 'text',
+                        class: "form-control",
+                        name: "kategori",
+                        id: "pilihanPage",
+                        placeholder: "Nama kategori"
+                    })
+                )
+            } else {
+                $("#pilihanPage").remove()
             }
         })
     });
 </script>
 
+<!-- ajax untuk switch is_active -->
 <script>
     $(".switch_active").click(function() {
         const id = $(this).data('sliderid')
