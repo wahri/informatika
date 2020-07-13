@@ -15,13 +15,13 @@
                             <h1 class="h3 text-light"><?= $judul ?></h1>
                         </div>
                         <div class="card-body">
-                            <a href="<?= base_url('admin/tambahberita') ?>" class="btn btn-primary mb-3">Tambah Berita</a>
+                            <a href="<?= base_url('admin/tambahberita') ?>" class="btn btn-primary mb-3"><i class="fa fa-plus-square"></i> Add News</a>
                             <div class="table-responsive">
                                 <table class="table table-sm table-bordered" id="dataTable">
                                     <thead>
                                         <tr>
                                             <th width="8%">No</th>
-                                            <th width="59%">Judul Berita</th>
+                                            <th width="59%">News Title</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -38,12 +38,13 @@
                                                 </td>
                                                 <td class="align-middle">
                                                     <a href="<?= base_url('admin/editberita/') . $b['id_berita'] ?>" class="btn btn-sm btn-warning">
-                                                        <span class="text">Edit</span>
+                                                        <span class="text"><i class="fas fa-highlighter"></i> Edit</span>
                                                     </a>
-                                                    <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#exampleModal" data-idpage="<?= $b['id_berita'] ?>" data-method="deleteberita">Delete</button>
                                                     <a href="<?= base_url('admin/kategoriberita/') . $b['id_berita'] ?>" class="btn btn-sm btn-info">
-                                                        <span class="text">Tambah Kategori</span>
+                                                        <span class="text"><i class="fas fa-plus"></i> Kategori</span>
                                                     </a>
+                                                    <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#exampleModal" data-idpage="<?= $b['id_berita'] ?>" data-method="deleteberita"><i class="fa fa-trash"></i></button>
+
 
                                                 </td>
 
@@ -64,13 +65,13 @@
                     <h1 class="h3 text-light"><?= $judul ?></h1>
                 </div> -->
                         <div class="card-body">
-                            <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#kategori">Tambah Kategori</a>
+                            <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#kategori"><i class="fa fa-plus-square"></i> Add Category</a>
                             <div class="table-responsive">
-                                <h6 class="h5">List Kategori</h6>
+                                <h6 class="h5">List Category</h6>
                                 <table class="table table-bordered table-sm" id="dataTables">
                                     <thead>
                                         <tr>
-                                            <th width="80%">Nama Kategori</th>
+                                            <th width="80%">Name</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -84,7 +85,7 @@
                                                     <?= $k['nama_kategori'] ?>
                                                 </td>
                                                 <td>
-                                                    <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#exampleModal" data-idpage="<?= $k['id_kategori'] ?>" data-method="deletekategoriberita">Delete</button>
+                                                    <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#exampleModal" data-idpage="<?= $k['id_kategori'] ?>" data-method="deletekategoriberita"><i class="fa fa-trash"></i></button>
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>

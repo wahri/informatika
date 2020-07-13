@@ -10,7 +10,7 @@
             <?php endif; ?>
 
             <?= $this->session->flashdata('message'); ?>
-            <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#menu">Tambah Menu</a>
+            <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#menu"><i class="fa fa-plus-square"></i> Add Menu</a>
             <div class="row">
                 <div class="col-md-8">
                     <table class="table table-bordered mt-3">
@@ -34,8 +34,8 @@
                                     <td class="align-middle text-center">
                                         <!-- <a href="" class="btn btn-warning">Edit</a> -->
                                         <!-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#editmenu" data-id="<?= $s['id_menu'] ?>" data-urutan="<?= $s['urutan'] ?>" data-nama="<?= $s['menu'] ?>" data-link="<?= $s['link'] ?>">Edit</button> -->
-                                        <button type="button" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#editmenu" data-id="<?= $s['id_menu'] ?>" data-urutan="<?= $s['urutan'] ?>" data-nama="<?= $s['menu'] ?>" data-link="<?= $s['link'] ?>">Edit</button>
-                                        <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#exampleModal" data-idpage="<?= $s['id_menu'] ?>" data-method="deletemenu">Delete</button>
+                                        <button type="button" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#editmenu" data-id="<?= $s['id_menu'] ?>" data-urutan="<?= $s['urutan'] ?>" data-nama="<?= $s['menu'] ?>" data-link="<?= $s['link'] ?>"> Edit</button>
+                                        <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#exampleModal" data-idpage="<?= $s['id_menu'] ?>" data-method="deletemenu"><i class="fa fa-trash"></i></button>
                                     </td>
                                 </tr>
 

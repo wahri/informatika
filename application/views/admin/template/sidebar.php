@@ -56,35 +56,43 @@
                     </div>
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                         <div class="sb-nav-link-icon"><i class="fas fa-bars"></i></div>
-                        Menu
+                      Create   Menu
                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
                     <div class="collapse" id="navbar" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
                             <a class="nav-link" href="<?= site_url('admin/menu') ?>">
-                                Tambah Menu
+                                Add Menu
                             </a>
                             <a class="nav-link" href="<?= site_url('admin/submenu') ?>">
-                                Tambah Submenu
+                                Add Submenu
                             </a>
                         </nav>
                     </div>
                     <a class="nav-link" href="<?= site_url('admin/dosen') ?>">
-                        <div class="sb-nav-link-icon"><i class="fas fa-user-edit"></i></div>
-                        Daftar Dosen
+                        <div class="sb-nav-link-icon"><i class="fas fa-user-tie"></i></div>
+                        Create Lecturer
                     </a>
                     <a class="nav-link" href="<?= site_url('admin/berita') ?>">
                         <div class="sb-nav-link-icon"><i class="fas fa-edit"></i></div>
-                        Tulis Berita
+                      Create News
                     </a>
                     <a class="nav-link" href="<?= site_url('admin/page') ?>">
                         <div class="sb-nav-link-icon"><i class="fas fa-file-alt"></i></div>
-                        Tambah Halaman
+                        Create Page
+                    </a>
+                    <a class="nav-link" href="<?= site_url('admin/kpta') ?>">
+                        <div class="sb-nav-link-icon"><i class="fas fa-cat"></i></div>
+                        KPTA
                     </a>
                     <div class="sb-sidenav-menu-heading">Pengaturan</div>
                     <a class="nav-link" href="<?= site_url('admin/pengaturanakun') ?>">
-                        <div class="sb-nav-link-icon"><i class="fas fa-user-cog"></i></div>
-                        Ganti Password
+                        <div class="sb-nav-link-icon"><i class="fas fa-sliders-h"></i></div>
+                        Change Password
+                    </a>
+                    <a class="nav-link" href="<?= site_url('auth/logout') ?>">
+                        <div class="sb-nav-link-icon"><i class="fa fa-power-off"></i></div>
+                        Sign Out
                     </a>
 
 

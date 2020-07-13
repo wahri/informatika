@@ -10,7 +10,7 @@
             <?php endif; ?>
 
             <?= $this->session->flashdata('message'); ?>
-            <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#submenu">Tambah Submenu</a>
+            <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#submenu"><i class="fa fa-plus-square"></i> Add Submenu</a>
             <div class="row">
                 <div class="col-md-8">
                     <table class="table table-bordered mt-3">
