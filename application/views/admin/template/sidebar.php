@@ -24,7 +24,8 @@
                         <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                         Blank
                     </a> -->
-                    <div class="sb-sidenav-menu-heading">Fitur</div>
+                    <div class="sb-sidenav-menu-heading">WEB INFORMATIKA</div>
+
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#home" aria-expanded="false" aria-controls="home">
                         <div class="sb-nav-link-icon"><i class="fas fa-home"></i></div>
                         Home
@@ -81,11 +82,34 @@
                         <div class="sb-nav-link-icon"><i class="fas fa-file-alt"></i></div>
                         Create Page
                     </a>
-                    <a class="nav-link" href="<?= site_url('admin/kpta') ?>">
+
+                    <div class="sb-sidenav-menu-heading">SISTER KP DAN SRIPSI</div>
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#kptabar" aria-expanded="false" aria-controls="navbar">
                         <div class="sb-nav-link-icon"><i class="fas fa-cat"></i></div>
-                        KPTA
+                      KPTA
+                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
-                    <div class="sb-sidenav-menu-heading">Pengaturan</div>
+                    <div class="collapse" id="kptabar" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav">
+                            <a class="nav-link" href="<?= site_url('admin/datakpta') ?>">
+                                Data Image
+                            </a>
+                            <a class="nav-link" href="<?= site_url('admin/unduhkpta') ?>">
+                                Data Unduh
+                            </a>
+                            <a class="nav-link" href="#">
+                                Testimony
+                            </a>
+                        </nav>
+                    </div>
+
+                    <div class="sb-sidenav-menu-heading">PENGATURAN</div>
+
+                    <a class="nav-link" href="#">
+                        <div class="sb-nav-link-icon"><i class="fas fa-sliders-h"></i></div>
+                        User Account
+                    </a>
+
                     <a class="nav-link" href="<?= site_url('admin/pengaturanakun') ?>">
                         <div class="sb-nav-link-icon"><i class="fas fa-sliders-h"></i></div>
                         Change Password

@@ -171,10 +171,15 @@ class Admin extends CI_Controller
         }
     }
 
-    public function KPTA()
+    public function DataKPTA()
     {
-            $data['judul'] = "KPTA Manajement";
-            $this->tampilan('kpta', $data);
+            $data['judul'] = "DATA IMAGE";
+            $this->tampilan('datakpta', $data);
+    }
+    public function UnduhKPTA()
+    {
+            $data['judul'] = "DATA UNDUH";
+            $this->tampilan('unduhkpta', $data);
     }
 
     public function hapusGambarProfil()
