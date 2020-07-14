@@ -1623,6 +1623,14 @@ footer p {
 	width: 35px;
 	text-align: center;
 }
+.pagination_bar .pagination .page-item .page-link.active {
+	font-size: 20px;
+	background: #485ea0;
+	border: 1px solid #485ea0;
+	color: #ffffff;
+	width: 35px;
+	text-align: center;
+}
 
 .pagination_bar .pagination .page-item .page-link:hover {
 	background: #485ea0;

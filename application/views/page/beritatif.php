@@ -59,8 +59,8 @@
                     <?php endforeach; ?>
                 </div>
 
-                <div class="pagination_bar">
                     <!-- Pagination -->
+                <!-- <div class="pagination_bar">
                     <ul class="pagination justify-content-center">
                         <li class="page-item">
                             <a class="page-link" href="#" aria-label="Previous">
@@ -84,7 +84,8 @@
                             </a>
                         </li>
                     </ul>
-                </div>
+                </div> -->
+                    <?= $this->pagination->create_links(); ?>
 
             </div>
             <!-- /.container -->

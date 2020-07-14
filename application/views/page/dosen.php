@@ -57,9 +57,9 @@
                                         <h3 class="title"><?= $d['nama'] ?></h3>
                                         <span class="post"><?= $d['jabatan'] ?></span>
                                         <ul class="social">
-                                            <li><a href="<?= $d['facebook'] ?>"><i class="fab fa-facebook"></i></a></li>
-                                            <li><a href="<?= $d['instagram'] ?>"><i class="fab fa-instagram"></i></a></li>
-                                            <li><a href="<?= $d['linkedin'] ?>"><i class="fab fa-linkedin"></i></a></li>
+                                            <li><a href="<?= $d['facebook'] ?>" target="_blank"><i class="fab fa-facebook"></i></a></li>
+                                            <li><a href="<?= $d['instagram'] ?>" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                            <li><a href="<?= $d['linkedin'] ?>" target="_blank"><i class="fab fa-linkedin"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>
