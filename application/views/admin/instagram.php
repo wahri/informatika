@@ -9,12 +9,12 @@
             <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#post">Tambah Post</a>
             <div class="row">
                 <div class="col-md-8">
-                    <table class="table table-bordered mt-3">
+                    <table class="table mt-3">
                         <thead class="thead-dark">
                             <tr>
                                 <th width="10%">No</th>
-                                <th width="40%">Instagram Post</th>
-                                <th width="20%">Action</th>
+                                <th>Instagram Post</th>
+                                <th width="10%">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -24,12 +24,12 @@
                             ?>
                                 <tr>
                                     <td class="align-middle text-center"><?= $i ?></td>
-                                    <td><img src="<?= base_url('assets/images/slider-ig/') . $ig['gambar'] ?>" class="img-thumbnail rounded"></td>
+                                    <td><img src="<?= base_url('assets/images/slider-ig/') . $ig['gambar'] ?>" class="img-thumbnail rounded" width="30%"></td>
                                     <!-- <td class="align-bottom text-center">
                                         <a href="" class="btn btn-warning">Edit</a>
                                     </td> -->
                                     <td class="align-middle text-center">
-                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" data-idpage="<?= $ig['id_instagram'] ?>" data-method="deleteinstagram">Delete</button>
+                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" data-idpage="<?= $ig['id_instagram'] ?>" data-method="deleteinstagram"><i class="fa fa-trash"></i></button>
                                     </td>
                                 </tr>
 

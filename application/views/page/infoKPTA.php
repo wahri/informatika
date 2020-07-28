@@ -2,14 +2,12 @@
 <html lang="en">
 
 <head>
-	<title>Sistem Terpadu Kerja Praktek & Skripsi</title>
+	<title>Sistem Terpadu Kerja Praktik & Skripsi</title>
 	<!-- Meta -->
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" href="<?= base_url('assets/images/favicon.ico') ?>">
-	<!-- <meta name="description" content="Bootstrap 4 Book/eBook Landing Page Template For Developers"> -->
-	<!-- <meta name="author" content="Xiaoying Riley at 3rd Wave Media"> -->
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- Google Font -->
 	<link href="https://fonts.googleapis.com/css?family=Quicksand:700|Roboto:400,400i,700&display=swap" rel="stylesheet">
@@ -96,7 +94,7 @@
 					<div class="promo pr-md-3 pr-lg-5">
 						<h1 class="headline mb-3">
 							Sistem Terpadu
-							<br> Kerja Praktek &amp; Skripsi
+							<br> Kerja Praktik &amp; Skripsi
 
 						</h1>
 						<!--//headline-->
@@ -203,7 +201,7 @@
 	<section id="content-section" class="content-section">
 		<div class="container">
 			<div class="single-col-max mx-auto">
-				<h2 class="section-heading text-center mb-5">PENGAJUAN DAN PENDAFTARAN <P>KERJA PRAKTEK/SKRIPSI</h2>
+				<h2 class="section-heading text-center mb-5">PENGAJUAN DAN PENDAFTARAN <P>KERJA PRAKTIK/SKRIPSI</h2>
 				<div class="row">
 					<div class="col-12 col-md-6">
 						<div class="figure-holder mb-5">
@@ -215,14 +213,14 @@
 					<div class="col-12 col-md-6 mb-5">
 						<div class="key-points mb-4 text-center">
 							<ul class="key-points-list list-unstyled mb-4 mx-auto d-inline-block text-left">
-								<li>KERJA PRAKTEK</li>
+								<li>KERJA PRAKTIK</li>
 								<li>
 									<i class="fas fa-hand-point-right mr-2"></i>
-									<a class="theme-link" href="https://docs.google.com/forms/d/e/1FAIpQLSe0EkYstPaRzhmTJ-bQxTpbAfVd2UpPZMjj8Y0fX4910IV0Ew/viewform" target="_blank">Pengajuan Kerja Praktek.</a>
+									<a class="theme-link" href="https://docs.google.com/forms/d/e/1FAIpQLSe0EkYstPaRzhmTJ-bQxTpbAfVd2UpPZMjj8Y0fX4910IV0Ew/viewform" target="_blank">Pengajuan Kerja Praktik.</a>
 								</li>
 								<li>
 									<i class="fas fa-hand-point-right mr-2"></i>
-									<a class="theme-link" href="https://drive.google.com/open?id=1uBy2FvcHJWFEuVxMeon3Ppe7QvvKTNWzspnlrPN5mLA" target="_blank">Pendaftaran Seminar Kerja Praktek.</a>
+									<a class="theme-link" href="https://drive.google.com/open?id=1uBy2FvcHJWFEuVxMeon3Ppe7QvvKTNWzspnlrPN5mLA" target="_blank">Pendaftaran Seminar Kerja Praktik.</a>
 								</li>
 								<br>
 								<li>SKRIPSI</li>
@@ -271,7 +269,7 @@
 	<section id="benefits-section" class="benefits-section theme-bg-light-gradient py-5">
 		<div class="container py-5">
 			<h2 class="section-heading text-center mb-3">Unduh Panduan dan SOP </h2>
-			<div class="section-intro single-col-max mx-auto text-center mb-5"> Silahkan mengunduh panduan Kerja Praktek, Skripsi dan Dokumen lainnya sebagai referensi dalam pelaksanaan dan penulisan KP/SKRIPSI </div>
+			<div class="section-intro single-col-max mx-auto text-center mb-5"> Silahkan mengunduh panduan Kerja Praktik, Skripsi dan Dokumen lainnya sebagai referensi dalam pelaksanaan dan penulisan KP/SKRIPSI </div>
 			<div class="row text-center">
 				<div class="item col-12 col-md-6 col-lg-4">
 					<div class="item-inner p-3 p-lg-4">
@@ -301,11 +299,11 @@
 							<div class="item-icon">
 								<i class="fas fa-book"></i>
 							</div>
-							<h3 class="item-heading">Panduan Kerja Praktek Covid-19</h3>
+							<h3 class="item-heading">Panduan Kerja Praktik Covid-19</h3>
 						</div>
 						<!--//item-heading-->
 						<div class="item-desc">
-							Panduan penulisan dan tata cara Kerja Praktek.
+							Panduan penulisan dan tata cara Kerja Praktik.
 						</div>
 						<!--//item-desc-->
 						<div class="text-center">
@@ -389,11 +387,11 @@
 							<div class="item-icon">
 								<i class="fab fa-leanpub"></i>
 							</div>
-							<h3 class="item-heading">SOP Seminar Kerja Praktek</h3>
+							<h3 class="item-heading">SOP Seminar Kerja Praktik</h3>
 						</div>
 						<!--//item-heading-->
 						<div class="item-desc">
-							Standar Operasional Prosedur / tata cara Seminar Kerja Praktek Online
+							Standar Operasional Prosedur / tata cara Seminar Kerja Praktik Online
 						</div>
 						<!--//item-desc-->
 						<div class="text-center">
@@ -426,8 +424,6 @@
 							<i cl ass="fa fa-envelope" aria-hidden="true"></i> destimualfah@umri.ac.id
 						</strong> /
 						<strong>informatika@umri.ac.id</strong>
-						<!-- <div class="author-links text-center pt-4"><h5 class="text-white mb-4">Follow Author</h5><ul class="social-list list-unstyled"><li class="list-inline-item"><a href="https://twitter.com/3rdwave_themes"><i class="fab fa-twitter"></i></a></li><li class="list-inline-item"><a href="https://github.com/xriley"><i class="fab fa-github-alt"></i></a></li><li class="li2st-inline-item"><a href="https://medium.com/@3rdwave_themes"><i class="fab fa-medium-m"></i></a></li><li class="list-inline-item"><a href="https://themes.3rdwavemedia.com/"><i class="fas fa-globe-europe"></i></a></li></ul>
-																						//social-list-->
 			</div>
 			<!--//author-links-->
 		</div>
@@ -438,7 +434,6 @@
 	<!--//author-section-->
 	<footer class="footer">
 		<div class="footer-bottom text-center py-5">
-			<!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
 			<small class="copyright">TIFTECH - Prodi Teknik Informatika |
 				<i class="" style="color: #fb866a;"></i>Copyright ©
 				<a class="theme-link" href="#" target="_blank"> </a> 2019 - 2020

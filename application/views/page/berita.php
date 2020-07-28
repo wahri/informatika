@@ -42,7 +42,7 @@
             <div class="container">
                 <div class="row">
                     <!-- Post Content Column -->
-                    <div class="col-lg-8">
+                    <div class="col-lg-12">
                         <!-- Preview Image -->
                         <img class="img-fluid rounded" src="<?= base_url('assets/images/berita/') . $berita['gambar'] ?>" alt="<?= $berita['judul'] ?>" />
                         <hr>
@@ -55,52 +55,6 @@
 
                     </div>
 
-                    <!-- Sidebar Widgets Column -->
-                    <div class="col-md-4 blog-right-side">
-                        <!-- Search Widget -->
-                        <div class="card mb-4">
-                            <h5 class="card-header">Search</h5>
-                            <div class="card-body">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Search for..." />
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-secondary" type="button">
-                                            Go!
-                                        </button>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Side Widget -->
-                        <div class="card my-4">
-                            <h5 class="card-header">Side Widget</h5>
-                            <div class="card-body">
-                                You can put anything you want inside of these side widgets.
-                                They are easy to use, and feature the new Bootstrap 4 card
-                                containers!
-                            </div>
-                        </div>
-                        <!-- Categories Widget -->
-                        <div class="card my-4">
-                            <h5 class="card-header">Categories</h5>
-                            <div class="card-body">
-                                <div class="row">
-                                    <?php
-                                    $kategori = $this->db->get('kategori')->result_array();
-                                    foreach ($kategori as $k) :
-                                    ?>
-                                        <div class="col-lg-6">
-                                            <ul class="list-unstyled mb-0">
-                                                <li>
-                                                    <a href="#"><?= $k['nama_kategori'] ?></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    <?php endforeach; ?>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
                 </div>
                 <!-- /.row -->

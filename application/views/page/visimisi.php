@@ -45,7 +45,7 @@
                     <div class="about-main">
                         <div class="row">
                             <div class="col-lg-6">
-                                <img class="img-fluid rounded mb-4" src="<?= site_url('assets/') ?>images/about-img.jpg" alt="" />
+                                <img class="img-fluid rounded mb-4" src="<?= site_url('assets/') ?>images/kaprodi.jpg" alt="Visi dan Misi Teknik Informatika" class="rounded" />
                             </div>
                             <div class="col-lg-6">
                                 <h2>TUJUAN</h2>

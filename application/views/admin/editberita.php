@@ -24,7 +24,7 @@
                     <small id="error" class="form-text text-danger"><?= form_error('isi') ?></small>
                 </div>
             </div>
-            <div class="row mt-5 justify-content-between">
+            <div class="row mt-5">
                 <div class="col-md-5 border">
                     <?php
                     if (!$ubahgambar) :
@@ -48,10 +48,16 @@
                         </div>
                     <?php endif; ?>
                 </div>
-                <div class="col-md-3 text-right">
-                    <button class="btn btn-primary mt-3 btn-lg" type="submit">Upload Berita</button>
+                <div class="col-auto ml-3">
+                    <div class="form-group">
+                        <label>Tanggal</label>
+                        <div class="input-group">
+                            <input type="date" name="date" value="<?= date("Y-m-d", strtotime($berita['datetime'])) ?>">
+                        </div>
+                    </div>
                 </div>
             </div>
+            <button class="btn btn-primary mt-3 btn-lg" type="submit">Upload Berita</button>
             </form>
         </div>
     </main>

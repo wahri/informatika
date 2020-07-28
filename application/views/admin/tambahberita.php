@@ -23,18 +23,24 @@
                     <small id="error" class="form-text text-danger"><?= form_error('isi') ?></small>
                 </div>
             </div>
-            <div class="row mt-5 justify-content-between">
-                <div class="col-md-5 border">
+            <div class="row mt-5">
+                <div class="col-md-4 border">
                     <div class="form-group">
                         <label for="gambar berita">Upload gambar</label>
                         <input type="file" class="form-control-file" name="gambar">
                         <small id="error" class="form-text text-danger"><?= $error ?></small>
                     </div>
                 </div>
-                <div class="col-md-3 text-right">
-                    <button class="btn btn-primary mt-3 btn-lg" type="submit">Upload Berita</button>
+                <div class="col-auto ml-3">
+                    <div class="form-group">
+                        <label>Tanggal</label>
+                        <div class="input-group">
+                            <input type="date" name="date">
+                        </div>
+                    </div>
                 </div>
             </div>
+            <button class="btn btn-primary mt-3 btn-lg" type="submit">Upload Berita</button>
             </form>
         </div>
     </main>

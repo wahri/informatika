@@ -19,6 +19,7 @@
 <script src="<?= site_url('assets/admin/') ?>assets/demo/datatables-demo.js"></script>
 
 
+
 <!-- modal untuk confirm hapus -->
 <script>
     $(document).ready(function() {
@@ -190,6 +191,28 @@
                 document.location.href = "<?= base_url('admin/slider') ?>";
             }
         })
+    })
+</script>
+
+<script>
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                $('#preview').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]); // convert to base64 string
+        }
+    }
+
+    $('#gambar').on('change', function() {
+        //get the file name
+        var fileName = $(this).val();
+        //replace the "Choose a file" label
+        $(this).next('.custom-file-label').html(fileName);
+        readURL(this);
     })
 </script>
 

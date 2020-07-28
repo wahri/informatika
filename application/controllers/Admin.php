@@ -88,7 +88,7 @@ class Admin extends CI_Controller
             $data['judul'] = "Edit Slider";
             $this->tampilan('editslider', $data);
         } else {
-            if($ubahgambar == 1){
+            if ($ubahgambar == 1) {
                 if ($this->gambarSlider->do_upload('gambar')) {
                     $dataa = [
                         'gambar' => $this->gambarSlider->data('file_name'),
@@ -102,12 +102,12 @@ class Admin extends CI_Controller
                     $data['judul'] = "Edit Slider";
                     $this->tampilan('editslider', $data);
                 }
-            }else if($ubahgambar == 0){
+            } else if ($ubahgambar == 0) {
                 $dataa['link'] = $this->input->post('link');
                 $this->db->update('slider', $dataa, ['id_slider' => $id]);
                 $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil mengubah slider!</div>');
                 redirect('admin/slider');
-            }else{
+            } else {
                 echo "something is wrong!";
             }
         }
@@ -171,16 +171,6 @@ class Admin extends CI_Controller
         }
     }
 
-    public function DataKPTA()
-    {
-            $data['judul'] = "DATA IMAGE";
-            $this->tampilan('datakpta', $data);
-    }
-    public function UnduhKPTA()
-    {
-            $data['judul'] = "DATA UNDUH";
-            $this->tampilan('unduhkpta', $data);
-    }
 
     public function hapusGambarProfil()
     {
@@ -352,7 +342,8 @@ class Admin extends CI_Controller
                 $data = [
                     'judul' => $this->input->post('judul'),
                     'isi' => $this->input->post('isi'),
-                    'gambar' => $this->gambar->data('file_name')
+                    'gambar' => $this->gambar->data('file_name'),
+                    'datetime' => $this->input->post('date')
                 ];
 
                 $this->db->insert('berita', $data);
@@ -437,7 +428,8 @@ class Admin extends CI_Controller
                     $data = [
                         'judul' => $this->input->post('judul'),
                         'isi' => $this->input->post('isi'),
-                        'gambar' => $this->gambar->data('file_name')
+                        'gambar' => $this->gambar->data('file_name'),
+                        'datetime' => $this->input->post('date')
                     ];
 
                     $this->db->update('berita', $data, ['id_berita' => $id]);
@@ -453,7 +445,8 @@ class Admin extends CI_Controller
             } else {
                 $data = [
                     'judul' => $this->input->post('judul'),
-                    'isi' => $this->input->post('isi')
+                    'isi' => $this->input->post('isi'),
+                    'datetime' => $this->input->post('date')
                 ];
 
                 $this->db->update('berita', $data, ['id_berita' => $id]);
@@ -700,7 +693,7 @@ class Admin extends CI_Controller
                 $this->db->update('pojok_prodi', $post, ['id_pojok_prodi' => $id]);
                 $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil mengubah poster!</div>');
                 redirect('admin/pojokprodi');
-            }else{
+            } else {
                 $post['link'] = $this->input->post('link');
                 $this->db->update('pojok_prodi', $post, ['id_pojok_prodi' => $id]);
                 $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil mengubah poster!</div>');
@@ -892,4 +885,59 @@ class Admin extends CI_Controller
     }
 
 
+    public function DataKPTA($id = null)
+    {
+        $data['editgambar'] = $this->db->get_where('gambarkpta', ['id_gambar' => $id])->row_array();
+        $data['gambar'] = $this->db->get('gambarkpta')->result_array();
+        $data['judul'] = "DATA IMAGE";
+        $this->tampilan('datakpta', $data);
+    }
+    public function UnduhKPTA()
+    {
+        $data['judul'] = "DATA UNDUH";
+        $this->tampilan('unduhkpta', $data);
+    }
+
+    public function inputDataImageKPTA()
+    {
+        $id = $this->input->post('id');
+        $title = $this->input->post('title');
+        $description = $this->input->post('description');
+        $location = $this->input->post('location');
+
+        $config['upload_path'] = './assets/images/kpta/';
+        $config['allowed_types'] = 'gif|jpg|jpeg|png|pdf|';
+        $config['max_size'] = '100000';
+        $config['file_name'] = $title;
+
+        $this->load->library('upload', $config, 'gambar');
+        $this->gambar->initialize($config);
+
+        $this->form_validation->set_rules('judul', 'judul', 'trim');
+
+        if ($this->form_validation->run() == FALSE) {
+            $data['error'] = $this->gambar->display_errors();
+            $data['judul'] = "DATA IMAGE";
+            $this->tampilan('datakpta', $data);
+        } else {
+            if($id != null){
+                
+            }else{
+                if ($this->gambar->do_upload('gambar')) {
+                    $data = [
+                        'title' => $title,
+                        'gambar' => $this->gambar->data('file_name'),
+                        'description' => $description,
+                        'location' => $location
+                    ];
+                    $this->db->insert('gambarkpta', $data);
+                    redirect('admin/datakpta');
+                } else {
+                    $data['error'] = $this->gambar->display_errors();
+                    $data['judul'] = "DATA IMAGE";
+                    $this->tampilan('datakpta', $data);
+                }
+            }
+        }
+    }
 }
