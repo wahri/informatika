@@ -97,33 +97,34 @@
 
         <!-- Page Content -->
         <section id="tentang">
-            <div class="container py-4 mb-5" id="about-main">
+            <div class="container  mb-3" id="about-main">
                 <!-- About Section -->
                 <div class="about-main">
                     <div class="row justify-content-between">
-                        <div class="col-lg-6">
+                        <div class="col-lg-9">
                             <h2 id="judul"><?= $profil['judul'] ?></h2>
                             <!-- <hr class="mt-0 mb-4"> -->
                             <?= $profil['paragraf'] ?>
                         </div>
-                        <div class="col-lg-5 ml-5 d-flex justify-content-center align-items-center">
-                            <div class="ig-slide">
-                                <a href="https://www.instagram.com/informatika_umri/" target="_blank" class="link-ig"></a>
-                                <?php foreach ($instagram as $ig) : ?>
-                                    <img class="img-fluid ig-slide-item" src="<?= base_url('assets/images/slider-ig/') . $ig['gambar'] ?>" alt="Teknik Informatika Instagram Post">
-                                <?php endforeach; ?>
-                            </div>
-                        </div>
+                          <div class="col-lg-3 pt-5">
+                            <!-- <input style="width: auto; padding: 10px; font-weight: normal; background: #06337b; color: #ffffff; border-radius: 0px; border: 0px solid #ffffff; font-size: 110%; font-weight: bold;" type="block" value="❯  Kurikulum" onclick="window.open('#', '_blank')" onmouseover="this.style.backgroundColor='#0D88C5'; return true;" onmouseout="this.style.backgroundColor='#06337b';return true;" /> -->
+                            <a href="http://informatika.umri.ac.id/page/detail/2" class="btn btn-primary btn-block "> Kurikulum </a>
+                            <a href="#" class="btn btn-primary btn-block"> Layanan Mahasiswa </a>
+                            <a href="#" class="btn btn-primary btn-block"> Fasilitas </a>
+                            <a href="http://informatika.umri.ac.id/page/detail/10" class="btn btn-primary btn-block"> Informasi Beasiswa </a>
+                          </div>
+
+
+
                     </div>
                 </div>
             </div>
         </section>
 
-
         <section id="prodi">
             <div class="services-bar pb-5">
                 <div class="container">
-                    <h1 class="h5 py-4 text-header mb-5">Pojok Program Studi</h1>
+                    <h1 class="h5 py-3 text-header mb-5">Pojok Program Studi</h1>
                     <!-- Services Section -->
                     <div class="row">
                         <?php $page1 = $this->db->get_where('page', ['id_page' => $prodi['page-1']])->row_array(); ?>
@@ -164,12 +165,64 @@
             </div>
         </section>
 
+        <section id="kalenderakademik">
+
+                <div class="container mb-3">
+                  <div class="row">
+                  <div class="col-md-4 col-sm-12">
+                    <h2 class="head-title" align="center">AGENDA AKADEMIK</h2>
+                    <p class="text-center">2020/2021 Semester Ganjil</p>
+                    <table class="table">
+		                <thead>
+		                    <tr>
+		                        <th scope="col">DESKRIPSI</th>
+		                        <th scope="col">TANGGAL</th>
+
+		                    </tr>
+		                </thead>
+		                <tbody>
+		                    <tr>
+		                        <td>Pembayaran SPP 2020 (Ganjil)</td>
+		                        <td class="text-success">18 Agu - 27 Sep 2020</td>
+		                    </tr>
+		                    <tr>
+		                        <td>Pengisian KRS </td>
+														<td class="text-success"> 21 Sep - 10 Okt 2020</td>
+		                    </tr>
+
+												<tr>
+		                        <td>PKKMB & MASTA 2020   </td>
+		                        <td class="text-warningr">7 - 9 Okt 2020</td>
+
+		                    </tr>
+		                </tbody>
+		            </table>
+                <a href="#" class="btn btn-primary" role="button">Download</a>
+
+                </div>
+                <div class="col-md-4 col-sm-12 d-flex justify-content-center align-items-center">
+                    <div class="ig-slide">
+                        <a href="https://www.instagram.com/informatika_umri/" target="_blank" class="link-ig"></a>
+                        <?php foreach ($instagram as $ig) : ?>
+                            <img class="img-fluid ig-slide-item" src="<?= base_url('assets/images/slider-ig/') . $ig['gambar'] ?>" alt="Teknik Informatika Instagram Post">
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+              </div>
+
+
+              </div>
+            </section>
+
+            
+
+
         <section id="akademik">
             <div class="container">
                 <div class="akademik-title">
                     <h1 class="text-uppercase text-header text-center">Teknik Informatika</h1>
                     <hr class="my-3">
-                    <p class="text-center">Bekal karier masa depan Anda dipelajari mulai saat ini Bersama Program Studi Teknik Informatika, Fakultas Ilmu Komputer, Universitas Muhammadiyah Riau. Anda akan menemukan pengalaman pembelajaran yang unik dengan memadukan nilai-nilai keislaman dan teknologi untuk mengembangkan potensi anda.</p>
+                    <p class="text-center">Bekal karier masa depan Anda dipelajari mulai saat ini, anda akan menemukan pengalaman pembelajaran yang unik dengan memadukan nilai-nilai keislaman dan teknologi untuk mengembangkan potensi anda.</p>
                 </div>
                 <div class="row">
                     <?php foreach ($akademik as $key => $a) : ?>
@@ -195,7 +248,7 @@
 
                                         ?>
                                     </p>
-                                    <a href="<?= base_url('page/detail/') . $a['id_page'] ?>" class="btn btn-coklat">KENALI LEBIH DEKAT</a>
+                                    <a href="<?= base_url('page/detail/') . $a['id_page'] ?>" class="btn btn-coklat">Kenali Lebih Dekat</a>
                                 </div>
                             </div>
                         </div>
