@@ -245,8 +245,8 @@
 								<div id="informasi" class="informasi">
 									<li> INFORMASI & PENGUMUMAN</li>
 									<li>
-										<i class="fas fa-calendar-alt mr-2"></i>
-										<a class="theme-link" href="https://sites.google.com/umri.ac.id/sipenol/jadwal-seminar?authuser=0" target="_blank">Cek Jadwal Seminar/Sidang.</a>
+										<!-- <i class="fas fa-calendar-alt mr-2"></i> -->
+										<!-- <a class="theme-link" href="https://sites.google.com/umri.ac.id/sipenol/jadwal-seminar?authuser=0" target="_blank">Cek Jadwal Seminar/Sidang.</a> -->
 									</li>
 									<li>
 										<i class="fas fa-user-tie mr-2"></i>
@@ -277,6 +277,7 @@
 							<li><a class="nav-link active" data-toggle="tab" href="#proposal"> Proposal</a></li>
 							<li><a class="nav-link" data-toggle="tab" href="#hasil">Hasil</a></li>
 							<li><a class="nav-link" data-toggle="tab" href="#kompre">Komprehensif</a></li>
+							<li><a class="nav-link" data-toggle="tab" href="#kp">Kerja Praktek</a></li>
 						</ul>
 					<div class="tab-content">
 						<div role="tabpanel" id="proposal" class="tab-pane active">
@@ -291,14 +292,13 @@
 						</div>
 						<div role="tabpanel" id="kompre" class="tab-pane">
 							<div class="panel-body">
-								<strong>Donec qum felis</strong>
-
-								<p>Thousand unknown plants are noticed by me: when I hear the buzz of the little world among the stalks, and grow familiar with the countless indescribable forms of the insects
-												and flies, then I feel the presence of the Almighty, who formed us in his own image, and the breath </p>
-
-								<p>I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite
-												sense of mere tranquil existence, that I neglect my talents. I should be incapable of drawing a single stroke at the present moment; and yet.</p>
-							</div>
+							<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7JebOdG7LkRU5xTL7BXXGmPldX72p2157_xWZ2roKczczaDu7UvkNhhW3BCeQszSOkrSz_lIxuRv_/pubhtml?widget=true&amp;headers=false" height="500pt" width="100%"></iframe>
+								</div>
+						</div>
+						<div role="tabpanel" id="kp" class="tab-pane">
+							<div class="panel-body">
+							<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS4PxAy95DuNTXD29vvVzVS0ply034dIpixCJGDCGch8xppmlaXNWS-Ps5Ut6CYNXvWC2lgI-6MtgG5/pubhtml?widget=true&amp;headers=false" height="500pt" width="100%"></iframe>
+								</div>
 						</div>
 					</div>
 
