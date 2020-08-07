@@ -21,8 +21,8 @@ body {
 
 
 a.btn-primary {
-	background-color: #485ea0;
-	border-color: #485ea0;
+	background-color: #06337b;
+	border-color: #06337b;
 }
 
 a.btn-primary:hover {
@@ -43,8 +43,8 @@ a.btn-coklat:hover {
 }
 
 button.btn-primary {
-	background-color: #485ea0;
-	border-color: #485ea0;
+	background-color: #06337b;
+	border-color: #06337b;
 }
 
 button.btn-primary:hover {
@@ -53,8 +53,8 @@ button.btn-primary:hover {
 }
 
 a.btn-secondary {
-	background-color: #485ea0;
-	border-color: #485ea0;
+	background-color: #06337b;
+	border-color: #06337b;
 }
 
 a.btn-secondary:hover {
@@ -63,8 +63,8 @@ a.btn-secondary:hover {
 }
 
 button.btn-secondary {
-	background-color: #485ea0;
-	border-color: #485ea0;
+	background-color: #06337b;
+	border-color: #06337b;
 }
 
 button.btn-secondary:hover {
@@ -78,7 +78,7 @@ button.btn-secondary:hover {
 	color: white;
 	width: 25px;
 	height: 25px;
-	border: 3px solid #485ea0;
+	border: 3px solid #06337b;
 	border-radius: 25px 50px 50px 50px/25px 50px 50px 50px;
 	z-index: 999999;
 	pointer-events: none;
@@ -90,7 +90,7 @@ button.btn-secondary:hover {
 }
 
 .top-bar {
-	background: #485ea0;
+	background: #06337b;
 	padding: 4px 0px;
 
 }
@@ -154,19 +154,19 @@ button.btn-secondary:hover {
 }
 
 .navbar-expand-lg.top-nav .navbar-nav .nav-link:hover {
-	color: #485ea0;
+	color: #06337b;
 	border-radius: 4.8px;
 }
 
 .navbar-expand-lg.top-nav .navbar-nav .nav-link.active {
-	color: #485ea0;
+	color: #06337b;
 }
 
 .navbar-expand-lg.top-nav .navbar-nav .nav-link.active:before {
 	content: "";
 	position: absolute;
 	width: 40px;
-	background: #485ea0;
+	background: #06337b;
 	height: 5px;
 	top: 0px;
 	left: 0px;
@@ -177,7 +177,7 @@ button.btn-secondary:hover {
 	content: "";
 	position: absolute;
 	width: 40px;
-	background: #485ea0;
+	background: #06337b;
 	height: 5px;
 	bottom: 0px;
 	right: 0px;
@@ -188,7 +188,7 @@ button.btn-secondary:hover {
 	content: "";
 	position: absolute;
 	width: 0px;
-	background: #485ea0;
+	background: #06337b;
 	height: 5px;
 	top: 0px;
 	left: 0px;
@@ -204,7 +204,7 @@ button.btn-secondary:hover {
 	content: "";
 	position: absolute;
 	width: 0px;
-	background: #485ea0;
+	background: #06337b;
 	height: 5px;
 	bottom: 0px;
 	right: 0px;
@@ -302,7 +302,7 @@ button.btn-secondary:hover {
 
 .navbar-expand-lg.top-nav .navbar-nav .dropdown-menu .dropdown-item:hover {
 	background: none;
-	color: #485ea0;
+	color: #06337b;
 }
 
 .top-nav .navbar-toggler {
@@ -311,8 +311,8 @@ button.btn-secondary:hover {
 }
 
 .top-nav .navbar-toggler:hover {
-	color: #485ea0;
-	border-color: #485ea0;
+	color: #06337b;
+	border-color: #06337b;
 }
 
 
@@ -323,7 +323,7 @@ button.btn-secondary:hover {
 }
 
 .slider-main .carousel .carousel-indicators .active {
-	background: #485ea0;
+	background: #06337b;
 }
 
 .slider-main .carousel .carousel-item .carousel-caption h3 {
@@ -396,7 +396,7 @@ button.btn-secondary:hover {
 }
 
 .services-bar .card .card-body {
-	border-top: 3px solid #485ea0;
+	border-top: 3px solid #06337b;
 }
 
 .services-bar .card a {
@@ -414,7 +414,7 @@ button.btn-secondary:hover {
 
 .services-bar .card h4.card-header {
 	background-color: transparent;
-	color: #485ea0;
+	color: #06337b;
 	font-size: 18px;
 	font-weight: 500;
 	border: none;
@@ -603,7 +603,7 @@ button.btn-secondary:hover {
 .post-slide {
 	margin: 0 15px;
 	background: #fff;
-	border-bottom: 4px solid #485ea0;
+	border-bottom: 4px solid #06337b;
 }
 
 .post-slide .post-header {
@@ -648,7 +648,7 @@ button.btn-secondary:hover {
 
 .post-slide .post-bar li a:hover {
 	text-decoration: none;
-	color: #485ea0;
+	color: #06337b;
 }
 
 .post-slide .post-bar li img {
@@ -702,7 +702,7 @@ button.btn-secondary:hover {
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	background: #485ea0;
+	background: #06337b;
 	z-index: 1;
 }
 
@@ -744,7 +744,7 @@ button.btn-secondary:hover {
 
 .touch-line {
 	padding: 40px 0px;
-	background: #485ea0;
+	background: #06337b;
 	position: relative;
 	margin-top: 90px;
 }
@@ -762,7 +762,7 @@ button.btn-secondary:hover {
 	height: 50px;
 	background-size: cover;
 	background-position: 50% 50%;
-	background-image: url(../images/Path.png);
+	/* background-image: url(../images/Path.png); */
 }
 
 .touch-line p {
@@ -882,7 +882,7 @@ footer p {
 }
 
 .footer_ul2_amrc li a {
-	color: #485ea0;
+	color: #06337b;
 	font-size: 12px;
 }
 
@@ -922,7 +922,7 @@ footer p {
 }
 
 .copyright a {
-	color: #485ea0;
+	color: #06337b;
 	text-decoration: underline;
 }
 
@@ -958,8 +958,8 @@ footer p {
 }
 
 .social_footer_ul li a:hover {
-	color: #485ea0;
-	border: 2px solid #485ea0;
+	color: #06337b;
+	border: 2px solid #06337b;
 }
 
 .footer-social {
@@ -1293,7 +1293,7 @@ footer p {
 }
 
 .breadcrumb-main .breadcrumb {
-	background: #485ea0;
+	background: #06337b;
 	border-radius: 100px 100px 0px 0px;
 	display: block;
 }
@@ -1384,8 +1384,8 @@ footer p {
 	height: auto;
 	background: #323232;
 	padding: 27px 0;
-	border-left: 5px solid #485ea0;
-	border-right: 5px solid #485ea0;
+	border-left: 5px solid #06337b;
+	border-right: 5px solid #06337b;
 	box-shadow: 0 15px 25px 0 rgba(3, 7, 15, 0.1);
 	position: absolute;
 	bottom: 0;
@@ -1394,7 +1394,7 @@ footer p {
 }
 
 .our-team:hover .team-content {
-	background: #485ea0;
+	background: #06337b;
 }
 
 .our-team .title {
@@ -1466,13 +1466,13 @@ footer p {
 
 /* #tentang,
 #portfolio {
-	background-color: #485ea0;
+	background-color: #06337b;
 } */
 
 
 .our-team .social li a:hover {
 	color: #ffffff;
-	background: #485ea0;
+	background: #06337b;
 }
 
 @media only screen and (max-width: 990px) {
@@ -1535,7 +1535,7 @@ footer p {
 }
 
 .dot-full {
-	background: #485ea0;
+	background: #06337b;
 	width: 40px;
 	height: 40px;
 	position: absolute;
@@ -1625,15 +1625,15 @@ footer p {
 }
 .pagination_bar .pagination .page-item .page-link.active {
 	font-size: 20px;
-	background: #485ea0;
-	border: 1px solid #485ea0;
+	background: #06337b;
+	border: 1px solid #06337b;
 	color: #ffffff;
 	width: 35px;
 	text-align: center;
 }
 
 .pagination_bar .pagination .page-item .page-link:hover {
-	background: #485ea0;
+	background: #06337b;
 }
 
 .portfolio-item h4.card-title a {
@@ -1681,7 +1681,7 @@ footer p {
 }
 
 .blog-entries .card .card-footer a {
-	color: #485ea0;
+	color: #06337b;
 }
 
 .blog-right-side .card {
@@ -1709,7 +1709,7 @@ footer p {
 }
 
 .blog-main .blockquote {
-	border-left: 3px solid #485ea0;
+	border-left: 3px solid #06337b;
 	padding-left: 20px;
 }
 
@@ -1728,7 +1728,7 @@ footer p {
 }
 
 .pagination_bar_arrow .pagination .page-item .page-link:hover {
-	background: #485ea0;
+	background: #06337b;
 }
 
 .faq-main {
@@ -1770,7 +1770,7 @@ footer p {
 }
 
 #accordionExample .accordion-single .card-header h5 button:hover {
-	color: #485ea0;
+	color: #06337b;
 	text-decoration: none;
 }
 
@@ -1781,8 +1781,8 @@ footer p {
 	width: 40px;
 	height: 47px;
 	line-height: 47px;
-	background: #485ea0;
-	border: 1px solid #485ea0;
+	background: #06337b;
+	border: 1px solid #06337b;
 	border-radius: 3px;
 	font-size: 24px;
 	color: #000000;
@@ -1800,8 +1800,8 @@ footer p {
 	width: 40px;
 	height: 47px;
 	line-height: 47px;
-	background: #485ea0;
-	border: 1px solid #485ea0;
+	background: #06337b;
+	border: 1px solid #06337b;
 	border-radius: 3px;
 	font-size: 24px;
 	color: #ffffff;
@@ -1817,7 +1817,7 @@ footer p {
 	display: block;
 	width: 1px;
 	height: 100%;
-	border: 1px dashed #485ea0;
+	border: 1px dashed #06337b;
 	position: absolute;
 	top: 25px;
 	left: 18px;
@@ -1906,7 +1906,7 @@ footer p {
 	padding: 4px 0;
 	right: -36px;
 	transform: rotate(40deg);
-	background-color: #485ea0;
+	background-color: #06337b;
 	color: #323232;
 }
 
@@ -2122,7 +2122,7 @@ footer p {
 	}
 
 	#visimisi {
-		background-color: #485ea0;
+		background-color: #06337b;
 	}
 }
 
