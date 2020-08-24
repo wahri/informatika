@@ -28,6 +28,49 @@ class Admin extends CI_Controller
         $data['judul'] = "Dashboard";
         $this->tampilan('index', $data);
     }
+    
+    public function setting()
+    {
+        $data = [
+            'title' => $this->db->get_where('website', ['setting' => 'title'])->row_array(),
+            'desc' => $this->db->get_where('website', ['setting' => 'desc'])->row_array(),
+            'copyright' => $this->db->get_where('website', ['setting' => 'copyright'])->row_array(),
+            'company' => $this->db->get_where('website', ['setting' => 'company'])->row_array(),
+            'address' => $this->db->get_where('website', ['setting' => 'address'])->row_array(),
+            'contact' => $this->db->get_where('website', ['setting' => 'contact'])->row_array(),
+            'logo' => $this->db->get_where('website', ['setting' => 'logo'])->row_array()
+        ];
+
+        $config['upload_path'] = './assets/images/';
+        $config['allowed_types'] = 'gif|jpg|jpeg|png|pdf|';
+        $config['max_size'] = '100000';
+
+        $this->load->library('upload', $config, 'logo');
+        $this->logo->initialize($config);
+
+        $data['judul'] = "Setting Website";
+        $this->tampilan('setting', $data);
+
+        $this->form_validation->set_rules('link', 'Link', 'trim');
+
+        if ($this->form_validation->run() == TRUE) {
+            // $this->db->update('website', ['value' => $this->input->post('title')], ['setting' => 'title']);
+            // $this->db->update('website', ['value' => $this->input->post('desc')], ['setting' => 'desc']);
+            // $this->db->update('website', ['value' => $this->input->post('copyright')], ['setting' => 'copyright']);
+            // $this->db->update('website', ['value' => $this->input->post('company')], ['setting' => 'company']);
+            // $this->db->update('website', ['value' => $this->input->post('address')], ['setting' => 'address']);
+            // $this->db->update('website', ['value' => $this->input->post('contact')], ['setting' => 'contact']);
+
+            if($this->logo->do_upload('logo')){
+                echo "berhasil";
+                die;
+            }else{
+                echo "gagal";
+                die;
+            }
+        }
+
+    }
 
     public function slider()
     {

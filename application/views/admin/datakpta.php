@@ -47,7 +47,7 @@
                               <label class="custom-file-label" for="customFile">Choose file</label>
                            </div>
                            <div class="thumbnail mt-3">
-                              <img id="preview" src="<?= base_url('assets/images/kpta/') ?><?= $editgambar != null ? $editgambar['gambar'] : "preview-icon.png" ?>" alt="preview" style="height: 200px; width:200px; object-fit:contain;">
+                              <img id="preview" src="<?= base_url('assets/images/kpta/') ?><?= $editgambar != null ? $editgambar['gambar'] : "preview-image.jpg" ?>" alt="preview" style="height: 200px; width:200px; object-fit:contain;">
                               <!-- <input id="image_fitur" type="hidden" name="image_fitur" value=""> -->
                               <!-- <input id="id_fitur" type="hidden" name="id_fitur" value=""> -->
                            </div>

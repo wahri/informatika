@@ -1,5 +1,5 @@
 #akademik {
-  background-color: #485ea0;
+  background-color: #06337b;
   padding: 70px;
   color: #fff;
 }
@@ -108,7 +108,7 @@
 }
 
 .daftar {
-  background: #485ea0;
+  background: #06337b;
   position: relative;
 }
 .daftar p {
@@ -117,7 +117,7 @@
   font-weight: 600;
   font-size: 22px;
 }
-.daftar :after {
+/* .daftar :after {
   position: absolute;
   content: "";
   z-index: -1;
@@ -131,6 +131,6 @@
   background-size: cover;
   background-position: 50% 50%;
   background-image: url(../images/path-reverse.png);
-}
+} */
 
 /*# sourceMappingURL=output.css.map */

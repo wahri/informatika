@@ -109,6 +109,10 @@
                         <div class="sb-nav-link-icon"><i class="fas fa-sliders-h"></i></div>
                         User Account
                     </a>
+                    <a class="nav-link" href="<?= site_url('admin/setting') ?>">
+                        <div class="sb-nav-link-icon"><i class="fas fa-sliders-h"></i></div>
+                        Setting
+                    </a>
 
                     <a class="nav-link" href="<?= site_url('admin/pengaturanakun') ?>">
                         <div class="sb-nav-link-icon"><i class="fas fa-sliders-h"></i></div>

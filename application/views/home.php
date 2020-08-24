@@ -81,7 +81,7 @@
         ?>
 
         <div class="daftar">
-            <div class="container pt-4 mb-5">
+            <div class="container py-5 mb-3">
                 <div class="row">
                     <div class="col-md-12 text-center">
                         <p id="judulpmb">PENERIMAAN MAHASISWA BARU TEKNIK INFORMATIKA</p>

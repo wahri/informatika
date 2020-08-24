@@ -194,6 +194,7 @@
     })
 </script>
 
+<!-- image preview -->
 <script>
     function readURL(input) {
         if (input.files && input.files[0]) {
