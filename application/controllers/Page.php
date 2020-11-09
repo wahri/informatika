@@ -8,12 +8,16 @@ class Page extends CI_Controller
         $data['prodi'] = $this->db->get('pojok_prodi')->row_array();
         $data['instagram'] = $this->db->get('instagram')->result_array();
         $data['page'] = $this->db->get('page')->result_array();
+
         $data['akademik'] = $this->db->get_where('page', ['kategori' => 'akademik'])->result_array();
+
         $data['judul'] = "Home";
         $data['link'] = "Home";
         $this->db->order_by('datetime', 'DESC');
         $this->db->limit(4);
         $data['berita'] = $this->db->get('berita')->result_array();
+
+        
         $this->load->view('home', $data);
     }
 

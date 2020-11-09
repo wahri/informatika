@@ -29,7 +29,7 @@
 			z-index: 9999;
 
 		}
-	</style>
+	</style>	
 </head>
 
 <body>
@@ -197,6 +197,7 @@
 		<!--//container-->
 	</section>
 
+
 	<!--//hero-section-->
 	<section id="content-section" class="content-section">
 		<div class="container">
@@ -244,8 +245,8 @@
 								<div id="informasi" class="informasi">
 									<li> INFORMASI & PENGUMUMAN</li>
 									<li>
-										<i class="fas fa-calendar-alt mr-2"></i>
-										<a class="theme-link" href="https://sites.google.com/umri.ac.id/sipenol/jadwal-seminar?authuser=0" target="_blank">Cek Jadwal Seminar/Sidang.</a>
+										<!-- <i class="fas fa-calendar-alt mr-2"></i> -->
+										<!-- <a class="theme-link" href="https://sites.google.com/umri.ac.id/sipenol/jadwal-seminar?authuser=0" target="_blank">Cek Jadwal Seminar/Sidang.</a> -->
 									</li>
 									<li>
 										<i class="fas fa-user-tie mr-2"></i>
@@ -265,6 +266,56 @@
 		</div>
 		<!--//container-->
 	</section>
+
+	<section id="content-section" class="content-section">
+		<div class="container">
+		<h2 class="section-heading text-center mb-3">JADWAL SEMINAR </h2>
+			<div class="row">
+				<div class="col-lg-12 mb-3">
+					<div class="tabs-container">
+						<ul class="nav nav-tabs" role="tablist">
+							<li><a class="nav-link active" data-toggle="tab" href="#proposal"> Proposal</a></li>
+							<li><a class="nav-link" data-toggle="tab" href="#hasil">Hasil</a></li>
+							<li><a class="nav-link" data-toggle="tab" href="#kompre">Komprehensif</a></li>
+							<li><a class="nav-link" data-toggle="tab" href="#kp">Kerja Praktek</a></li>
+						</ul>
+					<div class="tab-content">
+						<div role="tabpanel" id="proposal" class="tab-pane active">
+							<div class="panel-body">
+								<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRamrBiOP5v8HixckPPNXKphbJziGJ-_-b2P2RbnexNJ3sVQS7p51zexVe_BK2HLQVI0BjdEe9HnCnO/pubhtml?widget=true&amp;headers=false" height="500px" width="100%"></iframe>
+								</div>
+						</div>
+						<div role="tabpanel" id="hasil" class="tab-pane">
+							<div class="panel-body">
+							<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTcSbnA6PO3mqvsa-Mtu1r3yaq5QkYZlCt5UXrp4F4rT8OEfApbHjWrsza3PWJcNvRNdEwRPAKqKGJc/pubhtml?widget=true&amp;headers=false" height="500pt" width="100%"></iframe>
+							</div>
+						</div>
+						<div role="tabpanel" id="kompre" class="tab-pane">
+							<div class="panel-body">
+							<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7JebOdG7LkRU5xTL7BXXGmPldX72p2157_xWZ2roKczczaDu7UvkNhhW3BCeQszSOkrSz_lIxuRv_/pubhtml?widget=true&amp;headers=false" height="500pt" width="100%"></iframe>
+								</div>
+						</div>
+						<div role="tabpanel" id="kp" class="tab-pane">
+							<div class="panel-body">
+							<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS4PxAy95DuNTXD29vvVzVS0ply034dIpixCJGDCGch8xppmlaXNWS-Ps5Ut6CYNXvWC2lgI-6MtgG5/pubhtml?widget=true&amp;headers=false" height="500pt" width="100%"></iframe>
+								</div>
+						</div>
+					</div>
+
+
+				</div>
+			</div>
+					
+		</div>
+	</section>
+
+
+
+
+
+
+
+
 	<!--//content-section-->
 	<section id="benefits-section" class="benefits-section theme-bg-light-gradient py-5">
 		<div class="container py-5">

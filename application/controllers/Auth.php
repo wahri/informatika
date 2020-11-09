@@ -9,8 +9,6 @@ class Auth extends CI_Controller
         if ($this->session->userdata('status') == "login") {
             if ($this->session->userdata('role') == 1) {
                 redirect('admin');
-            } else {
-                echo "fitur blm ada";
             }
         } else {
             $this->form_validation->set_rules('username', 'Username', 'required|trim');
